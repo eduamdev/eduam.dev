@@ -1,26 +1,33 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { siteConfig } from "@/config/site.config";
 
-const inter = Inter({ subsets: ["latin"] });
+import { siteConfig } from "@/config/site";
+import { fontSans } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: {
     default: "",
     template: `%s - ${siteConfig.name}`,
   },
+  description: siteConfig.description,
 };
 
-export default function RootLayout({
-  children,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode;
-}) {
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head />
-      <body className={inter.className}>{children}</body>
+      <body className={cn("", fontSans.variable)}>
+        <div>
+          <header></header>
+          <div>{children}</div>
+          <footer></footer>
+        </div>
+      </body>
     </html>
   );
 }
