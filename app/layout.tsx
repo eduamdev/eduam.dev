@@ -6,6 +6,7 @@ import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { Provider as WrapBalancerProvider } from "react-wrap-balancer";
 
 export const metadata: Metadata = {
   title: {
@@ -27,11 +28,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={cn("min-h-screen font-sans antialiased", fontSans.variable)}
         style={{ textRendering: "optimizeLegibility" }}
       >
-        <div className="relative flex min-h-screen flex-col">
-          <SiteHeader />
-          <div>{children}</div>
-          <SiteFooter />
-        </div>
+        <WrapBalancerProvider>
+          <div className="relative flex min-h-screen flex-col">
+            <SiteHeader />
+            <div>{children}</div>
+            <SiteFooter />
+          </div>
+        </WrapBalancerProvider>
       </body>
     </html>
   );
