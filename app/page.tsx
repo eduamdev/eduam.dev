@@ -21,7 +21,7 @@ export default function IndexPage() {
         <Text
           as="h2"
           align="center"
-          className="max-w-4xl font-sans text-lg leading-8 tracking-[-0.017em] text-neutral-600 dark:text-neutral-300 md:text-xl md:leading-8 mt-6"
+          className="max-w-4xl font-sans text-lg leading-8 tracking-[-0.017em] text-neutral-600 dark:text-neutral-300 mt-6"
           balanced
         >
           Hello, I&apos;m Eduardo, a Mexico-based Software Engineer specializing
