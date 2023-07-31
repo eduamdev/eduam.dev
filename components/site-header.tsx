@@ -13,12 +13,11 @@ export function SiteHeader() {
     >
       <div className="mx-auto flex h-full max-w-7xl grid-cols-2 items-center justify-between gap-x-7 px-6 sm:grid md:grid-cols-3">
         <div className="hidden items-center md:flex">main nav</div>
-        <Link
-          href="/"
-          className="flex items-center justify-start md:justify-center "
-        >
-          <Icons.logo className="h-[18px] w-auto" />
-        </Link>
+        <div className="flex items-center justify-start md:justify-center">
+          <Link href="/">
+            <Icons.logo className="h-[18px] w-auto" />
+          </Link>
+        </div>
         <div className="flex items-center justify-end">
           <div className="hidden items-center justify-center gap-x-6 md:flex">
             <Link href={`mailto:${siteConfig.email}`}>

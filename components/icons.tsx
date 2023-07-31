@@ -9,4 +9,15 @@ export const Icons = {
       />
     </svg>
   ),
+  arrowUpRight: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" strokeWidth="1.5" fill="none" {...props}>
+      <path
+        d="M6 19L19 6m0 0v12.48M19 6H6.52"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  ),
 };
