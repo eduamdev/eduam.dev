@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className=" mx-auto mb-12 w-full max-w-7xl px-6 pt-10">
         <div className="flex flex-col flex-wrap items-center justify-center gap-5 md:flex-row md:justify-between">
           <Link href="/">
-            <Icons.logo className="h-4 w-full" />
+            <Icons.logo className="h-4 w-auto" />
           </Link>
           <p className="text-center text-sm leading-5 tracking-[-0.006em] text-neutral-600 dark:text-neutral-400 md:text-left">
             Built by{" "}

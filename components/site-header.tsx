@@ -15,14 +15,15 @@ export function SiteHeader() {
         <div className="hidden items-center md:flex">main nav</div>
         <div className="flex items-center justify-start md:justify-center">
           <Link href="/">
-            <Icons.logo className="h-[18px] w-auto" />
+            <Icons.logo className="h-4 lg:h-[17px] w-auto" />
           </Link>
         </div>
         <div className="flex items-center justify-end">
           <div className="hidden items-center justify-center gap-x-6 md:flex">
             <Link href={`mailto:${siteConfig.email}`}>
               <p className="text-sm font-medium leading-5 tracking-normal text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-white">
-                Let&apos;s chat
+                Let&apos;s chat{" "}
+                <Icons.arrowUpRight className="ml-1 inline h-3.5 w-3.5 align-text-top" />
               </p>
             </Link>
           </div>
