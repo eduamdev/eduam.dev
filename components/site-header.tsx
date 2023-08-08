@@ -12,7 +12,7 @@ export function SiteHeader() {
         WebkitBackdropFilter: "saturate(180%) blur(5px)",
       }}
     >
-      <div className="mx-auto flex h-full max-w-6xl grid-cols-2 items-center justify-between gap-x-7 px-6 sm:grid md:grid-cols-3">
+      <div className="mx-auto flex h-full max-w-5xl grid-cols-2 items-center justify-between gap-x-7 px-6 sm:grid md:grid-cols-3">
         <div className="flex items-center justify-start">
           <Link href="/">
             <Icons.logo className="h-[17px] lg:h-[18px] w-auto" />

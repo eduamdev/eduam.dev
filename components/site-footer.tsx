@@ -4,7 +4,7 @@ import { Icons } from "@/components/icons";
 
 export function SiteFooter() {
   return (
-    <footer className="px-6 mx-auto mb-20 w-full max-w-6xl">
+    <footer className="px-6 mx-auto mb-20 w-full max-w-5xl">
       <div className="pt-10 border-t border-black/[0.1] dark:border-white/[0.12]">
         <div className="flex flex-col flex-wrap items-center justify-center gap-5 md:flex-row md:justify-between">
           <Link href="/">

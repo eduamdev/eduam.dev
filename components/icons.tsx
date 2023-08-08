@@ -22,9 +22,55 @@ export const Icons = {
     </svg>
   ),
   arrowUpRight: (props: IconProps) => (
-    <svg viewBox="0 0 24 24" strokeWidth="1.5" fill="none" {...props}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      fill="none"
+      {...props}
+    >
       <path
         d="M6 19L19 6m0 0v12.48M19 6H6.52"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  ),
+  pin: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth="1.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M20 10c0 4.418-8 12-8 12s-8-7.582-8-12a8 8 0 1116 0z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      ></path>
+      <path
+        d="M12 11a1 1 0 100-2 1 1 0 000 2z"
+        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      ></path>
+    </svg>
+  ),
+  calendar: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth="1.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      {...props}
+    >
+      <path
+        d="M15 4V2m0 2v2m0-2h-4.5M3 10v9a2 2 0 002 2h14a2 2 0 002-2v-9H3zM3 10V6a2 2 0 012-2h2M7 2v4M21 10V6a2 2 0 00-2-2h-.5"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"

@@ -8,7 +8,7 @@ export default function IndexPage() {
   const projects = allProjects;
 
   return (
-    <main className="flex min-h-screen max-w-6xl mx-auto flex-col items-center px-6 py-24">
+    <main className="flex min-h-screen max-w-5xl mx-auto flex-col items-center px-6 py-24">
       <section className="flex flex-col justify-center items-center mt-10 md:mt-12 w-full">
         <Avatar>
           <AvatarImage src="https://github.com/edroamz.png" />
@@ -17,7 +17,7 @@ export default function IndexPage() {
         <Text
           as="h1"
           align="center"
-          className="max-w-5xl text-[34px] leading-[46px] font-[575] tracking-tight md:text-[38px] md:leading-[56px] mt-6"
+          className="max-w-5xl text-[34px] leading-[46px] font-semibold tracking-tight md:text-[38px] md:leading-[56px] mt-6"
           balanced
         >
           Front-End Web Developer
@@ -25,7 +25,7 @@ export default function IndexPage() {
         <Text
           as="h2"
           align="center"
-          className="max-w-5xl text-lg md:leading-9 tracking-[-0.01em] leading-8 text-neutral-600 dark:text-neutral-300 mt-3"
+          className="max-w-5xl text-lg md:text-xl md:leading-9 tracking-[-0.01em] leading-8 text-neutral-600 dark:text-neutral-300 mt-3"
           balanced
         >
           Hello, I&apos;m Eduardo, a Mexico-based Software Engineer specializing
@@ -47,11 +47,11 @@ export default function IndexPage() {
         </Button>
       </section>
       {projects.length > 0 && (
-        <section className="mx-auto mt-16 flex w-full max-w-6xl flex-col items-center justify-center md:mt-20">
+        <section className="mx-auto mt-16 flex w-full max-w-5xl flex-col items-center justify-center md:mt-20">
           <Text
             as="h3"
             align="center"
-            className="px-8 text-[22px] font-[575] leading-10 tracking-[-0.01em] md:text-[28px] md:leading-[54px]"
+            className="px-8 text-[22px] font-[575] leading-10 tracking-[-0.01em] md:text-2xl md:leading-[54px]"
             balanced
           >
             Selected Works
@@ -64,7 +64,7 @@ export default function IndexPage() {
                   rel="noopener noreferrer"
                   className="block overflow-hidden rounded-md outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-[#0072FF] dark:focus-visible:ring-[#3291ff] shadow-sm"
                 >
-                  <div className="h-full w-full bg-neutral-100 dark:bg-neutral-900 p-6 border border-black/[0.1] dark:border-white/[0.12] rounded-md">
+                  <div className="h-full w-full bg-neutral-100/90 dark:bg-neutral-900 p-6 border border-black/[0.1] dark:border-white/[0.12] rounded-md">
                     <div className="relative">
                       <ResponsiveImage
                         src={project.image.src}
@@ -79,7 +79,7 @@ export default function IndexPage() {
                     <div className="flex flex-col items-start justify-center gap-y-2.5 mb-2 mt-9 md:mt-10">
                       <Text
                         as="h4"
-                        className="text-sm md:text-[15px] font-semibold tracking-wide dark:text-neutral-200"
+                        className="text-sm md:text-[15px] font-semibold dark:text-neutral-200"
                         balanced
                       >
                         {project.name}
