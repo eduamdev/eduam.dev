@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Icons } from "@/components/icons";
+import { MainNav } from "@/components/main-nav";
 
 export function SiteHeader() {
   return (
@@ -11,19 +12,21 @@ export function SiteHeader() {
         WebkitBackdropFilter: "saturate(180%) blur(5px)",
       }}
     >
-      <div className="mx-auto flex h-full max-w-7xl grid-cols-2 items-center justify-between gap-x-7 px-6 sm:grid md:grid-cols-3">
-        <div className="hidden items-center md:flex">main nav</div>
-        <div className="flex items-center justify-start md:justify-center">
+      <div className="mx-auto flex h-full max-w-6xl grid-cols-2 items-center justify-between gap-x-7 px-6 sm:grid md:grid-cols-3">
+        <div className="flex items-center justify-start">
           <Link href="/">
-            <Icons.logo className="h-4 lg:h-[17px] w-auto" />
+            <Icons.logo className="h-[17px] lg:h-[18px] w-auto" />
           </Link>
+        </div>
+        <div className="hidden md:flex items-center justify-start md:justify-center">
+          <MainNav />
         </div>
         <div className="flex items-center justify-end">
           <div className="hidden items-center justify-center gap-x-6 md:flex">
             <Link href={`mailto:${siteConfig.email}`}>
-              <p className="text-sm font-medium leading-5 tracking-normal text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-white">
-                Let&apos;s chat{" "}
-                <Icons.arrowUpRight className="ml-1 inline h-3.5 w-3.5 align-text-top" />
+              <p className="text-sm font-medium leading-5 tracking-normal text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-white">
+                Let&apos;s chat
+                <Icons.arrowUpRight className="ml-1 inline h-3 w-3 align-text-top" />
               </p>
             </Link>
           </div>
