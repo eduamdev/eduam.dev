@@ -25,22 +25,22 @@ export function SiteFooter() {
           </div>
           <div className="flex flex-col lg:flex-row gap-3 items-start lg:items-center justify-end text-[13px] lg:text-sm">
             <a href="#" rel="noopener noreferrer">
-              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-3 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 py-1">
-                X
+              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-3 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
+                <Icons.x className="h-3.5 w-3.5" />
               </span>
             </a>
             <a href="#" rel="noopener noreferrer">
-              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-3 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 py-1">
+              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-3 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
                 Github
               </span>
             </a>
             <a href="#" rel="noopener noreferrer">
-              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-3 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 py-1">
+              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-3 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
                 LinkedIn
               </span>
             </a>
             <a href="#" rel="noopener noreferrer">
-              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-3 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 py-1">
+              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-3 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
                 eduambrizdev@gmail.com
               </span>
             </a>
