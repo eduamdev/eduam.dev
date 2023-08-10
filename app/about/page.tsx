@@ -55,7 +55,7 @@ const jobs = [
 
 export default function AboutPage() {
   return (
-    <main className="flex min-h-screen max-w-5xl mx-auto flex-col items-center px-6 py-24">
+    <main className="flex min-h-screen max-w-6xl mx-auto flex-col items-center px-6 pt-24 pb-12">
       <section className="flex flex-col justify-center items-center mt-6 w-full">
         <Text
           as="h1"
@@ -75,7 +75,7 @@ export default function AboutPage() {
           experiences.
         </Text>
       </section>
-      <section className="mx-auto mt-16 flex w-full max-w-5xl flex-col items-center justify-center md:mt-20">
+      <section className="mx-auto mt-16 flex w-full max-w-6xl flex-col items-center justify-center md:mt-20">
         <Text
           as="h2"
           align="center"
@@ -118,7 +118,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div> */}
-        <div className="mt-7 md:mt-12 max-w-5xl w-full flex flex-col items-start gap-y-4">
+        <div className="mt-7 md:mt-12 w-full flex flex-col items-start gap-y-4">
           {jobs.map((job) => {
             return (
               <div

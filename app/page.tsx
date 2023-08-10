@@ -1,15 +1,22 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { Text } from "@/components/text";
 import { allProjects } from "@/.contentlayer/generated";
 import { ResponsiveImage } from "@/components/responsive-image";
+import w1 from "../public/images/w-01.png";
+import w2 from "../public/images/w-02.png";
+import { StaticImageData } from "next/image";
+
+const projectImages: { [any: string]: StaticImageData } = {
+  w1,
+  w2,
+};
 
 export default function IndexPage() {
   const projects = allProjects;
 
   return (
-    <main className="flex min-h-screen max-w-5xl mx-auto flex-col items-center px-6 py-24">
-      <section className="flex flex-col justify-center items-center mt-10 md:mt-12 w-full">
+    <main className="flex min-h-screen max-w-6xl mx-auto flex-col items-center px-6 pt-24 pb-12">
+      <section className="flex flex-col justify-center items-center mt-10 md:mt-14 w-full sm:px-7">
         <Avatar>
           <AvatarImage src="https://github.com/edroamz.png" />
           <AvatarFallback>EA</AvatarFallback>
@@ -17,7 +24,7 @@ export default function IndexPage() {
         <Text
           as="h1"
           align="center"
-          className="max-w-5xl text-[34px] leading-[46px] font-semibold tracking-tight md:text-[38px] md:leading-[56px] mt-6"
+          className="max-w-5xl text-[32px] leading-[46px] font-semibold tracking-tight md:text-[38px] md:leading-[54px] mt-5"
           balanced
         >
           Front-End Web Developer
@@ -25,29 +32,29 @@ export default function IndexPage() {
         <Text
           as="h2"
           align="center"
-          className="max-w-5xl text-lg md:text-xl md:leading-9 tracking-[-0.01em] leading-8 text-neutral-600 dark:text-neutral-300 mt-3"
+          className="max-w-5xl text-lg md:text-xl md:leading-9 tracking-[-0.01em] leading-8 text-neutral-600 dark:text-neutral-300 mt-2"
           balanced
         >
           Hello, I&apos;m Eduardo, a Mexico-based Software Engineer specializing
           in crafting high-performance, intuitive websites with excellent user
           experiences.
         </Text>
-        <Button
-          variant="pill"
-          size="sm"
-          className="group flex items-center justify-between gap-x-3 mt-6 transition-colors"
+        <a
+          href="#"
+          rel="noopener noreferrer"
+          className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.6] dark:border-white/[0.12] dark:hover:border-white/[0.2] group flex items-center justify-center gap-x-2.5 mt-5 transition-colors h-9 px-3"
         >
-          <span className="relative flex h-[10.5px] w-[10.5px] shrink-0 items-center justify-center">
+          <span className="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
             <span className="absolute inline-flex h-full w-full shrink-0 animate-ping-slow rounded-full bg-green-400 opacity-75 dark:bg-green-300"></span>
-            <span className="relative inline-flex h-[7px] w-[7px] shrink-0 rounded-full bg-green-600 dark:bg-green-400"></span>
+            <span className="relative inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-green-500 dark:bg-green-400"></span>
           </span>
           <span className="text-sm text-neutral-600 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-100 font-normal transition-colors">
             Open to Remote Work
           </span>
-        </Button>
+        </a>
       </section>
       {projects.length > 0 && (
-        <section className="mx-auto mt-16 flex w-full max-w-5xl flex-col items-center justify-center md:mt-20">
+        <section className="mx-auto mt-16 flex w-full max-w-6xl flex-col items-center justify-center md:mt-18">
           <Text
             as="h3"
             align="center"
@@ -56,41 +63,32 @@ export default function IndexPage() {
           >
             Selected Works
           </Text>
-          <div className="mx-auto mt-6 grid w-full grid-cols-1 items-stretch gap-3 md:mt-8">
+          <div className="mx-auto mt-5 grid w-full grid-cols-1 items-stretch gap-6 ">
             {projects.map((project, index) => (
               <article key={project._id}>
                 <a
                   href={project.url}
                   rel="noopener noreferrer"
-                  className="block overflow-hidden rounded-md outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-[#0072FF] dark:focus-visible:ring-[#3291ff] shadow-sm"
+                  className="block overflow-hidden rounded-lg outline-none transition-all focus-visible:ring-2 focus-visible:ring-[#0072FF] dark:focus-visible:ring-[#3291ff] shadow-sm group border border-black/[0.1] dark:border-white/[0.15]"
                 >
-                  <div className="h-full w-full bg-neutral-100/90 dark:bg-neutral-900 p-6 border border-black/[0.1] dark:border-white/[0.12] rounded-md">
-                    <div className="relative">
-                      <ResponsiveImage
-                        src={project.image.src}
-                        alt={project.image.alt}
-                        priority={index <= 1 && true}
-                        className="rounded-lg"
-                        bordered={false}
-                        rounded={false}
-                      />
-                      <div className="inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-neutral-700 pt-20 pb-8 pointer-events-none dark:from-neutral-800 absolute"></div>
+                  <div className="relative">
+                    <ResponsiveImage
+                      src={projectImages[project.image.src]}
+                      alt={project.image.alt}
+                      priority={index <= 1 && true}
+                      className="bg-gray-200 dark:bg-neutral-900"
+                      bordered={false}
+                      rounded={false}
+                    />
+                    <div className="absolute left-6 bottom-6 z-10 flex items-center justify-center">
+                      <span className="px-4 py-2.5 rounded-lg text-[13px] md:text-sm bg-white group-hover:bg-black border border-black/[0.08] group-hover:border-white/[0.2] shadow-[inset_0_0_1px_0_rgba(0,0,0,.05)] group-hover:shadow-[inset_0_0_1px_0_rgba(235,235,255,.1)] text-black group-hover:text-white transition-all duration-300">
+                        <span className="font-medium">{project.name} </span>
+                        <span className="text-neutral-600 group-hover:text-neutral-400">
+                          - {project.description}
+                        </span>
+                      </span>
                     </div>
-                    <div className="flex flex-col items-start justify-center gap-y-2.5 mb-2 mt-9 md:mt-10">
-                      <Text
-                        as="h4"
-                        className="text-sm md:text-[15px] font-semibold dark:text-neutral-200"
-                        balanced
-                      >
-                        {project.name}
-                      </Text>
-                      <Text
-                        align="left"
-                        className="max-w-3xl text-sm text-neutral-600 dark:text-neutral-400 leading-[1.6rem] md:leading-loose"
-                      >
-                        {project.description}.
-                      </Text>
-                    </div>
+                    <div className="inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-black/10 pt-32 pointer-events-none dark:from-white/[0.08] absolute"></div>
                   </div>
                 </a>
               </article>

@@ -21,6 +21,11 @@ export const Icons = {
       </defs>
     </svg>
   ),
+  menu: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path d="M2 6h20v2H2zM2 16h20v2H2z"></path>
+    </svg>
+  ),
   arrowUpRight: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
