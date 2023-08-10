@@ -42,13 +42,13 @@ export default function IndexPage() {
         <a
           href="#"
           rel="noopener noreferrer"
-          className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.6] dark:border-white/[0.12] dark:hover:border-white/[0.2] group flex items-center justify-center gap-x-2.5 mt-5 transition-colors h-9 px-3"
+          className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] group flex items-center justify-center gap-x-2.5 mt-5 transition-colors h-9 px-3"
         >
           <span className="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
             <span className="absolute inline-flex h-full w-full shrink-0 animate-ping-slow rounded-full bg-green-400 opacity-75 dark:bg-green-300"></span>
             <span className="relative inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-green-500 dark:bg-green-400"></span>
           </span>
-          <span className="text-sm text-neutral-600 group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-100 font-normal transition-colors">
+          <span className="text-sm text-neutral-600 group-hover:text-neutral-800 dark:text-neutral-400 dark:group-hover:text-neutral-100 font-normal transition-colors">
             Open to Remote Work
           </span>
         </a>
@@ -75,7 +75,7 @@ export default function IndexPage() {
                     <ResponsiveImage
                       src={projectImages[project.image.src]}
                       alt={project.image.alt}
-                      priority={index <= 1 && true}
+                      priority={index < 1 && true}
                       className="bg-gray-200 dark:bg-neutral-900"
                       bordered={false}
                       rounded={false}
