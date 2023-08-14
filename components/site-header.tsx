@@ -7,7 +7,7 @@ import { MobileNav } from "@/components/mobile-nav";
 export function SiteHeader() {
   return (
     <header
-      className="fixed left-0 right-0 top-8 mx-auto z-20 w-[342px] md:w-full md:max-w-2xl lg:max-w-3xl px-4 h-[46px] border border-black/[0.08] dark:border-white/[0.15] rounded-full grid grid-cols-2 items-center justify-between gap-x-7 sm:grid md:grid-cols-3 bg-white/[0.85] dark:bg-black/80 shadow-[inset_0_0_1px_0_rgba(0,0,0,.05)] dark:shadow-[inset_0_0_1px_0_rgba(235,235,255,.1)]"
+      className="fixed left-0 right-0 top-8 mx-auto z-20 w-[342px] md:w-full md:max-w-2xl lg:max-w-3xl px-[10px] h-[46px] border border-black/[0.08] dark:border-white/[0.18] rounded-full grid grid-cols-2 items-center justify-between gap-x-7 sm:grid md:grid-cols-3 bg-white/[0.85] dark:bg-black/80 shadow-[inset_0_0_1px_0_rgba(0,0,0,.05)] dark:shadow-[inset_0_0_1px_0_rgba(235,235,255,.1)]"
       style={{
         backdropFilter: "saturate(180%) blur(5px)",
         WebkitBackdropFilter: "saturate(180%) blur(5px)",
@@ -15,7 +15,7 @@ export function SiteHeader() {
     >
       <div className="h-full flex items-center justify-start">
         <Link href="/">
-          <Icons.logo className="h-[17px] lg:h-[17.5px] w-auto pl-1.5" />
+          <Icons.logo className="h-[17px] lg:h-[17.5px] w-auto ml-2.5" />
         </Link>
       </div>
       <div className="hidden h-full md:flex items-center justify-start md:justify-center">

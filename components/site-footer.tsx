@@ -25,25 +25,25 @@ export function SiteFooter() {
           </div>
           <div className="flex flex-row flex-wrap gap-3 items-start lg:items-center justify-start lg:justify-end text-[13px] lg:text-sm">
             <a href="#" rel="noopener noreferrer">
-              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-2 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
-                <Icons.x className="h-4 w-auto" />
+              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-1.5 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
+                <Icons.x className="h-3.5 lg:h-4 w-auto" />
               </span>
             </a>
             <a href="#" rel="noopener noreferrer">
-              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-2 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
-                <Icons.github className="h-[18px] w-auto" />
+              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-1.5 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
+                <Icons.github className="h-[16.5px] lg:h-[17.5px] w-auto" />
                 {/* Github */}
               </span>
             </a>
             <a href="#" rel="noopener noreferrer">
-              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-2 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
-                <Icons.linkedin className="h-[23px] w-auto" />
+              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-1.5 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
+                <Icons.linkedin className="h-[21px] lg:h-[22.5px] w-auto" />
                 {/* LinkedIn */}
               </span>
             </a>
             <a href="#" rel="noopener noreferrer">
-              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-2 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
-                <Icons.envelope className="h-[22px] w-auto" />
+              <span className="rounded-full border border-black/[0.1] bg-accent/40 dark:bg-accent/30 hover:border-black/[0.8] dark:border-white/[0.12] dark:hover:border-white/[0.2] flex items-center justify-between gap-x-1.5 transition-colors text-sm text-neutral-600 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100 font-normal px-3 h-8">
+                <Icons.envelope className="h-5 w-auto" />
                 eduambrizdev@gmail.com
               </span>
             </a>
@@ -51,7 +51,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="flex flex-col flex-wrap items-center justify-center gap-5 md:flex-row md:justify-between">
-        <div className="flex items-center justify-center gap-x-2">
+        <div className="flex items-center justify-center gap-x-1.5">
           <span className="text-sm">© {new Date().getFullYear()}</span>
           <Link href="/">
             <Icons.logo className="h-[17px] lg:h-[17.5px] w-auto" />

@@ -23,7 +23,7 @@ export const Icons = {
   ),
   menu: (props: IconProps) => (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path d="M2 6h20v2H2zM2 16h20v2H2z"></path>
+      <path d="M2 6h20v2H2zM2 16h20v2H2z" fill="currentColor"></path>
     </svg>
   ),
   arrowUpRight: (props: IconProps) => (
