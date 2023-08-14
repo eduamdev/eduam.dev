@@ -7,23 +7,23 @@ import { MobileNav } from "@/components/mobile-nav";
 export function SiteHeader() {
   return (
     <header
-      className="fixed left-0 right-0 top-8 mx-auto z-20 w-[342px] md:w-full md:max-w-2xl lg:max-w-3xl px-[10px] h-[46px] border border-black/[0.08] dark:border-white/[0.18] rounded-full grid grid-cols-2 items-center justify-between gap-x-7 sm:grid md:grid-cols-3 bg-white/[0.85] dark:bg-black/80 shadow-[inset_0_0_1px_0_rgba(0,0,0,.05)] dark:shadow-[inset_0_0_1px_0_rgba(235,235,255,.1)]"
+      className="fixed inset-x-0 top-8 z-20 mx-auto grid h-[46px] w-[342px] grid-cols-2 items-center justify-between gap-x-7 rounded-full border border-black/[0.08] bg-white/[0.85] px-[10px] shadow-[inset_0_0_1px_0_rgba(0,0,0,.05)] dark:border-white/[0.18] dark:bg-black/80 dark:shadow-[inset_0_0_1px_0_rgba(235,235,255,.1)] sm:grid md:w-full md:max-w-2xl md:grid-cols-3 lg:max-w-3xl"
       style={{
         backdropFilter: "saturate(180%) blur(5px)",
         WebkitBackdropFilter: "saturate(180%) blur(5px)",
       }}
     >
-      <div className="h-full flex items-center justify-start">
+      <div className="flex h-full items-center justify-start">
         <Link href="/">
-          <Icons.logo className="h-[17px] lg:h-[17.5px] w-auto ml-2.5" />
+          <Icons.logo className="ml-2.5 h-[17px] w-auto lg:h-[17.5px]" />
         </Link>
       </div>
-      <div className="hidden h-full md:flex items-center justify-start md:justify-center">
+      <div className="hidden h-full items-center justify-start md:flex md:justify-center">
         <MainNav />
       </div>
-      <div className="h-full flex items-center justify-end">
+      <div className="flex h-full items-center justify-end">
         <div className="hidden h-full items-center justify-center gap-x-6 md:flex">
-          <span className="transition-colors text-sm font-medium leading-5 tracking-normal text-neutral-50 dark:text-black bg-black dark:bg-white dark:hover:bg-neutral-300 hover:bg-neutral-700 h-8 rounded-full flex items-center justify-center">
+          <span className="flex h-8 items-center justify-center rounded-full bg-black text-sm font-medium leading-5 tracking-normal text-neutral-50 transition-colors hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-300">
             <Link href={`mailto:${siteConfig.email}`} className="px-3">
               Let&apos;s chat
             </Link>

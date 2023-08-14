@@ -88,7 +88,7 @@ export function Text({
       wrap,
       balanced,
     }),
-    className
+    className,
   );
 
   if (as === AsEnum.label) {

@@ -32,5 +32,12 @@
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.6",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^6.3.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "prettier": "^3.0.1",
+    "prettier-plugin-tailwindcss": "^0.5.2"
   }
 }

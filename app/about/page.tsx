@@ -55,8 +55,8 @@ const jobs = [
 
 export default function AboutPage() {
   return (
-    <main className="flex min-h-screen max-w-6xl mx-auto flex-col items-center px-6 pt-24 pb-12">
-      <section className="flex flex-col justify-center items-center mt-6 w-full">
+    <main className="mx-auto flex min-h-screen max-w-6xl flex-col items-center px-6 pb-12 pt-24">
+      <section className="mt-6 flex w-full flex-col items-center justify-center">
         <Text
           as="h1"
           align="center"
@@ -67,7 +67,7 @@ export default function AboutPage() {
         </Text>
         <Text
           align="center"
-          className="max-w-4xl text-lg leading-8 text-neutral-600 dark:text-neutral-300 mt-5"
+          className="mt-5 max-w-4xl text-lg leading-8 text-neutral-600 dark:text-neutral-300"
           balanced
         >
           Hello, I&apos;m Eduardo, a Mexico-based Software Engineer specializing
@@ -118,16 +118,16 @@ export default function AboutPage() {
             </div>
           </div>
         </div> */}
-        <div className="mt-7 md:mt-12 w-full flex flex-col items-start gap-y-4">
+        <div className="mt-7 flex w-full flex-col items-start gap-y-4 md:mt-12">
           {jobs.map((job) => {
             return (
               <div
                 key={job.company}
-                className="flex gap-x-5 md:gap-x-8 w-full p-5 shadow-sm shadow-neutral-50 border border-black/[0.08] dark:border-white/[0.1] rounded-xl"
+                className="flex w-full gap-x-5 rounded-xl border border-black/[0.08] p-5 shadow-sm shadow-neutral-50 dark:border-white/[0.1] md:gap-x-8"
               >
                 <div className="h-[60px] w-[60px] bg-neutral-50">
                   <Image
-                    className="border border-black/[0.1] dark:border-white/[0.1] rounded-md shadow-sm"
+                    className="rounded-md border border-black/[0.1] shadow-sm dark:border-white/[0.1]"
                     width={60}
                     height={60}
                     src={job.logo.image}
@@ -135,20 +135,20 @@ export default function AboutPage() {
                   />
                 </div>
                 <div>
-                  <Text className="leading-none text-[15px] md:text-base font-semibold dark:text-neutral-200">
+                  <Text className="text-[15px] font-semibold leading-none dark:text-neutral-200 md:text-base">
                     {job.job}
                   </Text>
                   <Text className="mt-1.5 text-[15px] text-neutral-600 dark:text-neutral-400">
                     {job.company}
                   </Text>
-                  <div className="flex flex-col md:flex-row items-start md:items-center mt-4 gap-2">
-                    <span className="rounded-md px-2.5 py-1 text-[13px] text-neutral-600 border border-black/[0.1] dark:border-white/[0.1] text-sm bg-neutral-50 inline-flex items-center justify-center gap-x-2">
+                  <div className="mt-4 flex flex-col items-start gap-2 md:flex-row md:items-center">
+                    <span className="inline-flex items-center justify-center gap-x-2 rounded-md border border-black/[0.1] bg-neutral-50 px-2.5 py-1 text-[13px] text-neutral-600 dark:border-white/[0.1]">
                       <Icons.calendar className="h-4 w-4" />
                       <span>
                         {job.initialDate} - {job.endDate}
                       </span>
                     </span>
-                    <span className="rounded-md px-2.5 py-1 text-[13px] text-neutral-600 border border-black/[0.1] dark:border-white/[0.1] text-sm bg-neutral-50 inline-flex items-center justify-center gap-x-2">
+                    <span className="inline-flex items-center justify-center gap-x-2 rounded-md border border-black/[0.1] bg-neutral-50 px-2.5 py-1 text-[13px]  text-neutral-600 dark:border-white/[0.1]">
                       <Icons.pin className="h-4 w-4" />
                       <span>
                         {job.location}

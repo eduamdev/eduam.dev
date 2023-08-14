@@ -26,7 +26,7 @@ export function ResponsiveImage({
       className={cn(
         "max-w-full overflow-hidden",
         rounded && "rounded-xl",
-        bordered && "border border-neutral-200 dark:border-neutral-700/80"
+        bordered && "border border-neutral-200 dark:border-neutral-700/80",
       )}
     >
       <AspectRatio ratio={ratio}>
