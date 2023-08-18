@@ -1,10 +1,13 @@
 export const siteConfig = {
-  name: "Eduardo Ambriz",
-  email: "eduardo.roamz@gmail.com",
-  url: "https://eduardoambriz.com",
-  description: "",
+  name: 'Eduardo Ambriz',
+  username: 'eduamdev',
+  email: 'eduamdev@gmail.com',
+  url: 'https://eduardoambriz.com',
+  description: '',
   links: {
-    github: "https://github.com/edroamz",
+    linkedin: { name: 'LinkedIn', url: 'https://www.linkedin.com/in/eduamdev' },
+    github: { name: 'GitHub', url: 'https://github.com/eduamdev' },
+    x: { name: 'X', url: 'https://twitter.com/eduamdev' },
   },
 };
 

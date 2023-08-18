@@ -1,7 +1,13 @@
-import Link from "next/link";
-import { siteConfig } from "@/config/site";
-import { Icons } from "@/components/icons";
-import { Text } from "@/components/text";
+import Link from 'next/link';
+import { siteConfig } from '@/config/site';
+import { Icons } from '@/components/icons';
+import { Text } from '@/components/text';
+
+const socialIcons: any = {
+  github: <Icons.github className="h-[16.5px] w-auto lg:h-[17.5px]" />,
+  linkedin: <Icons.linkedin className="h-[21px] w-auto lg:h-[22.5px]" />,
+  x: <Icons.x className="h-3.5 w-auto lg:h-4" />,
+};
 
 export function SiteFooter() {
   return (
@@ -23,31 +29,25 @@ export function SiteFooter() {
               Available Worldwide.
             </Text>
           </div>
-          <div className="flex flex-row flex-wrap items-start justify-start gap-3 text-[13px] lg:items-center lg:justify-end lg:text-sm">
-            <a href="#" rel="noopener noreferrer">
-              <span className="flex h-8 items-center justify-between gap-x-1.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 text-sm font-normal text-neutral-600 transition-colors hover:border-black/[0.8] hover:text-neutral-800 dark:border-white/[0.12] dark:bg-accent/30 dark:text-neutral-400 dark:hover:border-white/[0.2] dark:hover:text-neutral-100">
-                <Icons.x className="h-3.5 w-auto lg:h-4" />
-              </span>
-            </a>
-            <a href="#" rel="noopener noreferrer">
-              <span className="flex h-8 items-center justify-between gap-x-1.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 text-sm font-normal text-neutral-600 transition-colors hover:border-black/[0.8] hover:text-neutral-800 dark:border-white/[0.12] dark:bg-accent/30 dark:text-neutral-400 dark:hover:border-white/[0.2] dark:hover:text-neutral-100">
-                <Icons.github className="h-[16.5px] w-auto lg:h-[17.5px]" />
-                {/* Github */}
-              </span>
-            </a>
-            <a href="#" rel="noopener noreferrer">
-              <span className="flex h-8 items-center justify-between gap-x-1.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 text-sm font-normal text-neutral-600 transition-colors hover:border-black/[0.8] hover:text-neutral-800 dark:border-white/[0.12] dark:bg-accent/30 dark:text-neutral-400 dark:hover:border-white/[0.2] dark:hover:text-neutral-100">
-                <Icons.linkedin className="h-[21px] w-auto lg:h-[22.5px]" />
-                {/* LinkedIn */}
-              </span>
-            </a>
-            <a href="#" rel="noopener noreferrer">
-              <span className="flex h-8 items-center justify-between gap-x-1.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 text-sm font-normal text-neutral-600 transition-colors hover:border-black/[0.8] hover:text-neutral-800 dark:border-white/[0.12] dark:bg-accent/30 dark:text-neutral-400 dark:hover:border-white/[0.2] dark:hover:text-neutral-100">
-                <Icons.envelope className="h-5 w-auto" />
-                eduambrizdev@gmail.com
-              </span>
-            </a>
-          </div>
+          <ul className="flex flex-row flex-wrap items-start justify-start gap-3 text-[13px] lg:items-center lg:justify-end lg:text-sm">
+            {Object.entries(siteConfig.links).map(([key, value]) => (
+              <li key={key}>
+                <a href={value.url} rel="noopener noreferrer">
+                  <span className="flex h-8 items-center justify-between gap-x-1.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 text-sm font-normal text-neutral-600 transition-colors hover:border-black/[0.8] hover:text-neutral-800 dark:border-white/[0.12] dark:bg-accent/30 dark:text-neutral-400 dark:hover:border-white/[0.2] dark:hover:text-neutral-100">
+                    {socialIcons[key]}
+                  </span>
+                </a>
+              </li>
+            ))}
+            <li>
+              <a href={`mailto:${siteConfig.email}`} rel="noopener noreferrer">
+                <span className="flex h-8 items-center justify-between gap-x-1.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 text-sm font-normal text-neutral-600 transition-colors hover:border-black/[0.8] hover:text-neutral-800 dark:border-white/[0.12] dark:bg-accent/30 dark:text-neutral-400 dark:hover:border-white/[0.2] dark:hover:text-neutral-100">
+                  <Icons.envelope className="h-5 w-auto" />
+                  {siteConfig.email}
+                </span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div className="flex flex-col flex-wrap items-center justify-center gap-5 md:flex-row md:justify-between">
@@ -58,13 +58,14 @@ export function SiteFooter() {
           </Link>
         </div>
         <p className="text-center text-sm leading-5 text-neutral-500 dark:text-neutral-400 md:text-left">
-          Design and developed by{" "}
-          <Link
-            href={siteConfig.links.github}
+          Design and developed by{' '}
+          <a
+            href={siteConfig.links.github.url}
+            rel="noopener noreferrer"
             className="font-medium text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-neutral-100"
           >
-            edroamz
-          </Link>
+            {siteConfig.username}
+          </a>
           .
         </p>
       </div>

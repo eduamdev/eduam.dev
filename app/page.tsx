@@ -1,10 +1,11 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Text } from "@/components/text";
-import { allProjects } from "@/.contentlayer/generated";
-import { ResponsiveImage } from "@/components/responsive-image";
-import w1 from "../public/images/w-01.png";
-import w2 from "../public/images/w-02.png";
-import { StaticImageData } from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Text } from '@/components/text';
+import { allProjects } from '@/.contentlayer/generated';
+import { ResponsiveImage } from '@/components/responsive-image';
+import w1 from '../public/images/w-01.png';
+import w2 from '../public/images/w-02.png';
+import { StaticImageData } from 'next/image';
+import { siteConfig } from '@/config/site';
 
 const projectImages: { [any: string]: StaticImageData } = {
   w1,
@@ -17,8 +18,8 @@ export default function IndexPage() {
   return (
     <main className="mx-auto flex min-h-screen max-w-6xl flex-col items-center px-6 pb-12 pt-24">
       <section className="mt-10 flex w-full flex-col items-center justify-center sm:px-7 md:mt-14">
-        <Avatar>
-          <AvatarImage src="https://github.com/edroamz.png" />
+        <Avatar className="border border-black/[0.1] dark:border-white/[0.12]">
+          <AvatarImage src={`https://github.com/${siteConfig.username}.png`} />
           <AvatarFallback>EA</AvatarFallback>
         </Avatar>
         <Text
@@ -40,7 +41,7 @@ export default function IndexPage() {
           experiences.
         </Text>
         <a
-          href="#"
+          href={`mailto:${siteConfig.email}`}
           rel="noopener noreferrer"
           className="group mt-5 flex h-9 items-center justify-center gap-x-2.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 transition-colors hover:border-black/[0.8] dark:border-white/[0.12] dark:bg-accent/30 dark:hover:border-white/[0.2]"
         >
