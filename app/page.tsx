@@ -1,6 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Text } from '@/components/text';
-import { allProjects } from '@/.contentlayer/generated';
 import { ResponsiveImage } from '@/components/responsive-image';
 import w1 from '../public/images/w-01.png';
 import w2 from '../public/images/w-02.png';
@@ -13,7 +12,7 @@ const projectImages: { [any: string]: StaticImageData } = {
 };
 
 export default function IndexPage() {
-  const projects = allProjects;
+  const projects = siteConfig.work;
 
   return (
     <main className="mx-auto flex min-h-screen max-w-6xl flex-col items-center px-6 pb-12 pt-24">
@@ -36,8 +35,8 @@ export default function IndexPage() {
           className="mt-2 max-w-5xl text-lg leading-8 tracking-[-0.01em] text-neutral-600 dark:text-neutral-300 md:text-xl md:leading-9"
           balanced
         >
-          Hello, I&apos;m Eduardo, a Mexico-based Software Engineer specializing
-          in crafting high-performance, intuitive websites with excellent user
+          Hi, I&apos;m Eduardo, a Mexico-based Software Engineer specializing in
+          crafting high-performance, intuitive websites with excellent user
           experiences.
         </Text>
         <a
