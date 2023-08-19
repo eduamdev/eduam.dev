@@ -24,7 +24,7 @@ export default function IndexPage() {
         <Text
           as="h1"
           align="center"
-          className="mt-5 max-w-5xl text-[32px] font-semibold leading-[46px] tracking-tight md:text-[38px] md:leading-[54px]"
+          className="mt-5 max-w-5xl text-[32px] font-semibold leading-[46px] md:text-[38px] md:leading-[54px]"
           balanced
         >
           Front-End Web Developer
@@ -58,7 +58,7 @@ export default function IndexPage() {
           <Text
             as="h3"
             align="center"
-            className="px-8 text-[22px] font-[575] leading-10 tracking-[-0.01em] md:text-2xl md:leading-[54px]"
+            className="px-8 text-[22px] font-[575] leading-10 md:text-[26px] md:leading-[54px]"
             balanced
           >
             Selected Works

@@ -18,13 +18,13 @@ export function SiteFooter() {
             <Text
               balanced
               align="left"
-              className="text-xl font-medium leading-9 tracking-tight lg:text-2xl lg:leading-10"
+              className="text-[22px] font-[575] leading-10 md:text-[26px] md:leading-[48px]"
             >
               Have a project in mind? Contact me.
             </Text>
             <Text
               balanced
-              className="text-xl font-medium leading-9 tracking-tight lg:text-2xl lg:leading-10"
+              className="text-[22px] font-[575] leading-10 md:text-[26px] md:leading-[48px]"
             >
               Available Worldwide.
             </Text>
