@@ -1,12 +1,13 @@
-import "@/styles/globals.css";
-import type { Metadata } from "next";
+import '@/styles/globals.css';
+import type { Metadata } from 'next';
 
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { Provider as WrapBalancerProvider } from "react-wrap-balancer";
+import { siteConfig } from '@/config/site';
+import { fontSans } from '@/lib/fonts';
+import { cn } from '@/lib/utils';
+import { SiteHeader } from '@/components/site-header';
+import { SiteFooter } from '@/components/site-footer';
+import { ThemeProvider } from '@/components/theme-provider';
+import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
 
 export const metadata: Metadata = {
   title: {
@@ -25,16 +26,22 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <head />
       <body
-        className={cn("min-h-screen font-sans antialiased", fontSans.variable)}
-        style={{ textRendering: "optimizeLegibility" }}
+        className={cn('min-h-screen font-sans antialiased', fontSans.variable)}
+        style={{ textRendering: 'optimizeLegibility' }}
       >
-        <WrapBalancerProvider>
-          <div className="relative flex min-h-screen flex-col">
-            <SiteHeader />
-            <div>{children}</div>
-            <SiteFooter />
-          </div>
-        </WrapBalancerProvider>
+        <ThemeProvider
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <WrapBalancerProvider>
+            <div className="relative flex min-h-screen flex-col">
+              <SiteHeader />
+              <div>{children}</div>
+              <SiteFooter />
+            </div>
+          </WrapBalancerProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
