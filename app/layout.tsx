@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Analytics } from '@/components/analytics';
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
 
 export const metadata: Metadata = {
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </div>
           </WrapBalancerProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
