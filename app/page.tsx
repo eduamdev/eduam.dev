@@ -69,7 +69,7 @@ export default function IndexPage() {
                 <a
                   href={project.url}
                   rel="noopener noreferrer"
-                  className="group block overflow-hidden rounded-lg border border-black/[0.1] shadow-sm outline-none transition-all focus-visible:ring-2 focus-visible:ring-[#0072FF] dark:border-white/[0.15] dark:focus-visible:ring-[#3291ff]"
+                  className="group block overflow-hidden rounded-lg border border-black/[0.1] shadow-xl outline-none transition-all focus-visible:ring-2 focus-visible:ring-[#0072FF] dark:border-white/[0.15] dark:focus-visible:ring-[#3291ff] sm:rounded-xl"
                 >
                   <div className="relative">
                     <ResponsiveImage
