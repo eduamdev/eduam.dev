@@ -12,6 +12,9 @@ import { siteConfig } from '@/config/site';
 import { AnimatePresence, LazyMotion, domMax, m } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
+const loadFeatures = () =>
+  import('./framer-motion/feature-bundle.js').then((mod) => mod.default);
+
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -71,7 +74,7 @@ export function MobileNav() {
             </CollapsibleTrigger>
           </div>
         </div>
-        <LazyMotion features={domMax}>
+        <LazyMotion features={loadFeatures}>
           <AnimatePresence>
             {isOpen && (
               <CollapsibleContent forceMount asChild>
