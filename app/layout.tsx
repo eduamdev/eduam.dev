@@ -24,17 +24,13 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head />
       <body
         className={cn('min-h-screen font-sans antialiased', fontSans.variable)}
         style={{ textRendering: 'optimizeLegibility' }}
       >
-        <ThemeProvider
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" disableTransitionOnChange>
           <WrapBalancerProvider>
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />

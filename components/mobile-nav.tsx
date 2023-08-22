@@ -9,11 +9,38 @@ import {
 } from '@/components/ui/collapsible';
 import { Icons } from '@/components/icons';
 import { siteConfig } from '@/config/site';
+import { AnimatePresence, LazyMotion, m } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { AnimatePresence, motion } from 'framer-motion';
+
+const loadFeatures = () =>
+  import('./framer-motion/feature-bundle.js').then((mod) => mod.default);
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const container = {
+    hidden: { opacity: 0, height: 'var(--radix-collapsible-content-height)' },
+    show: {
+      opacity: 1,
+      height: '241.60000610351562px',
+      transition: {
+        type: 'spring',
+        bounce: 0,
+        duration: 0.3,
+        staggerChildren: 0.075,
+      },
+    },
+    exit: {
+      opacity: 0,
+      height: '52px',
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
@@ -47,47 +74,52 @@ export function MobileNav() {
             </CollapsibleTrigger>
           </div>
         </div>
-        <AnimatePresence>
-          {isOpen && (
-            <CollapsibleContent forceMount asChild>
-              <motion.div
-                initial={{ opacity: 0, height: '52px' }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{
-                  opacity: 0,
-                  height: '52px',
-                }}
-                className="fixed inset-x-0 top-8 mx-auto grid w-[342px] grid-cols-1 items-center justify-between gap-x-7 rounded-3xl border border-white bg-black px-3 text-white dark:border-black dark:bg-white dark:text-black sm:hidden"
-              >
-                <ul className="mx-auto mt-[52px] flex w-full flex-col items-center justify-center gap-y-2.5 pb-5 pl-1.5 pt-2.5 text-sm text-neutral-400 dark:text-neutral-600">
-                  {Object.entries(siteConfig.links).map(([key, value]) => (
-                    <li
-                      key={key}
+        <LazyMotion features={loadFeatures}>
+          <AnimatePresence>
+            {isOpen && (
+              <CollapsibleContent forceMount asChild>
+                <m.nav
+                  layout
+                  variants={container}
+                  initial="hidden"
+                  animate="show"
+                  exit="exit"
+                  className="fixed inset-x-0 top-8 mx-auto w-[342px] rounded-3xl border border-white bg-black px-3 dark:border-black dark:bg-white"
+                >
+                  <ul className="mx-auto flex h-full w-full flex-col items-center justify-center gap-y-2.5 pb-5 pl-1.5 pt-[62px] text-sm text-neutral-400 dark:text-neutral-600">
+                    {Object.entries(siteConfig.links).map(([key, value]) => (
+                      <m.li
+                        key={key}
+                        variants={item}
+                        className="flex h-8 w-full items-center justify-start"
+                      >
+                        <a
+                          href={value.url}
+                          rel="noopener noreferrer"
+                          className="w-full p-2 pl-0 hover:text-white dark:hover:text-black"
+                        >
+                          {value.name}
+                        </a>
+                      </m.li>
+                    ))}
+                    <m.li
+                      variants={item}
                       className="flex h-8 w-full items-center justify-start"
                     >
                       <a
-                        href={value.url}
+                        href={`mailto:${siteConfig.email}`}
                         rel="noopener noreferrer"
-                        className="w-full p-2 pl-0 hover:text-white dark:hover:text-black"
+                        className="w-full p-2 pl-0 hover:text-white dark:hover:text-black "
                       >
-                        {value.name}
+                        Let&apos;s chat
                       </a>
-                    </li>
-                  ))}
-                  <li className="flex h-8 w-full items-center justify-start">
-                    <a
-                      href={`mailto:${siteConfig.email}`}
-                      rel="noopener noreferrer"
-                      className="w-full p-2 pl-0 hover:text-white dark:hover:text-black "
-                    >
-                      Let&apos;s chat
-                    </a>
-                  </li>
-                </ul>
-              </motion.div>
-            </CollapsibleContent>
-          )}
-        </AnimatePresence>
+                    </m.li>
+                  </ul>
+                </m.nav>
+              </CollapsibleContent>
+            )}
+          </AnimatePresence>
+        </LazyMotion>
       </header>
     </Collapsible>
   );
