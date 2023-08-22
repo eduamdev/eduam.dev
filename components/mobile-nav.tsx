@@ -16,10 +16,10 @@ export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   const container = {
-    hidden: { opacity: 0, height: 'var(--radix-collapsible-content-height)' },
+    hidden: { opacity: 0, height: '52px' },
     show: {
       opacity: 1,
-      height: '241.60000610351562px',
+      height: 'auto',
       transition: {
         type: 'spring',
         bounce: 0,
