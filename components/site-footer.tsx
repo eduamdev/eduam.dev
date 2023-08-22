@@ -51,13 +51,11 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="flex flex-col flex-wrap items-center justify-center gap-5 md:flex-row md:justify-between">
-        <div className="flex items-center justify-center gap-x-1.5">
-          <span className="text-sm">© {new Date().getFullYear()}</span>
-          <Link href="/">
-            <Icons.logo className="h-[17px] w-auto lg:h-[17.5px]" />
-          </Link>
-        </div>
+        <Link href="/">
+          <Icons.logo className="h-[17px] w-auto lg:h-[17.5px]" />
+        </Link>
         <p className="text-center text-sm leading-5 text-neutral-500 dark:text-neutral-400 md:text-left">
+          <span className="mr-1.5 text-sm">© {new Date().getFullYear()}</span>
           Design and developed by{' '}
           <a
             href={siteConfig.links.github.url}

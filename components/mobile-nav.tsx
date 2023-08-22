@@ -17,7 +17,7 @@ export function MobileNav() {
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-      <header className="fixed inset-x-0 top-8 z-20 mx-auto grid h-[52px] w-[342px] grid-cols-2 items-center justify-between gap-x-7 rounded-full border border-black/[0.08] bg-white/[0.85] px-3 shadow-[inset_0_0_1px_0_rgba(0,0,0,.05)] backdrop-blur-[5px] backdrop-saturate-[180%] dark:border-white/[0.18] dark:bg-black/80 dark:shadow-[inset_0_0_1px_0_rgba(235,235,255,.1)] sm:hidden">
+      <header className="fixed inset-x-0 top-8 z-20 mx-auto grid h-[52px] w-[342px] grid-cols-2 items-center justify-between gap-x-7 rounded-full border border-black/[0.08] bg-white px-3 shadow-[inset_0_0_1px_0_rgba(0,0,0,.05)] dark:border-white/[0.18] dark:bg-black dark:shadow-[inset_0_0_1px_0_rgba(235,235,255,.1)] sm:hidden">
         <div className="z-30 ml-1.5 flex h-full items-center justify-start">
           <Link href="/">
             <Icons.logo
@@ -57,7 +57,7 @@ export function MobileNav() {
                   opacity: 0,
                   height: '52px',
                 }}
-                className="fixed inset-x-0 top-0 mx-auto grid w-full grid-cols-1 items-center justify-between gap-x-7 rounded-3xl border border-white bg-black px-3 text-white dark:border-black dark:bg-white dark:text-black sm:hidden"
+                className="fixed inset-x-0 top-8 mx-auto grid w-[342px] grid-cols-1 items-center justify-between gap-x-7 rounded-3xl border border-white bg-black px-3 text-white dark:border-black dark:bg-white dark:text-black sm:hidden"
               >
                 <ul className="mx-auto mt-[52px] flex w-full flex-col items-center justify-center gap-y-2.5 pb-5 pl-1.5 pt-2.5 text-sm text-neutral-400 dark:text-neutral-600">
                   {Object.entries(siteConfig.links).map(([key, value]) => (
