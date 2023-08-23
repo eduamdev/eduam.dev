@@ -9,7 +9,7 @@ export function MainNav() {
             key={key}
             className="text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-neutral-100"
           >
-            <a href={value.url} rel="noopener noreferrer" className="px-2 py-1">
+            <a href={value.url} rel="noreferrer" className="px-2 py-1">
               {value.name}
             </a>
           </li>

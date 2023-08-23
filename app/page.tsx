@@ -6,7 +6,7 @@ import w2 from '../public/images/w-02.png';
 import { StaticImageData } from 'next/image';
 import { siteConfig } from '@/config/site';
 
-const projectImages: { [any: string]: StaticImageData } = {
+const projectImages: { [key: string]: StaticImageData } = {
   w1,
   w2,
 };
@@ -41,7 +41,8 @@ export default function IndexPage() {
         </Text>
         <a
           href={`mailto:${siteConfig.email}`}
-          rel="noopener noreferrer"
+          rel="noreferrer"
+          target="_blank"
           className="group mt-5 flex h-9 items-center justify-center gap-x-2.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 transition-colors hover:border-black/[0.8] dark:border-white/[0.12] dark:bg-accent/30 dark:hover:border-white/[0.2]"
         >
           <span className="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
@@ -68,7 +69,7 @@ export default function IndexPage() {
               <article key={project._id}>
                 <a
                   href={project.url}
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                   className="group block overflow-hidden rounded-lg border border-black/[0.1] shadow-xl outline-none transition-all focus-visible:ring-2 focus-visible:ring-[#0072FF] dark:border-white/[0.15] dark:focus-visible:ring-[#3291ff] sm:rounded-xl"
                 >
                   <div className="relative">

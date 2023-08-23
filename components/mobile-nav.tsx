@@ -95,7 +95,7 @@ export function MobileNav() {
                       >
                         <a
                           href={value.url}
-                          rel="noopener noreferrer"
+                          rel="noreferrer"
                           className="w-full p-2 pl-0 hover:text-white dark:hover:text-black"
                         >
                           {value.name}
@@ -108,7 +108,8 @@ export function MobileNav() {
                     >
                       <a
                         href={`mailto:${siteConfig.email}`}
-                        rel="noopener noreferrer"
+                        rel="noreferrer"
+                        target="_blank"
                         className="w-full p-2 pl-0 hover:text-white dark:hover:text-black "
                       >
                         Let&apos;s chat

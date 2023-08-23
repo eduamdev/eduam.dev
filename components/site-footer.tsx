@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/site';
 import { Icons } from '@/components/icons';
 import { Text } from '@/components/text';
 
-const socialIcons: any = {
+const socialIcons: { [key: string]: JSX.Element } = {
   github: <Icons.github className="h-[16.5px] w-auto lg:h-[17.5px]" />,
   linkedin: <Icons.linkedin className="h-[21px] w-auto lg:h-[22.5px]" />,
   x: <Icons.x className="h-3.5 w-auto lg:h-4" />,
@@ -11,8 +11,8 @@ const socialIcons: any = {
 
 export function SiteFooter() {
   return (
-    <footer className="mx-auto mb-24 mt-5 w-full max-w-6xl px-6">
-      <div className="mb-14 w-full rounded-md border border-black/[0.1] p-5 dark:border-white/[0.15] lg:p-8">
+    <footer className="mx-auto mb-24 w-full max-w-6xl px-6">
+      <div className="mb-10 w-full rounded-md border border-black/[0.1] p-5 dark:border-white/[0.15] lg:p-8">
         <div className="grid grid-cols-1 items-start justify-between gap-6 lg:grid-cols-2 lg:items-center">
           <div>
             <Text
@@ -32,7 +32,7 @@ export function SiteFooter() {
           <ul className="flex flex-row flex-wrap items-start justify-start gap-3 text-[13px] lg:items-center lg:justify-end lg:text-sm">
             {Object.entries(siteConfig.links).map(([key, value]) => (
               <li key={key}>
-                <a href={value.url} rel="noopener noreferrer">
+                <a href={value.url} rel="noreferrer">
                   <span className="flex h-8 items-center justify-between gap-x-1.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 text-sm font-normal text-neutral-600 transition-colors hover:border-black/[0.8] hover:text-neutral-800 dark:border-white/[0.12] dark:bg-accent/30 dark:text-neutral-400 dark:hover:border-white/[0.2] dark:hover:text-neutral-100">
                     {socialIcons[key]}
                   </span>
@@ -40,7 +40,11 @@ export function SiteFooter() {
               </li>
             ))}
             <li>
-              <a href={`mailto:${siteConfig.email}`} rel="noopener noreferrer">
+              <a
+                href={`mailto:${siteConfig.email}`}
+                rel="noreferrer"
+                target="_blank"
+              >
                 <span className="flex h-8 items-center justify-between gap-x-1.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 text-sm font-normal text-neutral-600 transition-colors hover:border-black/[0.8] hover:text-neutral-800 dark:border-white/[0.12] dark:bg-accent/30 dark:text-neutral-400 dark:hover:border-white/[0.2] dark:hover:text-neutral-100">
                   <Icons.envelope className="h-5 w-auto" />
                   {siteConfig.email}
@@ -59,7 +63,7 @@ export function SiteFooter() {
           Design and developed by{' '}
           <a
             href={siteConfig.links.github.url}
-            rel="noopener noreferrer"
+            rel="noreferrer"
             className="font-medium text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-neutral-100"
           >
             {siteConfig.username}

@@ -20,7 +20,8 @@ export function SiteHeader() {
           <div className="hidden h-full items-center justify-center gap-x-6 sm:flex">
             <a
               href={`mailto:${siteConfig.email}`}
-              rel="noopener noreferrer"
+              rel="noreferrer"
+              target="_blank"
               className="flex h-8 items-center justify-center rounded-full bg-black px-3 text-sm font-medium leading-5 tracking-normal text-neutral-50 transition-colors hover:bg-neutral-700 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
             >
               Let&apos;s chat
