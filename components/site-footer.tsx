@@ -11,20 +11,20 @@ const socialIcons: { [key: string]: JSX.Element } = {
 
 export function SiteFooter() {
   return (
-    <footer className="mx-auto mb-24 w-full max-w-6xl px-6">
-      <div className="mb-10 w-full rounded-md border border-black/[0.1] p-5 dark:border-white/[0.15] lg:p-8">
+    <footer className="mx-auto mb-24 mt-12 w-full max-w-none px-5 sm:max-w-[90%] sm:px-0 xl:max-w-6xl">
+      <div className="w-full rounded-lg border border-black/[0.1] p-5 dark:border-white/[0.15] sm:rounded-xl lg:p-8">
         <div className="grid grid-cols-1 items-start justify-between gap-6 lg:grid-cols-2 lg:items-center">
           <div>
             <Text
               balanced
               align="left"
-              className="text-[22px] font-[575] leading-10 md:text-[26px] md:leading-[48px]"
+              className="text-[22px] font-[575] leading-[38px] tracking-[-0.02em] md:text-[26px] md:leading-[44px]"
             >
               Have a project in mind? Contact me.
             </Text>
             <Text
               balanced
-              className="text-[22px] font-[575] leading-10 md:text-[26px] md:leading-[48px]"
+              className="text-[22px] font-[575] leading-[38px] tracking-[-0.02em] md:text-[26px] md:leading-[44px]"
             >
               Available Worldwide.
             </Text>
@@ -46,15 +46,15 @@ export function SiteFooter() {
                 target="_blank"
               >
                 <span className="flex h-8 items-center justify-between gap-x-1.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 text-sm font-normal text-neutral-600 transition-colors hover:border-black/[0.8] hover:text-neutral-800 dark:border-white/[0.12] dark:bg-accent/30 dark:text-neutral-400 dark:hover:border-white/[0.2] dark:hover:text-neutral-100">
-                  <Icons.envelope className="h-5 w-auto" />
-                  {siteConfig.email}
+                  <Icons.envelope className="h-[22px] w-auto lg:h-5" />
+                  <span className="hidden lg:block">{siteConfig.email}</span>
                 </span>
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <div className="flex flex-col flex-wrap items-center justify-center gap-5 md:flex-row md:justify-between">
+      <div className="mt-10 flex flex-col flex-wrap items-center justify-center gap-5 md:flex-row md:justify-between">
         <Link href="/">
           <Icons.logo className="h-[17px] w-auto lg:h-[17.5px]" />
         </Link>

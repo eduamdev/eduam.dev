@@ -15,16 +15,16 @@ export default function IndexPage() {
   const projects = siteConfig.work;
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-6xl flex-col items-center px-6 pb-12 pt-24">
-      <section className="mt-10 flex w-full flex-col items-center justify-center sm:px-7 md:mt-14">
+    <main className="flex min-h-screen flex-col items-center">
+      <section className="mx-auto mt-16 flex w-full max-w-none flex-col items-center justify-center px-5 sm:mt-10 sm:max-w-[90%] sm:px-0 md:mt-14 xl:max-w-6xl">
         <Avatar className="border border-black/[0.1] dark:border-white/[0.12]">
           <AvatarImage src={`https://github.com/${siteConfig.username}.png`} />
-          <AvatarFallback>EA</AvatarFallback>
+          <AvatarFallback className="bg-[#f8f8f8]" />
         </Avatar>
         <Text
           as="h1"
           align="center"
-          className="mt-5 max-w-5xl text-[32px] font-semibold leading-[46px] md:text-[38px] md:leading-[54px]"
+          className="mt-5 max-w-5xl text-[32px] font-semibold leading-[42px] tracking-tight md:text-[38px] md:leading-[54px] md:tracking-normal"
           balanced
         >
           Front-End Web Developer
@@ -55,16 +55,16 @@ export default function IndexPage() {
         </a>
       </section>
       {projects.length > 0 && (
-        <section className="mx-auto mt-16 flex w-full max-w-6xl flex-col items-center justify-center">
+        <section className="mx-auto mt-14 flex w-full max-w-none flex-col items-center justify-center px-5 sm:max-w-[90%] sm:px-0 xl:max-w-6xl">
           <Text
             as="h3"
             align="center"
-            className="px-8 text-[22px] font-[575] leading-10 md:text-[26px] md:leading-[54px]"
+            className="text-[22px] font-[575] leading-9 tracking-[-0.02em] md:text-[26px] md:leading-10"
             balanced
           >
             Selected Works
           </Text>
-          <div className="mx-auto mt-5 grid w-full grid-cols-1 items-stretch gap-6 ">
+          <div className="mx-auto mt-5 grid w-full grid-cols-1 items-stretch gap-4 lg:gap-6 ">
             {projects.map((project, index) => (
               <article key={project._id}>
                 <a
