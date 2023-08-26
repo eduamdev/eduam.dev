@@ -21,7 +21,7 @@ module.exports = {
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '17px', letterSpacing: '0em' }], // 12px
-      sm: ['0.875rem', { lineHeight: '20px', letterSpacing: '-0.006em' }], // 14px
+      sm: ['0.875rem', { lineHeight: '21px', letterSpacing: '-0.006em' }], // 14px
       base: ['1rem', { lineHeight: '27px', letterSpacing: '-0.011em' }], // 16px
       lg: ['1.125rem', { lineHeight: '31px', letterSpacing: '-0.014em' }], // 18px
       xl: ['1.25rem', { lineHeight: '30px', letterSpacing: '-0.017em' }], // 20px

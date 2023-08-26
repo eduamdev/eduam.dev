@@ -58,7 +58,7 @@ export default function IndexPage() {
           >
             Selected Works
           </Text>
-          <div className="mx-auto mt-6 grid w-full grid-cols-1 items-stretch gap-y-10 lg:gap-y-6 ">
+          <div className="mx-auto mt-8 grid w-full grid-cols-1 items-stretch gap-y-10 lg:gap-y-6 ">
             {siteConfig.work.map((w, index) => (
               <article key={w._id}>
                 <a
@@ -86,18 +86,18 @@ export default function IndexPage() {
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-black/10 pt-32 dark:from-white/[0.08]"></div>
                   </div>
                 </a>
-                <div className="mt-6 text-sm md:hidden">
+                <div className="mt-6 flex flex-col items-center justify-start gap-y-1 md:hidden">
                   <Text
                     as="p"
                     balanced
-                    className="font-semibold text-black dark:text-white"
+                    className="text-base font-semibold text-black dark:text-white"
                   >
                     {w.name}
                   </Text>
                   <Text
                     as="p"
                     balanced
-                    className="mt-2 font-medium leading-[26px] text-neutral-600 dark:text-neutral-400"
+                    className="text-sm text-neutral-600 dark:text-neutral-400"
                   >
                     {w.description}
                   </Text>
