@@ -1,7 +1,6 @@
 export const siteConfig = {
   name: 'Eduardo Ambriz',
   username: 'eduamdev',
-  email: 'eduamdev@gmail.com',
   url: 'https://eduardoambriz.com',
   description: 'Software Engineer, developer.',
   links: {

@@ -39,18 +39,6 @@ export function SiteFooter() {
                 </a>
               </li>
             ))}
-            <li>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <span className="flex h-8 items-center justify-between gap-x-1.5 rounded-full border border-black/[0.1] bg-accent/40 px-3 text-sm font-normal text-neutral-600 transition-colors hover:border-black/[0.8] hover:text-neutral-800 dark:border-white/[0.12] dark:bg-accent/30 dark:text-neutral-400 dark:hover:border-white/[0.2] dark:hover:text-neutral-100">
-                  <Icons.envelope className="h-[22px] w-auto lg:h-5" />
-                  <span className="hidden lg:block">{siteConfig.email}</span>
-                </span>
-              </a>
-            </li>
           </ul>
         </div>
       </div>
