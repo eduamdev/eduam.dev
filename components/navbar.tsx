@@ -46,7 +46,7 @@ export function Navbar() {
       <Link href="/" className="-m-1 ml-1 flex p-1">
         <Icons.logo className="h-4 w-auto align-middle sm:h-[17.5px]" />
       </Link>
-      {/* Allow horizontal scroll on very small devices (<360px) */}
+      {/* Allow horizontal scrolling to avoid overlapping items on very small devices (<360px) */}
       <div className="static flex flex-1 items-center justify-end overflow-x-hidden">
         <ul className="shrink-1 flex grow-0 basis-auto items-stretch overflow-x-hidden text-[13px] md:text-sm">
           {Object.entries(siteConfig.links).map(([key, value]) => (

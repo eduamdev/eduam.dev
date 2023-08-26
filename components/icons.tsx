@@ -21,21 +21,6 @@ export const Icons = {
       </defs>
     </svg>
   ),
-  menu: (props: IconProps) => (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path d="M2 6h20v2H2zM2 16h20v2H2z" fill="currentColor"></path>
-    </svg>
-  ),
-  close: (props: IconProps) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      viewBox="0 0 256 256"
-      {...props}
-    >
-      <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
-    </svg>
-  ),
   arrowUpRight: (props: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -50,54 +35,6 @@ export const Icons = {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-      ></path>
-    </svg>
-  ),
-  pin: (props: IconProps) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      strokeWidth="1.5"
-      viewBox="0 0 24 24"
-      fill="none"
-      {...props}
-    >
-      <path
-        d="M20 10c0 4.418-8 12-8 12s-8-7.582-8-12a8 8 0 1116 0z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-      ></path>
-      <path
-        d="M12 11a1 1 0 100-2 1 1 0 000 2z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      ></path>
-    </svg>
-  ),
-  calendar: (props: IconProps) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      strokeWidth="1.5"
-      viewBox="0 0 24 24"
-      fill="none"
-      {...props}
-    >
-      <path
-        d="M15 4V2m0 2v2m0-2h-4.5M3 10v9a2 2 0 002 2h14a2 2 0 002-2v-9H3zM3 10V6a2 2 0 012-2h2M7 2v4M21 10V6a2 2 0 00-2-2h-.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      ></path>
-    </svg>
-  ),
-  envelope: (props: IconProps) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
-      <path
-        d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"
-        fill="currentColor"
       ></path>
     </svg>
   ),

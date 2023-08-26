@@ -15,7 +15,7 @@ const workImages: { [key: string]: StaticImageData } = {
 export default function IndexPage() {
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <section className="mx-auto mt-10 flex w-full max-w-none flex-col items-center justify-center px-5 sm:max-w-[90%] sm:px-0 xl:max-w-6xl">
+      <section className="mx-auto mt-16 flex w-full max-w-none flex-col items-center justify-center px-5 sm:max-w-[90%] sm:px-0 xl:max-w-6xl">
         <Avatar className="border border-black/[0.1] dark:border-white/[0.12]">
           <AvatarImage src={`https://github.com/${siteConfig.username}.png`} />
           <AvatarFallback className="bg-[#f8f8f8]" />
@@ -56,7 +56,7 @@ export default function IndexPage() {
           >
             Selected Works
           </Text>
-          <div className="mx-auto mt-7 grid w-full grid-cols-1 items-stretch gap-y-10 lg:gap-y-6 ">
+          <div className="mx-auto mt-6 grid w-full grid-cols-1 items-stretch gap-y-10 lg:gap-y-6 ">
             {siteConfig.work.map((w, index) => (
               <article key={w._id}>
                 <a
