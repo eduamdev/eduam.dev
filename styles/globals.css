@@ -92,8 +92,12 @@
     touch-action: manipulation;
     min-width: 360px;
     text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   body {
+    overscroll-behavior-y: contain;
     @apply bg-background text-foreground;
   }
 
