@@ -18,14 +18,10 @@ export function SiteFooter() {
             <Text
               balanced
               align="left"
-              className="text-[20px] font-semibold leading-8 tracking-[-0.03em] md:text-[24px] md:leading-10"
+              className="text-xl font-semibold leading-8 md:text-2xl md:leading-10"
             >
               Have a project in mind? Contact me.
-            </Text>
-            <Text
-              balanced
-              className="text-[20px] font-semibold leading-8 tracking-[-0.03em] md:text-[24px] md:leading-10"
-            >
+              <br />
               Available Worldwide.
             </Text>
           </div>
@@ -46,7 +42,7 @@ export function SiteFooter() {
         <Link href="/">
           <Icons.logo className="h-4 w-auto align-middle sm:h-[17.5px]" />
         </Link>
-        <p className="text-center text-[13px] leading-5 text-neutral-500 dark:text-neutral-400 md:text-left">
+        <p className="text-center text-[13px] text-neutral-500 dark:text-neutral-400 md:text-left">
           <span className="mr-1.5">© {new Date().getFullYear()}</span>
           Design and developed by{' '}
           <a

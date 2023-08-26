@@ -19,6 +19,16 @@ module.exports = {
         '2xl': '1400px',
       },
     },
+    fontSize: {
+      xs: ['0.75rem', { lineHeight: '17px', letterSpacing: '0em' }], // 12px
+      sm: ['0.875rem', { lineHeight: '20px', letterSpacing: '-0.006em' }], // 14px
+      base: ['1rem', { lineHeight: '27px', letterSpacing: '-0.011em' }], // 16px
+      lg: ['1.125rem', { lineHeight: '31px', letterSpacing: '-0.014em' }], // 18px
+      xl: ['1.25rem', { lineHeight: '30px', letterSpacing: '-0.017em' }], // 20px
+      '2xl': ['1.5rem', { lineHeight: '34px', letterSpacing: '-0.019em' }], // 24px
+      '3xl': ['1.875rem', { lineHeight: '42px', letterSpacing: '-0.021em' }], // 30px
+      '4xl': ['2.5rem', { lineHeight: '56px', letterSpacing: '-0.022em' }], // 40px
+    },
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],

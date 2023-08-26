@@ -23,7 +23,7 @@ export default function IndexPage() {
         <Text
           as="h1"
           align="center"
-          className="mt-5 max-w-5xl whitespace-normal text-[32px] font-semibold leading-[46px] tracking-[-0.01em] md:text-[38px] md:leading-[54px]"
+          className="mt-5 max-w-5xl text-3xl font-semibold md:text-4xl"
           balanced
         >
           Frontend Developer
@@ -31,19 +31,21 @@ export default function IndexPage() {
         <Text
           as="p"
           align="center"
-          className="mt-2 max-w-3xl text-[15px] font-normal leading-[1.8] tracking-[-0.01em] text-neutral-600 dark:text-neutral-400 md:text-[18px]"
+          className="mt-3 max-w-3xl text-base font-normal text-neutral-600 dark:text-neutral-400 md:text-lg"
           balanced
         >
           Hi, I&apos;m <strong>Eduardo</strong>, a <strong>Mexico</strong>-based{' '}
           <strong>Software Engineer</strong> specializing in crafting
           high-performance, intuitive websites with excellent user experiences.
         </Text>
-        <div className="mt-6 flex h-7 flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/[0.1] p-2 text-center text-xs font-medium text-neutral-700 dark:border-white/[0.15] dark:text-neutral-300 lg:h-[30px] lg:text-[13px]">
+        <div className="mt-6 flex h-7 flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/[0.1] p-2 dark:border-white/[0.15]  lg:h-[30px]">
           <span className="relative flex h-[7px] w-[7px] items-center justify-center">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-500 opacity-75"></span>
             <span className="relative inline-flex h-[7px] w-[7px] rounded-full bg-green-500"></span>
           </span>
-          <p>Open to Remote Work</p>
+          <p className="text-center text-xs font-medium text-neutral-700 dark:text-neutral-300 lg:text-[13px] lg:tracking-[-0.003em]">
+            Open to Remote Work
+          </p>
         </div>
       </section>
       {siteConfig.work.length > 0 && (
@@ -51,7 +53,7 @@ export default function IndexPage() {
           <Text
             as="h2"
             align="center"
-            className="text-[20px] font-semibold leading-8 tracking-[-0.03em] md:text-[24px] md:leading-10"
+            className="text-xl font-semibold md:text-2xl"
             balanced
           >
             Selected Works
@@ -95,7 +97,7 @@ export default function IndexPage() {
                   <Text
                     as="p"
                     balanced
-                    className="mt-2 leading-[26px] tracking-[-0.01em] text-neutral-700 dark:text-neutral-400"
+                    className="mt-2 font-medium leading-[26px] text-neutral-600 dark:text-neutral-400"
                   >
                     {w.description}
                   </Text>
