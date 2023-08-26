@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: siteConfig.ogImage.url,
-        width: '',
-        height: '',
-        alt: siteConfig.ogImage.alt,
+        width: '1200',
+        height: '630',
+        alt: siteConfig.ogImage.altText,
       },
     ],
     locale: 'en_US',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     creator: `@${siteConfig.username}`,
     images: {
       url: siteConfig.ogImage.url,
-      alt: siteConfig.ogImage.alt,
+      alt: siteConfig.ogImage.altText,
     },
   },
 };
@@ -63,17 +63,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body
-        className={cn(
-          'min-h-screen font-sans antialiased [text-rendering:optimizeLegibility]',
-          fontSans.variable,
-        )}
-      >
+      <body className={cn('min-h-screen font-sans', fontSans.variable)}>
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <WrapBalancerProvider>
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
-              <div>{children}</div>
+              {children}
               <SiteFooter />
             </div>
           </WrapBalancerProvider>

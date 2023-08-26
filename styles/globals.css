@@ -34,11 +34,14 @@
     --ring: 0 0% 63.9%;
 
     --radius: 0.5rem;
+
+    --rgbMax: 235;
+    --background-alpha: rgba(235, 235, 235, 0.8);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: 0 0% 3.9%;
+      --background: 0 0% 0%;
       --foreground: 0 0% 98%;
 
       --muted: 0 0% 14.9%;
@@ -66,6 +69,9 @@
       --destructive-foreground: 0 85.7% 97.3%;
 
       --ring: 0 0% 14.9%;
+
+      --rgbMax: 50;
+      --background-alpha: rgba(50, 50, 50, 0.8);
     }
   }
 }
@@ -76,23 +82,32 @@
   }
 
   ::selection {
-    @apply bg-[#79ffe1] text-black;
+    background-color: #79ffe1;
+    color: theme('colors.black');
   }
 
   html,
   body {
     /* Enable panning and pinch zoom gestures, but disable additional non-standard gestures such as double-tap to zoom */
     touch-action: manipulation;
+    min-width: 360px;
+    text-rendering: optimizeLegibility;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  strong {
+    font-weight: 500;
+    color: theme('colors.neutral.900');
+    @apply dark:text-neutral-100;
   }
 
   /* https://bugs.webkit.org/show_bug.cgi?id=243601
   https://nextjs.org/docs/pages/api-reference/components/image#known-browser-bugs 
   Safari 15 and 16 display a gray border while loading */
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {
-    img[loading="lazy"] {
+    img[loading='lazy'] {
       clip-path: inset(0.6px);
     }
   }

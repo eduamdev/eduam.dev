@@ -3,35 +3,36 @@ export const siteConfig = {
   username: 'eduamdev',
   email: 'eduamdev@gmail.com',
   url: 'https://eduardoambriz.com',
-  description: '',
+  description: 'Software Engineer, developer.',
   links: {
     github: { name: 'GitHub', url: 'https://github.com/eduamdev' },
     linkedin: { name: 'LinkedIn', url: 'https://www.linkedin.com/in/eduamdev' },
-    x: { name: 'X', url: 'https://twitter.com/eduamdev' },
+    x: { name: '𝕏', url: 'https://twitter.com/eduamdev' },
   },
   ogImage: {
-    url: '',
-    alt: '',
+    url: 'https://eduardoambriz.com/og-image.png',
+    altText: 'A black background with the word eduamdev in white.',
   },
   work: [
     {
-      _id: 'w-02',
+      _id: 'w-01',
       url: 'https://eduamdev.github.io/car-rental-react',
       name: 'Rides',
-      description: 'Car Rental Website',
+      description: 'Car Rental Website built with React',
       image: {
-        src: 'w2',
-        alt: "Rides' homepage featuring the headline 'Your One-Stop Destination for Car Rentals', a tagline, and a call-to-action button to browse vehicles",
+        name: 'rides',
+        altText: 'Homepage of a car rental website with a black background.',
       },
     },
     {
-      _id: 'w-01',
+      _id: 'w-02',
       url: 'https://spotify-web-ui-clone.vercel.app',
       name: 'Spotify',
-      description: 'Website UI Clone',
+      description: 'Web Player UI Clone built with Next.js, TailwindCSS',
       image: {
-        src: 'w1',
-        alt: '',
+        name: 'spotify',
+        altText:
+          'Spotify Web Player that displays lists of recently listened music and personalized recommendations containing puns with song names and tech personalities.',
       },
     },
   ],

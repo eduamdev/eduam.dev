@@ -18,13 +18,13 @@ export function SiteFooter() {
             <Text
               balanced
               align="left"
-              className="text-[22px] font-[575] leading-[38px] tracking-[-0.02em] md:text-[26px] md:leading-[44px]"
+              className="text-[20px] font-semibold leading-8 tracking-[-0.03em] md:text-[24px] md:leading-10"
             >
               Have a project in mind? Contact me.
             </Text>
             <Text
               balanced
-              className="text-[22px] font-[575] leading-[38px] tracking-[-0.02em] md:text-[26px] md:leading-[44px]"
+              className="text-[20px] font-semibold leading-8 tracking-[-0.03em] md:text-[24px] md:leading-10"
             >
               Available Worldwide.
             </Text>
@@ -56,10 +56,10 @@ export function SiteFooter() {
       </div>
       <div className="mt-10 flex flex-col flex-wrap items-center justify-center gap-5 md:flex-row md:justify-between">
         <Link href="/">
-          <Icons.logo className="h-[17px] w-auto lg:h-[17.5px]" />
+          <Icons.logo className="h-4 w-auto align-middle sm:h-[17.5px]" />
         </Link>
-        <p className="text-center text-sm leading-5 text-neutral-500 dark:text-neutral-400 md:text-left">
-          <span className="mr-1.5 text-sm">© {new Date().getFullYear()}</span>
+        <p className="text-center text-[13px] leading-5 text-neutral-500 dark:text-neutral-400 md:text-left">
+          <span className="mr-1.5">© {new Date().getFullYear()}</span>
           Design and developed by{' '}
           <a
             href={siteConfig.links.github.url}
