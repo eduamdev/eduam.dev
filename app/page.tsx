@@ -23,20 +23,13 @@ export default function IndexPage() {
         <Text
           as="h1"
           align="center"
-          className="mt-5 max-w-5xl text-3xl font-semibold md:text-4xl"
+          className="mt-6 max-w-4xl text-base font-normal text-neutral-700 dark:text-neutral-400 md:text-lg"
           balanced
         >
-          Frontend Developer
-        </Text>
-        <Text
-          as="p"
-          align="center"
-          className="mt-3 max-w-3xl text-base font-normal text-neutral-600 dark:text-neutral-400 md:text-lg"
-          balanced
-        >
-          Hi, I&apos;m <strong>Eduardo</strong>, a <strong>Mexico</strong>-based{' '}
-          <strong>Software Engineer</strong> specializing in crafting
-          high-performance, intuitive websites with excellent user experiences.
+          I&apos;m Eduardo, a <strong>frontend developer</strong> based in{' '}
+          <strong>Mexico</strong>. I specialize in meticulously designing and
+          developing stunning, high-performance websites that seamlessly blend
+          aesthetics and functionality.
         </Text>
         <div className="mt-6 flex h-7 flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/[0.1] p-2 dark:border-white/[0.15]  lg:h-[30px]">
           <span className="relative flex h-[7px] w-[7px] items-center justify-center">
@@ -56,7 +49,7 @@ export default function IndexPage() {
             className="text-xl font-semibold md:text-2xl"
             balanced
           >
-            Selected Works
+            Highlighted Works
           </Text>
           <div className="mx-auto mt-8 grid w-full grid-cols-1 items-stretch gap-y-10 lg:gap-y-6 ">
             {siteConfig.work.map((w, index) => (

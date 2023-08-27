@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Eduardo Ambriz',
   username: 'eduamdev',
   url: 'https://eduardoambriz.com',
-  description: 'Software Engineer, developer.',
+  description: 'Software Engineer, frontend developer.',
   links: {
     github: { name: 'GitHub', url: 'https://github.com/eduamdev' },
     linkedin: { name: 'LinkedIn', url: 'https://www.linkedin.com/in/eduamdev' },
@@ -27,7 +27,8 @@ export const siteConfig = {
       _id: 'w-02',
       url: 'https://spotify-web-ui-clone.vercel.app',
       name: 'Spotify',
-      description: 'Web Player UI Clone built with Next.js, TailwindCSS',
+      description:
+        'Web Player UI Clone built with Next.js, TailwindCSS and Shadcn/ui components',
       image: {
         name: 'spotify',
         altText:
