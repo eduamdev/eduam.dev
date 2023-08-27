@@ -4,11 +4,11 @@ import { Icons } from '@/components/icons';
 import { Text } from '@/components/text';
 
 const socialIcons: { [key: string]: JSX.Element } = {
-  github: <Icons.github className="h-[0.9rem] w-auto align-middle lg:h-4" />,
+  github: <Icons.github className="h-[0.9rem] w-full align-middle lg:h-4" />,
   linkedin: (
-    <Icons.linkedin className="h-5 w-auto align-middle lg:h-[21.5px]" />
+    <Icons.linkedin className="h-5 w-full align-middle lg:h-[21.5px]" />
   ),
-  x: <Icons.x className="h-[13px] w-auto align-middle lg:h-[14.5px]" />,
+  x: <Icons.x className="h-[13px] w-full align-middle lg:h-[14.5px]" />,
 };
 
 export function SiteFooter() {
