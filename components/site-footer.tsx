@@ -13,7 +13,7 @@ const socialIcons: { [key: string]: JSX.Element } = {
 
 export function SiteFooter() {
   return (
-    <footer className="mx-auto my-16 w-full max-w-none px-5 sm:max-w-[90%] sm:px-0 xl:max-w-6xl">
+    <footer className="mx-auto my-16 w-full max-w-none px-5 sm:max-w-[90%] sm:px-0 xl:max-w-7xl">
       <div className="w-full rounded-lg border border-black/[0.1] p-4 dark:border-white/[0.15] sm:rounded-xl md:p-6">
         <div className="grid grid-cols-1 items-start justify-between gap-5 md:grid-cols-2 md:items-center">
           <Text

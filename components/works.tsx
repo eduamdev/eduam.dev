@@ -1,7 +1,8 @@
-import spotify from '../public/projects/spotify-ui-clone.png';
-import carhive from '../public/projects/carhive.png';
 import { ResponsiveImage } from './responsive-image';
 import { Text } from '@/components/text';
+
+import spotify from '../public/projects/spotify-ui-clone.png';
+import carhive from '../public/projects/carhive.webp';
 
 const works = [
   {
@@ -29,7 +30,7 @@ export function Works() {
   if (!works.length) return null;
 
   return (
-    <section className="mx-auto mt-16 flex w-full max-w-none flex-col items-center justify-center px-5 sm:max-w-[90%] sm:px-0 xl:max-w-6xl">
+    <section className="mx-auto mt-16 flex w-full max-w-none flex-col items-center justify-center px-5 sm:max-w-[90%] sm:px-0 xl:max-w-7xl">
       <Text
         as="h2"
         align="center"

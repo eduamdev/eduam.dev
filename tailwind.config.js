@@ -31,7 +31,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-sans)', ...fontFamily.sans],
+        sans: ['var(--font-geist-sans)', ...fontFamily.sans],
       },
       spacing: {
         header: '64px',
