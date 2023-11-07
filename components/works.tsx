@@ -1,8 +1,8 @@
 import { ResponsiveImage } from './responsive-image';
 import { Text } from '@/components/text';
 
-import spotify from '../public/projects/spotify-ui-clone.png';
-import carhive from '../public/projects/carhive.webp';
+import spotify from '../public/works/spotify-ui-clone.png';
+import carhive from '../public/works/carhive.webp';
 
 const works = [
   {

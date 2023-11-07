@@ -48,7 +48,7 @@ export function SiteFooter() {
             rel="noreferrer"
             className="font-medium text-neutral-600 hover:text-black dark:text-neutral-300 dark:hover:text-neutral-100"
           >
-            {siteConfig.username}
+            {siteConfig.name}
           </a>
           .
         </p>

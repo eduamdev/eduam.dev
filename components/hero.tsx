@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="mx-auto mt-14 flex w-full max-w-none flex-col items-center justify-center px-5 sm:max-w-[90%] sm:px-0 xl:max-w-7xl">
       <Avatar className="border border-black/[0.1] dark:border-white/[0.12]">
-        <AvatarImage src={`https://github.com/${siteConfig.username}.png`} />
+        <AvatarImage src={`https://github.com/${siteConfig.name}.png`} />
         <AvatarFallback className="bg-[#f8f8f8]" />
       </Avatar>
       <Text
