@@ -54,7 +54,7 @@ export function Works() {
                   />
                 </div>
                 <div className="absolute bottom-6 left-6 z-10 hidden items-center justify-center md:flex">
-                  <span className="rounded-lg border border-black/[0.08] bg-white px-4 py-2.5 text-[13px] text-black shadow-[inset_0_0_1px_0_rgba(0,0,0,.05)] transition-all duration-300 group-hover:border-white/[0.2] group-hover:bg-black group-hover:text-white group-hover:shadow-[inset_0_0_1px_0_rgba(235,235,255,.1)] md:text-sm">
+                  <span className="rounded-lg border border-black/[0.08] bg-white px-4 py-2.5 text-black shadow-[inset_0_0_1px_0_rgba(0,0,0,.05)] transition-all duration-300 group-hover:border-white/[0.2] group-hover:bg-black group-hover:text-white group-hover:shadow-[inset_0_0_1px_0_rgba(235,235,255,.1)]">
                     <span className="font-medium">{name} </span>
                     <span className="text-neutral-600 group-hover:text-neutral-400">
                       – {description}

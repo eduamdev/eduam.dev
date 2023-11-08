@@ -4,16 +4,29 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --rgbMax: 235;
-    --background-alpha: rgba(235, 235, 235, 0.8);
+    --navbar-bg-initial: 0 0% 100%;
+    --navbar-bg-max-rgb: 235;
+    --navbar-bg-max-alpha: 0.8;
+    --navbar-bg-end: rgba(
+      var(--navbar-bg-max-rgb),
+      var(--navbar-bg-max-rgb),
+      var(--navbar-bg-max-rgb),
+      var(--navbar-bg-max-alpha)
+    );
+    --navbar-animation-start-y: 20;
+    --navbar-animation-end-y: 317;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: 0 0% 0%;
-      --rgbMax: 50;
-      --background-alpha: rgba(50, 50, 50, 0.8);
+      --navbar-bg-initial: 0 0% 0%;
+      --navbar-bg-max-rgb: 50;
+      --navbar-bg-end: rgba(
+        var(--navbar-bg-max-rgb),
+        var(--navbar-bg-max-rgb),
+        var(--navbar-bg-max-rgb),
+        var(--navbar-bg-max-alpha)
+      );
     }
   }
 }
