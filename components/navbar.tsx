@@ -4,8 +4,9 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 
+import { Wordmark } from '@/components/wordmark';
+import { socialLinks } from '@/components/site-header';
 import { Icons } from '@/components/icons';
-import { siteConfig } from '@/config/site';
 
 export function Navbar() {
   const ref = useRef<HTMLDivElement>(null);
@@ -40,27 +41,29 @@ export function Navbar() {
   return (
     <div
       ref={ref}
-      className="fixed inset-x-0 bottom-auto top-0 z-20 mx-auto mt-[15px] flex h-auto w-[90%] min-w-[330px] max-w-[700px] flex-row items-center justify-between gap-x-4 rounded-xl border-[length:0.5px] border-black/[0.05] bg-white px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease] dark:border-white/[0.1] dark:bg-black sm:w-[600px]"
+      className="fixed inset-x-0 bottom-auto top-0 z-20 mx-auto mt-[15px] flex h-auto w-[90%] min-w-[330px] max-w-[700px] flex-row items-baseline justify-between gap-x-4 rounded-xl border-[length:0.5px] border-black/[0.05] bg-white px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease] dark:border-white/[0.1] dark:bg-black sm:w-[600px]"
       style={{ willChange: 'background' }}
     >
-      <Link href="/" className="-m-1 ml-1 flex p-1">
-        <Icons.logo className="h-4 w-auto align-middle sm:h-[17.5px]" />
+      <Link href="/" className="-m-1 ml-1 p-1">
+        <Wordmark />
       </Link>
       {/* Allow horizontal scrolling to avoid overlapping items on very small devices (<360px) */}
-      <div className="static flex flex-1 items-center justify-end overflow-x-hidden">
+      <nav className="static flex flex-1 items-center justify-end overflow-x-hidden">
         <ul className="shrink-1 flex grow-0 basis-auto items-stretch overflow-x-hidden text-[13px] md:text-sm">
-          {Object.entries(siteConfig.links).map(([key, value]) => (
+          {socialLinks.map(({ name, url }) => (
             <a
-              key={key}
-              href={value.url}
+              key={name}
+              href={url}
+              target="_blank"
               rel="noreferrer"
-              className="relative mx-auto inline-block px-2.5 py-2 text-left align-top font-medium text-neutral-600 transition-all hover:text-black dark:text-neutral-400 dark:hover:text-white sm:px-4 sm:py-3"
+              className="group relative mx-auto inline-block px-4 py-3 text-left align-top font-medium text-neutral-600 ring-inset ring-[#0060df] ring-offset-1 ring-offset-white transition-all hover:text-black focus:outline-none focus-visible:ring dark:text-neutral-400 dark:hover:text-white"
             >
-              <li>{value.name}</li>
+              <li>{name}</li>
+              <Icons.arrowUpRight className="absolute right-1.5 top-3 h-2 w-2 text-neutral-500 transition-transform group-focus-visible:-translate-y-1" />
             </a>
           ))}
         </ul>
-      </div>
+      </nav>
     </div>
   );
 }

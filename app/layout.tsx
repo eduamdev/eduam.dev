@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { fontSans } from '@/lib/fonts';
+import { fontMono, fontSans } from '@/lib/fonts';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -75,9 +75,13 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${fontSans.variable} ${fontMono.variable}`}
+      suppressHydrationWarning
+    >
       <head />
-      <body className={cn('min-h-screen font-sans', fontSans.variable)}>
+      <body className="min-h-screen bg-white font-sans dark:bg-black">
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <WrapBalancerProvider>
             <div className="relative flex min-h-screen flex-col">
