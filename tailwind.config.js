@@ -1,5 +1,3 @@
-const { fontFamily } = require('tailwindcss/defaultTheme');
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   future: {
@@ -14,11 +12,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-geist-sans)', ...fontFamily.sans],
-        mono: ['var(--font-geist-mono)', ...fontFamily.mono],
-      },
-      colors: {
-        selection: 'hsla(212, 100%, 41%, 1)',
+        sans: ['var(--font-sans)'],
+        mono: ['var(--font-mono)', 'var(--font-mono-fallback)'],
       },
     },
   },

@@ -7,7 +7,7 @@ export function Links() {
   return (
     <div className="mx-auto w-full max-w-none px-5 pb-8 pt-16 sm:max-w-[90%] sm:px-0 2xl:max-w-7xl">
       <div className="h-28 w-full rounded-lg border border-black/[0.1] dark:border-white/[0.15] sm:rounded-xl">
-        <div className="flex h-full items-center justify-center gap-10">
+        <div className="flex h-full items-center justify-center gap-10 p-4">
           <h2 className="text-left text-2xl font-semibold md:text-3xl md:leading-10">
             Let&apos;s connect.
           </h2>

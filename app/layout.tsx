@@ -81,7 +81,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       suppressHydrationWarning
     >
       <head />
-      <body className="min-h-screen bg-white font-sans dark:bg-black">
+      <body>
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <WrapBalancerProvider>
             <div className="relative flex min-h-screen flex-col">

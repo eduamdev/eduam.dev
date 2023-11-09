@@ -4,6 +4,18 @@
 
 @layer base {
   :root {
+    --selection: hsla(212, 100%, 41%, 1);
+    --selection-text-color: theme('colors.white');
+
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+    --font-sans-fallback: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    --font-mono-fallback: 'Roboto Mono', Menlo, Monaco, Lucida Console,
+      Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+      monospace;
+
     --navbar-bg-initial: 0 0% 100%;
     --navbar-bg-max-rgb: 235;
     --navbar-bg-max-alpha: 0.8;
@@ -33,8 +45,14 @@
 
 @layer base {
   ::selection {
-    background-color: theme('colors.selection');
-    color: theme('colors.white');
+    background-color: var(--selection);
+    color: var(--selection-text-color);
+  }
+
+  html,
+  html body {
+    font-family: var(--font-sans), var(--font-sans-fallback);
+    font-feature-settings: normal;
   }
 
   html,
@@ -49,6 +67,16 @@
   }
   body {
     overscroll-behavior-y: contain;
+    font-size: 100%;
+    min-height: 100%;
+    max-width: 100vw;
+    background-color: white;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: black;
+    }
   }
 
   strong {

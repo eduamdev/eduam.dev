@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 
-import { Wordmark } from '@/components/wordmark';
 import { socialLinks } from '@/components/site-header';
 import { Icons } from '@/components/icons';
 import { getCssVariableValue } from '@/lib/utils';
@@ -69,11 +68,11 @@ export function Navbar() {
   return (
     <div
       ref={ref}
-      className="fixed inset-x-0 bottom-auto top-0 z-20 mx-auto mt-[15px] flex h-14 w-[90%] min-w-[330px] max-w-[700px] flex-row items-center justify-between gap-x-4 rounded-xl border-[length:0.5px] border-black/[0.08] bg-white px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease] dark:border-white/[0.15] dark:bg-black sm:w-[600px]"
+      className="fixed inset-x-0 bottom-auto top-0 z-20 mx-auto mt-[15px] flex h-14 w-[90%] min-w-[330px] max-w-[700px] flex-row items-center justify-between gap-x-3 rounded-xl border-[length:0.5px] border-black/[0.08] bg-white px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease] dark:border-white/[0.15] dark:bg-black sm:w-[600px]"
       style={{ willChange: 'background' }}
     >
-      <Link href="/" className="-m-1 ml-1 p-1">
-        <Wordmark />
+      <Link href="/" className="-m-1 ml-1">
+        <Icons.wordmark className="h-[14px] w-auto shrink-0 text-black dark:text-white" />
       </Link>
       {/* Allow horizontal scrolling to avoid overlapping items on very small devices (<360px) */}
       <nav className="static flex flex-1 items-center justify-end overflow-x-hidden">

@@ -40,7 +40,7 @@ export function Projects() {
             <a
               href={url}
               rel="noreferrer"
-              className="group block overflow-hidden rounded-lg border border-black/[0.1] shadow-2xl outline-none transition-all focus-visible:ring-2 focus-visible:ring-[#0072FF] dark:border-white/[0.15] dark:focus-visible:ring-[#3291ff] sm:rounded-xl"
+              className="group block overflow-hidden rounded-lg border border-black/[0.1] outline-none transition-all focus-visible:ring-2 focus-visible:ring-[#0072FF] dark:border-white/[0.15] dark:focus-visible:ring-[#3291ff] sm:rounded-xl lg:shadow-2xl"
             >
               <div className="relative">
                 <div className="aspect-video max-w-full overflow-hidden">
