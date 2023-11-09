@@ -1,38 +1,43 @@
-import Balancer from 'react-wrap-balancer';
 import { socialLinks } from '@/components/site-header';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { siteConfig } from '@/config/site';
 
 export function Links() {
   return (
-    <div className="mx-auto mt-16 w-full max-w-none px-5 sm:max-w-[90%] sm:px-0 xl:max-w-7xl">
-      <div className="w-full rounded-lg border border-black/[0.1]  p-4 dark:border-white/[0.15] sm:rounded-xl md:p-6">
-        <div className="grid grid-cols-1 items-start justify-between gap-6 md:grid-cols-[1fr_auto] md:items-center">
-          <h2 className="w-full text-left text-xl font-semibold md:text-[26px] md:leading-10">
-            <Balancer>
-              Ready to bring your project to life? <br />
-              Let&apos;s work together.
-            </Balancer>
+    <div className="mx-auto w-full max-w-none px-5 pb-8 pt-16 sm:max-w-[90%] sm:px-0 2xl:max-w-7xl">
+      <div className="h-28 w-full rounded-lg border border-black/[0.1] dark:border-white/[0.15] sm:rounded-xl">
+        <div className="flex h-full items-center justify-center gap-10">
+          <h2 className="text-left text-2xl font-semibold md:text-3xl md:leading-10">
+            Let&apos;s connect.
           </h2>
-          <ul className="flex flex-row flex-wrap items-start justify-start gap-5 md:justify-end">
+          <ul className="flex flex-row flex-nowrap items-start justify-start gap-5 md:justify-end">
             {socialLinks.map(({ name, url, icon: Icon }) => {
               return (
-                <a key={name} href={url} rel="noreferrer">
-                  <li className="flex h-7 w-7 shrink-0 items-center justify-center rounded-2xl border border-black/[0.1] transition-colors hover:border-black/[0.8]  dark:border-white/[0.12]  dark:hover:border-white/[0.8]  lg:h-8 lg:w-8">
-                    {Icon ? (
-                      <Icon
-                        className={cn(
-                          name === siteConfig.links.x.name &&
-                            'h-[13px] w-full align-middle lg:h-[14.5px]',
-                          name === siteConfig.links.github.name &&
-                            'h-[0.9rem] w-full align-middle lg:h-4',
-                          name === siteConfig.links.linkedin.name &&
-                            'h-5 w-full align-middle lg:h-[21.5px]',
-                        )}
-                      />
-                    ) : null}
-                  </li>
-                </a>
+                <Button
+                  size={'icon'}
+                  key={name}
+                  className="h-6 w-6 rounded-full shadow-none transition-colors hover:bg-neutral-50"
+                  asChild
+                >
+                  <a href={url} rel="noreferrer" target="_blank">
+                    <li>
+                      {Icon ? (
+                        <Icon
+                          className={cn(
+                            'shrink-0',
+                            name === siteConfig.links.github.name &&
+                              ' h-[18px] w-auto align-middle',
+                            name === siteConfig.links.linkedin.name &&
+                              ' h-[22px] w-auto align-middle',
+                            name === siteConfig.links.x.name &&
+                              ' h-[15px] w-auto align-middle',
+                          )}
+                        />
+                      ) : null}
+                    </li>
+                  </a>
+                </Button>
               );
             })}
           </ul>

@@ -15,7 +15,7 @@ export function Navbar() {
 
   const minY = getCssVariableValue('--navbar-animation-start-y');
   const maxY = getCssVariableValue('--navbar-animation-end-y');
-  const maxNavbarBgRGB = getCssVariableValue('--navbar-bg-max-rgb');
+  let maxNavbarBgRGB = getCssVariableValue('--navbar-bg-max-rgb');
   const maxNavbarBgAlpha = getCssVariableValue('--navbar-bg-max-alpha');
 
   function calculateNavbarBgColor(
@@ -30,6 +30,8 @@ export function Navbar() {
   }
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
+    maxNavbarBgRGB = getCssVariableValue('--navbar-bg-max-rgb');
+
     if (
       !ref ||
       !ref.current ||
@@ -67,7 +69,7 @@ export function Navbar() {
   return (
     <div
       ref={ref}
-      className="fixed inset-x-0 bottom-auto top-0 z-20 mx-auto mt-[15px] flex h-14 w-[90%] min-w-[330px] max-w-[700px] flex-row items-center justify-between gap-x-4 rounded-xl border-[length:0.5px] border-black/[0.05] bg-white px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease] dark:border-white/[0.1] dark:bg-black sm:w-[600px]"
+      className="fixed inset-x-0 bottom-auto top-0 z-20 mx-auto mt-[15px] flex h-14 w-[90%] min-w-[330px] max-w-[700px] flex-row items-center justify-between gap-x-4 rounded-xl border-[length:0.5px] border-black/[0.08] bg-white px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease] dark:border-white/[0.15] dark:bg-black sm:w-[600px]"
       style={{ willChange: 'background' }}
     >
       <Link href="/" className="-m-1 ml-1 p-1">
@@ -75,17 +77,20 @@ export function Navbar() {
       </Link>
       {/* Allow horizontal scrolling to avoid overlapping items on very small devices (<360px) */}
       <nav className="static flex flex-1 items-center justify-end overflow-x-hidden">
-        <ul className="shrink-1 flex grow-0 basis-auto items-stretch overflow-x-hidden text-[13px] md:text-sm">
+        <ul className="shrink-1 flex grow-0 basis-auto items-center overflow-x-hidden text-[13px] md:text-sm">
           {socialLinks.map(({ name, url }) => (
             <a
               key={name}
               href={url}
               target="_blank"
               rel="noreferrer"
-              className="group relative mx-auto inline-block px-4 py-3 text-left align-top font-medium text-neutral-600 ring-inset ring-[#0060df] ring-offset-1 ring-offset-white transition-all hover:text-black focus:outline-none focus-visible:ring dark:text-neutral-400 dark:hover:text-white"
+              className="group relative mx-auto inline-block p-3 text-left align-top leading-none text-neutral-600 ring-inset ring-[#0060df] ring-offset-1 ring-offset-white transition-all hover:text-black focus:outline-none focus-visible:ring-2 dark:text-neutral-300 dark:hover:text-white"
             >
               <li>{name}</li>
-              <Icons.arrowUpRight className="absolute right-1.5 top-3 h-2 w-2 text-neutral-500 transition-transform group-focus-visible:-translate-y-1" />
+              <Icons.arrowUpRight
+                aria-hidden="true"
+                className="absolute right-1 top-2.5 h-[7px] w-[7px] text-neutral-400 transition-transform group-focus-visible:-translate-y-1 dark:text-neutral-600"
+              />
             </a>
           ))}
         </ul>

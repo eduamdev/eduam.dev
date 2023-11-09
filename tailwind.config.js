@@ -17,6 +17,9 @@ module.exports = {
         sans: ['var(--font-geist-sans)', ...fontFamily.sans],
         mono: ['var(--font-geist-mono)', ...fontFamily.mono],
       },
+      colors: {
+        selection: 'hsla(212, 100%, 41%, 1)',
+      },
     },
   },
 };

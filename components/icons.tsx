@@ -2,34 +2,21 @@ type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
   arrowUpRight: (props: IconProps) => (
-    <svg
-      viewBox="0 0 24 24"
-      strokeWidth="2.5"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      color="currentColor"
-      {...props}
-    >
+    <svg viewBox="0 0 6 6" {...props}>
       <path
-        d="M6.00005 19L19 5.99996M19 5.99996V18.48M19 5.99996H6.52005"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M1.25215 5.54731L0.622742 4.9179L3.78169 1.75597H1.3834L1.38936 0.890915H5.27615V4.78069H4.40513L4.41109 2.38538L1.25215 5.54731Z"
+        fill="currentColor"
       ></path>
     </svg>
   ),
   x: (props: IconProps) => (
-    <svg
-      viewBox="0 0 1200 1227"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+    <svg strokeLinejoin="round" viewBox="0 0 16 16" {...props}>
       <path
-        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M0.5 0.5H5.75L9.48421 5.71053L14 0.5H16L10.3895 6.97368L16.5 15.5H11.25L7.51579 10.2895L3 15.5H1L6.61053 9.02632L0.5 0.5ZM12.0204 14L3.42043 2H4.97957L13.5796 14H12.0204Z"
         fill="currentColor"
-      />
+      ></path>
     </svg>
   ),
   github: (props: IconProps) => (

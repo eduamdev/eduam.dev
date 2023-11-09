@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Balancer from 'react-wrap-balancer';
 
-import spotify from '../public/works/spotify-ui-clone.png';
-import carhive from '../public/works/carhive.webp';
+import spotify from '../public/projects/spotify-ui-clone.png';
+import carhive from '../public/projects/carhive.webp';
 
-const works = [
+const projects = [
   {
     name: 'CarHive',
     url: 'https://carhive.eduam.dev',
@@ -26,21 +26,21 @@ const works = [
   },
 ];
 
-export function Works() {
-  if (!works.length) return null;
+export function Projects() {
+  if (!projects.length) return null;
 
   return (
-    <section className="mx-auto mt-16 flex w-full max-w-none flex-col items-center justify-center px-5 sm:max-w-[90%] sm:px-0 xl:max-w-7xl">
-      <h2 className="w-full text-center text-xl font-semibold lg:text-3xl">
-        <Balancer>Highlighted Works</Balancer>
+    <section className="mx-auto mt-20 flex w-full max-w-none flex-col items-center justify-center px-5 sm:max-w-[90%] sm:px-0 xl:max-w-7xl">
+      <h2 className="w-full text-center text-2xl font-semibold lg:text-3xl">
+        <Balancer>Projects</Balancer>
       </h2>
-      <div className="mx-auto mt-2 grid w-full grid-cols-1 items-stretch gap-y-10 lg:gap-y-6 ">
-        {works.map(({ name, url, image, description }, index) => (
+      <div className="mx-auto mt-6 grid w-full grid-cols-1 items-stretch gap-y-10 lg:gap-y-6 ">
+        {projects.map(({ name, url, image, description }, index) => (
           <article key={name}>
             <a
               href={url}
               rel="noreferrer"
-              className="group block overflow-hidden rounded-lg border border-black/[0.1] shadow-xl outline-none transition-all focus-visible:ring-2 focus-visible:ring-[#0072FF] dark:border-white/[0.15] dark:focus-visible:ring-[#3291ff] sm:rounded-xl"
+              className="group block overflow-hidden rounded-lg border border-black/[0.1] shadow-2xl outline-none transition-all focus-visible:ring-2 focus-visible:ring-[#0072FF] dark:border-white/[0.15] dark:focus-visible:ring-[#3291ff] sm:rounded-xl"
             >
               <div className="relative">
                 <div className="aspect-video max-w-full overflow-hidden">
@@ -49,8 +49,9 @@ export function Works() {
                     alt={image.alt}
                     priority={index < 1}
                     fill
-                    className="bg-gray-200 object-cover dark:bg-neutral-900"
+                    className="object-cover"
                     placeholder="blur"
+                    sizes="100vw"
                   />
                 </div>
                 <div className="absolute bottom-6 left-6 z-10 hidden items-center justify-center md:flex">
@@ -68,7 +69,7 @@ export function Works() {
               <p className="w-full text-left font-semibold text-black dark:text-white">
                 <Balancer>{name}</Balancer>
               </p>
-              <p className="w-full text-left text-sm text-neutral-600 dark:text-neutral-400">
+              <p className="w-full text-left text-sm leading-6 text-neutral-600 dark:text-neutral-400">
                 <Balancer>{description}</Balancer>
               </p>
             </div>

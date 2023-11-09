@@ -1,12 +1,12 @@
 import { Hero } from '@/components/hero';
-import { Works } from '@/components/works';
+import { Projects } from '@/components/projects';
 import { Links } from '@/components/links';
 
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <Hero />
-      <Works />
+      <Projects />
       <Links />
     </main>
   );

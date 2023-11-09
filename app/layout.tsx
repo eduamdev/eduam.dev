@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Analytics } from '@/components/analytics';
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
 import { siteConfig } from '@/config/site';
-import { absoluteUrl, cn } from '@/lib/utils';
+import { absoluteUrl } from '@/lib/utils';
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),
