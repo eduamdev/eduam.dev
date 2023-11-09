@@ -4,42 +4,23 @@
 
 @layer base {
   :root {
+    --content-width: 640px;
+
     --selection: hsla(212, 100%, 41%, 1);
     --selection-text-color: theme('colors.white');
 
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
+    --font-serif: var(--font-newsreader-serif);
+
     --font-sans-fallback: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
     --font-mono-fallback: 'Roboto Mono', Menlo, Monaco, Lucida Console,
       Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
       monospace;
-
-    --navbar-bg-initial: 0 0% 100%;
-    --navbar-bg-max-rgb: 235;
-    --navbar-bg-max-alpha: 0.8;
-    --navbar-bg-end: rgba(
-      var(--navbar-bg-max-rgb),
-      var(--navbar-bg-max-rgb),
-      var(--navbar-bg-max-rgb),
-      var(--navbar-bg-max-alpha)
-    );
-    --navbar-animation-start-y: 20;
-    --navbar-animation-end-y: 317;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --navbar-bg-initial: 0 0% 0%;
-      --navbar-bg-max-rgb: 50;
-      --navbar-bg-end: rgba(
-        var(--navbar-bg-max-rgb),
-        var(--navbar-bg-max-rgb),
-        var(--navbar-bg-max-rgb),
-        var(--navbar-bg-max-alpha)
-      );
-    }
+    --font-serif-fallback: ui-serif, Georgia, Cambria, 'Times New Roman', Times,
+      serif;
   }
 }
 
@@ -68,9 +49,11 @@
   body {
     overscroll-behavior-y: contain;
     font-size: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     max-width: 100vw;
+    width: 100vw;
     background-color: white;
+    overflow-x: hidden;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -79,23 +62,84 @@
     }
   }
 
-  strong {
+  .prose {
+    color: black;
+  }
+
+  .prose h3,
+  .prose h4 {
+    margin-top: 2rem;
+    scroll-margin: 5rem;
+    line-height: 1.75rem;
     font-weight: 500;
-    color: theme('colors.neutral.950');
+    letter-spacing: -0.025em;
+  }
+
+  .prose h3 {
+    font-size: 1.25rem;
+  }
+
+  .prose p:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+
+  .prose p {
+    line-height: 1.7;
+  }
+
+  .prose strong {
+    font-weight: 600;
+  }
+
+  .prose em {
+    font-family: var(--font-serif), var(--font-serif-fallback);
+    font-size: 1.125em;
+    font-style: italic;
+  }
+
+  .prose a {
+    white-space: nowrap;
+    border-bottom-width: 1px;
+    border-color: rgba(139, 57, 247, 0.3);
+    --tw-text-opacity: 1;
+    color: rgb(82 36 252 / var(--tw-text-opacity));
+  }
+
+  .prose a:hover {
+    border-color: rgba(16, 7, 255, 0.5);
+    --tw-text-opacity: 1;
+    color: rgb(16 7 255 / var(--tw-text-opacity));
+  }
+
+  .prose ol,
+  .prose ul {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  .prose ul {
+    list-style-type: disc;
+  }
+
+  .prose li {
+    margin-top: 0.5rem;
   }
 
   @media (prefers-color-scheme: dark) {
-    strong {
-      color: theme('colors.neutral.100');
+    .prose {
+      color: white;
     }
-  }
 
-  /* https://bugs.webkit.org/show_bug.cgi?id=243601
-  https://nextjs.org/docs/pages/api-reference/components/image#known-browser-bugs 
-  Safari 15 and 16 display a gray border while loading */
-  @supports (font: -apple-system-body) and (-webkit-appearance: none) {
-    img[loading='lazy'] {
-      clip-path: inset(0.6px);
+    .prose a {
+      border-color: rgba(139, 207, 247, 0.3);
+      --tw-text-opacity: 1;
+      color: rgb(182 226 252 / var(--tw-text-opacity));
+    }
+
+    .prose a:hover {
+      border-color: rgba(239, 248, 255, 0.5);
+      --tw-text-opacity: 1;
+      color: rgb(239 248 255 / var(--tw-text-opacity));
     }
   }
 }

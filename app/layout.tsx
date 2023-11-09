@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { fontMono, fontSans } from '@/lib/fonts';
-import { SiteHeader } from '@/components/site-header';
-import { SiteFooter } from '@/components/site-footer';
+import { fontMono, fontSans, fontSerif } from '@/lib/fonts';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Analytics } from '@/components/analytics';
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
@@ -77,19 +75,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"
-      className={`${fontSans.variable} ${fontMono.variable}`}
+      className={`${fontSans.variable} ${fontMono.variable} ${fontSerif.variable}`}
       suppressHydrationWarning
     >
       <head />
       <body>
         <ThemeProvider attribute="class" disableTransitionOnChange>
-          <WrapBalancerProvider>
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              {children}
-              <SiteFooter />
-            </div>
-          </WrapBalancerProvider>
+          <WrapBalancerProvider>{children}</WrapBalancerProvider>
         </ThemeProvider>
         <Analytics />
       </body>
