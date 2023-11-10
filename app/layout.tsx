@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import './globals.css';
-import { fontMono, fontSans, fontSerif } from '@/lib/fonts';
-import { ThemeProvider } from '@/components/theme-provider';
-import { Analytics } from '@/components/analytics';
+import '@/app/styles/globals.css';
+import { fontSans } from '@/lib/fonts';
+import { ThemeProvider } from '@/app/components/theme-provider';
+import { Analytics } from '@/app/components/analytics';
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
 import { siteConfig } from '@/config/site';
 import { absoluteUrl } from '@/lib/utils';
@@ -73,11 +73,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html
-      lang="en"
-      className={`${fontSans.variable} ${fontMono.variable} ${fontSerif.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={fontSans.variable} suppressHydrationWarning>
       <head />
       <body>
         <ThemeProvider attribute="class" disableTransitionOnChange>

@@ -1,12 +1,20 @@
-import { Newsreader } from 'next/font/google';
-import { GeistSans, GeistMono } from 'geist/font';
+import { GeistSans } from 'geist/font';
+import localFont from 'next/font/local';
 
-export const fontSerif = Newsreader({
+export const fontSerif = localFont({
+  src: '../app/styles/fonts/Newsreader-Italic-VariableFont_opsz,wght.ttf',
   variable: '--font-newsreader-serif',
-  subsets: ['latin'],
-  axes: ['opsz'],
+  display: 'swap',
   style: 'italic',
+  fallback: [
+    'ui-serif',
+    'Georgia',
+    'Cambria',
+    'Times New Roman',
+    'Times',
+    'serif',
+  ],
+  adjustFontFallback: 'Times New Roman',
 });
 
 export const fontSans = GeistSans;
-export const fontMono = GeistMono;
