@@ -19,14 +19,3 @@ export function absoluteUrl(path: string) {
       return `http://localhost:${process.env.PORT ?? 3000}${path}`;
   }
 }
-
-export function getCssVariableValue(variableName: string) {
-  // Check if running on the client-side (browser environment)
-  if (typeof document === 'undefined') {
-    return null;
-  }
-
-  const root = document.documentElement;
-  const computedStyles = getComputedStyle(root);
-  return computedStyles.getPropertyValue(variableName).trim() || null;
-}

@@ -11,10 +11,6 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'eduamdev.vercel.app',
       },
-      {
-        protocol: 'https',
-        hostname: 'avatars.githubusercontent.com',
-      },
     ],
   },
 };
