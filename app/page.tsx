@@ -1,7 +1,6 @@
 import Balancer from 'react-wrap-balancer';
 import { Separator } from '@/app/components/ui/separator';
 import { Wordmark } from '@/app/components/wordmark';
-import { fontSerif } from '@/lib/fonts';
 import { siteConfig } from '@/config/site';
 import '@/app/styles/prose.css';
 
@@ -16,17 +15,15 @@ export default function HomePage() {
       <main>
         <article className="flex flex-col">
           <div className="prose select-within w-full">
-            <p className={fontSerif.className}>
-              <em>
-                <Balancer>
-                  I&apos;m <strong>Eduardo</strong>{' '}
-                  <a href={xcom.url} rel="noreferrer" className="font-medium">
-                    ({xcom.name})
-                  </a>
-                  , a frontend development specialist and software engineer
-                  based in Mexico.
-                </Balancer>
-              </em>
+            <p>
+              <Balancer>
+                I&apos;m <strong>Eduardo</strong>{' '}
+                <a href={xcom.url} rel="noreferrer">
+                  ({xcom.name})
+                </a>
+                , a frontend development specialist and software engineer based
+                in Mexico.
+              </Balancer>
             </p>
             <p>
               <Balancer>
@@ -45,7 +42,7 @@ export default function HomePage() {
                 </a>
               </Balancer>
             </p>
-            <h3>Projects</h3>
+            <h2>Projects</h2>
             <ul>
               <li>
                 <a href="https://carhive.eduam.dev/" rel="noreferrer">
@@ -55,7 +52,7 @@ export default function HomePage() {
                 <a href={`${github.url}/carhive`} rel="noreferrer">
                   open-source
                 </a>{' '}
-                car rental website.
+                car rental application.
               </li>
             </ul>
           </div>
@@ -63,10 +60,10 @@ export default function HomePage() {
       </main>
       <Separator
         orientation="horizontal"
-        className="h-[1px] w-full bg-slate-200 dark:bg-slate-700"
+        className="h-[1px] w-full bg-neutral-200 dark:bg-neutral-700"
         decorative
       />
-      <footer className="flex select-none flex-col gap-1 text-[13px] text-slate-500 dark:text-slate-400 sm:flex-row sm:gap-2">
+      <footer className="flex select-none flex-col gap-1 text-xs text-neutral-500 dark:text-neutral-400 sm:flex-row sm:gap-2">
         <span>Copyright ©{new Date().getFullYear()} eduam.dev.</span>
         <span>All rights reserved.</span>
       </footer>

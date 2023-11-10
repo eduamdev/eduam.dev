@@ -13,11 +13,11 @@
   margin-top: 2rem;
   scroll-margin: 5rem;
   line-height: 1.75rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-.prose h3 {
-  font-size: 1.25rem;
+.prose h2 {
+  font-size: 1.2rem;
 }
 
 .prose strong {
@@ -30,12 +30,6 @@
 
 .prose p {
   line-height: 1.5em;
-}
-
-.prose em {
-  font-family: var(--font-serif), var(--font-serif-fallback);
-  font-size: 1.125em;
-  font-style: italic;
 }
 
 .prose a {
