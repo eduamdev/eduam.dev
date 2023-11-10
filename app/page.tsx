@@ -6,6 +6,8 @@ import { siteConfig } from '@/config/site';
 import '@/app/styles/prose.css';
 
 export default function HomePage() {
+  const { xcom, linkedin, github } = siteConfig.links;
+
   return (
     <div className="mx-auto flex max-w-[--content-width] flex-col gap-6 px-6 py-12 sm:py-20 md:py-24">
       <header className="pb-6">
@@ -16,63 +18,44 @@ export default function HomePage() {
           <div className="prose select-within w-full">
             <p className={fontSerif.className}>
               <em>
-                I&apos;m <strong>Eduardo</strong>, a{' '}
-                <strong>frontend developer</strong> based in{' '}
-                <strong>Mexico</strong>.
+                <Balancer>
+                  I&apos;m <strong>Eduardo</strong>{' '}
+                  <a href={xcom.url} rel="noreferrer" className="font-medium">
+                    ({xcom.name})
+                  </a>
+                  , a frontend development specialist and software engineer
+                  based in Mexico.
+                </Balancer>
               </em>
             </p>
             <p>
               <Balancer>
-                I specialize in meticulously designing and developing stunning,
-                high-performance websites that seamlessly blend aesthetics and
-                functionality.
+                What fuels my coding passion? It&apos;s the sweet spot where
+                design, performance, and user experience collide. I thrive on
+                making websites not just functional but beautifully performant
+                and accessible.
               </Balancer>
             </p>
-            <div className="mt-6 flex flex-row flex-wrap items-center gap-x-6 gap-y-2">
-              <a
-                href={siteConfig.links.linkedin.url}
-                rel="noreferrer"
-                target="_blank"
-              >
-                {siteConfig.links.linkedin.name}
-              </a>
-              <a
-                href={siteConfig.links.github.url}
-                rel="noreferrer"
-                target="_blank"
-              >
-                {siteConfig.links.github.name}
-              </a>
-
-              <a
-                href={siteConfig.links.xcom.url}
-                rel="noreferrer"
-                target="_blank"
-              >
-                {siteConfig.links.xcom.name}
-              </a>
-            </div>
+            <p>
+              <Balancer>
+                I am interested in collaborating with early-stage
+                startups/founders looking to define their online presence.{' '}
+                <a href={linkedin.url} rel="noopener">
+                  Lets work together →
+                </a>
+              </Balancer>
+            </p>
             <h3>Projects</h3>
             <ul>
               <li>
-                <a
-                  href="https://carhive.eduam.dev/"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  CarHive.
-                </a>{' '}
-                An open source app...
-              </li>
-              <li>
-                <a
-                  href="https://spotify-web-ui-clone.vercel.app/"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Spotify Web UI
+                <a href="https://carhive.eduam.dev/" rel="noreferrer">
+                  CarHive
                 </a>
-                .
+                , an{' '}
+                <a href={`${github.url}/carhive`} rel="noreferrer">
+                  open-source
+                </a>{' '}
+                car rental website.
               </li>
             </ul>
           </div>
