@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'eduamdev',
   url: 'https://eduam.dev',
-  description: 'Software Engineer, frontend developer.',
+  description: 'software engineer, frontend developer',
   links: {
     github: { name: 'GitHub', url: 'https://github.com/eduamdev' },
     linkedin: { name: 'LinkedIn', url: 'https://www.linkedin.com/in/eduamdev' },
