@@ -28,7 +28,6 @@
 
 .prose a {
   color: #0072f5;
-  touch-action: pan-y;
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-property: color;

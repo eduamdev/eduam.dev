@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import '@/app/styles/globals.css';
 import { fontSans } from '@/lib/fonts';
 import { ThemeProvider } from '@/app/components/theme-provider';
@@ -60,11 +60,14 @@ export const metadata: Metadata = {
   manifest: siteConfig.manifest,
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
+  colorScheme: 'light dark',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 interface RootLayoutProps {

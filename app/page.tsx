@@ -13,7 +13,10 @@ export default function HomePage() {
   return (
     <div className="mx-auto flex max-w-[--content-width] flex-col gap-6 px-6 py-12 sm:py-20 xl:py-24">
       <header className="pb-10">
-        <Icons.wordmark className="h-[14px] w-auto shrink-0" />
+        <div className="flex items-center justify-between gap-10">
+          <Icons.wordmark className="h-[15px] w-auto shrink-0" />
+          <SocialLinks />
+        </div>
       </header>
       <main>
         <article className="flex flex-col">
@@ -21,14 +24,12 @@ export default function HomePage() {
             <p>
               <Balancer>
                 I&apos;m{' '}
-                <strong>
-                  <a href={github.url} rel="noreferrer">
-                    Eduardo
-                    <span className="inline-flex">
-                      <Icons.arrowUpRight className="h-[14px] w-[14px]" />
-                    </span>
-                  </a>
-                </strong>
+                <a href={github.url} target="_blank" rel="noreferrer">
+                  Eduardo
+                  <span className="inline-flex">
+                    <Icons.arrowUpRight className="h-[14px] w-[14px]" />
+                  </span>
+                </a>
                 , a frontend development specialist and software engineer based
                 in Mexico.
               </Balancer>
@@ -45,7 +46,7 @@ export default function HomePage() {
               <Balancer>
                 I am interested in collaborating with early-stage
                 startups/founders looking to define their online presence.{' '}
-                <a href={linkedin.url} rel="noopener">
+                <a href={linkedin.url} target="_blank" rel="noopener">
                   Lets work together
                   <span className="inline-flex">
                     <Icons.arrowUpRight className="h-[14px] w-[14px]" />
@@ -57,7 +58,11 @@ export default function HomePage() {
             <ul>
               <li>
                 <strong>
-                  <a href="https://carhive.eduam.dev/" rel="noreferrer">
+                  <a
+                    href="https://carhive.eduam.dev/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     CarHive
                     <span className="inline-flex">
                       <Icons.arrowUpRight className="h-[14px] w-[14px]" />
@@ -65,7 +70,11 @@ export default function HomePage() {
                   </a>
                 </strong>
                 , an{' '}
-                <a href={`${github.url}/carhive`} rel="noreferrer">
+                <a
+                  href={`${github.url}/carhive`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   open-source
                   <span className="inline-flex">
                     <Icons.arrowUpRight className="h-[14px] w-[14px]" />
@@ -79,19 +88,16 @@ export default function HomePage() {
       </main>
       <Separator
         orientation="horizontal"
-        className="h-[1px] w-full bg-[#eaeaea] dark:bg-[#333]"
+        className="h-[1px] w-full bg-[hsla(0,0%,92%,1)] dark:bg-[hsla(0,0%,12%,1)]"
         decorative
       />
-      <footer className="pt-3">
+      <footer className="pt-2">
         <span className="select-none text-sm text-[#666] dark:text-[#888]">
           <Balancer>
             Copyright ©{new Date().getFullYear()} eduam.dev. All rights
             reserved.
           </Balancer>
         </span>
-        <div className="mt-5">
-          <SocialLinks />
-        </div>
       </footer>
     </div>
   );

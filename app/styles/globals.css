@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --content-width: 50rem;
+    --content-width: 49rem;
 
     --selection-bg-color: hsla(212, 100%, 41%, 1);
     --selection-text-color: theme('colors.white');
@@ -41,6 +41,13 @@
     width: 100vw;
     background-color: white;
     overflow-x: hidden;
+  }
+
+  a {
+    /* Prevent tap highlight and tap callout */
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
   }
 
   @media (prefers-color-scheme: dark) {
