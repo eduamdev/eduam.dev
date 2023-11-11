@@ -1,7 +1,7 @@
 type IconProps = React.HTMLAttributes<SVGElement>;
 
-export function Wordmark(props: IconProps) {
-  return (
+export const Icons = {
+  wordmark: (props: IconProps) => (
     <svg
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -13,5 +13,20 @@ export function Wordmark(props: IconProps) {
         fill="currentColor"
       />
     </svg>
-  );
-}
+  ),
+  arrowUpRight: (props: IconProps) => (
+    <svg
+      fill="none"
+      shapeRendering="geometricPrecision"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path d="M7 17L17 7"></path>
+      <path d="M7 7h10v10"></path>
+    </svg>
+  ),
+};

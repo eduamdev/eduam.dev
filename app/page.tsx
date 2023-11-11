@@ -1,6 +1,6 @@
 import Balancer from 'react-wrap-balancer';
 import { Separator } from '@/app/components/ui/separator';
-import { Wordmark } from '@/app/components/wordmark';
+import { Icons } from '@/app/components/icons';
 import { siteConfig } from '@/config/site';
 import '@/app/styles/prose.css';
 
@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <div className="mx-auto flex max-w-[--content-width] flex-col gap-6 px-6 py-12 sm:py-20 md:py-24">
       <header className="pb-6">
-        <Wordmark className="h-[14px] w-auto shrink-0" />
+        <Icons.wordmark className="h-[14px] w-auto shrink-0" />
       </header>
       <main>
         <article className="flex flex-col">
@@ -20,6 +20,9 @@ export default function HomePage() {
                 I&apos;m <strong>Eduardo</strong>{' '}
                 <a href={xcom.url} rel="noreferrer">
                   ({xcom.name})
+                  <span className="inline-flex">
+                    <Icons.arrowUpRight className="h-[14px] w-[14px]" />
+                  </span>
                 </a>
                 , a frontend development specialist and software engineer based
                 in Mexico.
@@ -38,7 +41,10 @@ export default function HomePage() {
                 I am interested in collaborating with early-stage
                 startups/founders looking to define their online presence.{' '}
                 <a href={linkedin.url} rel="noopener">
-                  Lets work together →
+                  Lets work together
+                  <span className="inline-flex">
+                    <Icons.arrowUpRight className="h-[14px] w-[14px]" />
+                  </span>
                 </a>
               </Balancer>
             </p>
@@ -47,10 +53,16 @@ export default function HomePage() {
               <li>
                 <a href="https://carhive.eduam.dev/" rel="noreferrer">
                   CarHive
+                  <span className="inline-flex">
+                    <Icons.arrowUpRight className="h-[14px] w-[14px]" />
+                  </span>
                 </a>
                 , an{' '}
                 <a href={`${github.url}/carhive`} rel="noreferrer">
                   open-source
+                  <span className="inline-flex">
+                    <Icons.arrowUpRight className="h-[14px] w-[14px]" />
+                  </span>
                 </a>{' '}
                 car rental application.
               </li>
@@ -60,12 +72,16 @@ export default function HomePage() {
       </main>
       <Separator
         orientation="horizontal"
-        className="h-[1px] w-full bg-neutral-200 dark:bg-neutral-700"
+        className="h-[1px] w-full bg-[#eaeaea] dark:bg-[#333]"
         decorative
       />
-      <footer className="flex select-none flex-col gap-1 text-xs text-neutral-500 dark:text-neutral-400 sm:flex-row sm:gap-2">
-        <span>Copyright ©{new Date().getFullYear()} eduam.dev.</span>
-        <span>All rights reserved.</span>
+      <footer>
+        <span className="select-none text-sm text-[#666] dark:text-[#888]">
+          <Balancer>
+            Copyright ©{new Date().getFullYear()} eduam.dev. All rights
+            reserved.
+          </Balancer>
+        </span>
       </footer>
     </div>
   );

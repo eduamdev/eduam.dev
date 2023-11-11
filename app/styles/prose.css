@@ -1,11 +1,5 @@
 .prose {
-  color: rgb(27, 28, 29);
-}
-
-.prose h2,
-.prose h3,
-.prose strong {
-  color: black;
+  color: rgb(23, 23, 23);
 }
 
 .prose h2,
@@ -17,7 +11,7 @@
 }
 
 .prose h2 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 }
 
 .prose strong {
@@ -29,21 +23,15 @@
 }
 
 .prose p {
-  line-height: 1.5em;
+  line-height: 1.75em;
 }
 
 .prose a {
-  border-bottom-width: 1px;
-  line-height: 1.2;
-  border-color: rgba(139, 57, 247, 0.3);
-  --tw-text-opacity: 1;
-  color: rgb(82 36 252 / var(--tw-text-opacity));
+  color: #0072f5;
 }
 
 .prose a:hover {
-  border-color: rgba(16, 7, 255, 0.5);
-  --tw-text-opacity: 1;
-  color: rgb(16 7 255 / var(--tw-text-opacity));
+  color: #68b5fb;
 }
 
 .prose ol,
@@ -62,24 +50,6 @@
 
 @media (prefers-color-scheme: dark) {
   .prose {
-    color: white;
-  }
-
-  .prose h2,
-  .prose h3,
-  .prose strong {
-    color: white;
-  }
-
-  .prose a {
-    border-color: rgba(139, 207, 247, 0.3);
-    --tw-text-opacity: 1;
-    color: rgb(182 226 252 / var(--tw-text-opacity));
-  }
-
-  .prose a:hover {
-    border-color: rgba(239, 248, 255, 0.5);
-    --tw-text-opacity: 1;
-    color: rgb(239 248 255 / var(--tw-text-opacity));
+    color: rgb(237, 237, 237);
   }
 }
