@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --content-width: 40rem;
+    --content-width: 50rem;
 
-    --selection: hsla(212, 100%, 41%, 1);
+    --selection-bg-color: hsla(212, 100%, 41%, 1);
     --selection-text-color: theme('colors.white');
 
     --font-sans: var(--font-geist-sans);
@@ -18,25 +18,21 @@
 
 @layer base {
   ::selection {
-    background-color: var(--selection);
+    background-color: var(--selection-bg-color);
     color: var(--selection-text-color);
   }
 
   html,
-  html body {
+  body {
     font-family: var(--font-sans), var(--font-sans-fallback);
     font-feature-settings: normal;
-  }
-
-  html,
-  body {
-    /* Enable panning and pinch zoom gestures, but disable additional non-standard gestures such as double-tap to zoom */
-    touch-action: manipulation;
+    font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   body {
     overscroll-behavior-y: contain;
     font-size: 100%;

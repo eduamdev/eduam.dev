@@ -1,15 +1,18 @@
 import Balancer from 'react-wrap-balancer';
 import { Separator } from '@/app/components/ui/separator';
 import { Icons } from '@/app/components/icons';
+import { SocialLinks } from '@/app/components/social-links';
 import { siteConfig } from '@/config/site';
 import '@/app/styles/prose.css';
 
 export default function HomePage() {
-  const { xcom, linkedin, github } = siteConfig.links;
+  const {
+    links: { linkedin, github },
+  } = siteConfig;
 
   return (
-    <div className="mx-auto flex max-w-[--content-width] flex-col gap-6 px-6 py-12 sm:py-20 md:py-24">
-      <header className="pb-6">
+    <div className="mx-auto flex max-w-[--content-width] flex-col gap-6 px-6 py-12 sm:py-20 xl:py-24">
+      <header className="pb-10">
         <Icons.wordmark className="h-[14px] w-auto shrink-0" />
       </header>
       <main>
@@ -17,13 +20,15 @@ export default function HomePage() {
           <div className="prose select-within w-full">
             <p>
               <Balancer>
-                I&apos;m <strong>Eduardo</strong>{' '}
-                <a href={xcom.url} rel="noreferrer">
-                  ({xcom.name})
-                  <span className="inline-flex">
-                    <Icons.arrowUpRight className="h-[14px] w-[14px]" />
-                  </span>
-                </a>
+                I&apos;m{' '}
+                <strong>
+                  <a href={github.url} rel="noreferrer">
+                    Eduardo
+                    <span className="inline-flex">
+                      <Icons.arrowUpRight className="h-[14px] w-[14px]" />
+                    </span>
+                  </a>
+                </strong>
                 , a frontend development specialist and software engineer based
                 in Mexico.
               </Balancer>
@@ -48,15 +53,17 @@ export default function HomePage() {
                 </a>
               </Balancer>
             </p>
-            <h2>Projects</h2>
+            <h3>Projects</h3>
             <ul>
               <li>
-                <a href="https://carhive.eduam.dev/" rel="noreferrer">
-                  CarHive
-                  <span className="inline-flex">
-                    <Icons.arrowUpRight className="h-[14px] w-[14px]" />
-                  </span>
-                </a>
+                <strong>
+                  <a href="https://carhive.eduam.dev/" rel="noreferrer">
+                    CarHive
+                    <span className="inline-flex">
+                      <Icons.arrowUpRight className="h-[14px] w-[14px]" />
+                    </span>
+                  </a>
+                </strong>
                 , an{' '}
                 <a href={`${github.url}/carhive`} rel="noreferrer">
                   open-source
@@ -75,13 +82,16 @@ export default function HomePage() {
         className="h-[1px] w-full bg-[#eaeaea] dark:bg-[#333]"
         decorative
       />
-      <footer>
+      <footer className="pt-3">
         <span className="select-none text-sm text-[#666] dark:text-[#888]">
           <Balancer>
             Copyright ©{new Date().getFullYear()} eduam.dev. All rights
             reserved.
           </Balancer>
         </span>
+        <div className="mt-5">
+          <SocialLinks />
+        </div>
       </footer>
     </div>
   );
