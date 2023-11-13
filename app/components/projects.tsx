@@ -26,28 +26,26 @@ export function Projects() {
               >
                 <span className="sr-only">CarHive</span>
               </a>
-              <div className="relative">
-                <div className="aspect-video max-w-full">
-                  <Image
-                    src={carhive}
-                    alt="CarHive"
-                    priority
-                    fill
-                    className="object-contain transition-all group-hover:scale-105"
-                    placeholder="blur"
-                    sizes="100vw"
-                  />
-                </div>
+              <div className="relative aspect-video max-w-full">
+                <Image
+                  src={carhive}
+                  alt="CarHive"
+                  priority
+                  fill
+                  className="object-contain transition-all group-hover:scale-105"
+                  placeholder="blur"
+                  sizes="100vw"
+                />
               </div>
             </div>
-            <div className="flex h-[72px] items-center gap-x-4 rounded-b-[6px] border border-t-0 border-black/10 bg-white px-4 dark:border-[hsla(0,0%,18%,1)] dark:bg-black md:px-6">
+            <div className="flex h-[68px] items-center gap-x-4 rounded-b-[6px] border border-t-0 border-black/10 bg-white px-4 dark:border-[hsla(0,0%,18%,1)] dark:bg-black md:px-6">
               <div className="inline-flex overflow-hidden">
-                <div className="flex max-w-full flex-col justify-center gap-y-0.5">
-                  <span className="inline-block max-w-full truncate text-[15px] font-medium leading-6">
+                <div className="flex max-w-full flex-col">
+                  <span className="inline-block max-w-full truncate text-sm font-medium leading-none">
                     CarHive
                   </span>
-                  <span className="inline-block max-w-full truncate text-sm text-neutral-600 dark:text-neutral-400">
-                    Open-source car rental application.
+                  <span className="mt-2 inline-block max-w-full truncate text-sm leading-none text-neutral-600 dark:text-neutral-400">
+                    Open-source car rental application
                   </span>
                 </div>
               </div>

@@ -75,18 +75,18 @@ export function Navbar() {
       className="fixed inset-x-4 bottom-auto top-0 z-20 mx-auto mt-[var(--navbar-offset)] flex h-[var(--navbar-height)] w-[90%] min-w-[var(--content-min-width)] flex-row items-center justify-between gap-x-4 rounded-xl border-[length:0.5px] border-black/[0.08] bg-white px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease] dark:border-[hsla(0,0%,18%,1)] dark:bg-black sm:w-[var(--navbar-width)]"
       style={{ willChange: 'background' }}
     >
-      <div className="flex shrink-0 items-center gap-x-2.5">
+      <div className="flex shrink-0 items-center gap-x-2.5 pl-1">
         <Avatar />
         <div className="flex flex-col items-stretch">
-          <span className="text-[15px] font-medium">Eduardo</span>
-          <span className="text-sm text-neutral-600 dark:text-neutral-400">
+          <span className="text-[15px] font-medium">eduamdev</span>
+          <span className="text-[13px] text-neutral-600 dark:text-neutral-400">
             Software Engineer
           </span>
         </div>
       </div>
       {/* Allow horizontal scrolling to avoid overlapping items on very small devices (<360px) */}
       <nav className="overflow-hidden">
-        <ul className="flex items-center gap-x-2 overflow-x-hidden text-sm md:text-[15px]">
+        <ul className="flex items-center gap-x-2 overflow-x-hidden text-sm">
           <a
             href={github.url}
             target="_blank"
