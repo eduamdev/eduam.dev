@@ -18,7 +18,7 @@ export default function HomePage() {
                 Frontend development specialist and software engineer based in
                 Mexico{' '}
                 <span
-                  className="text-lg"
+                  className="select-none text-lg"
                   role="presentation"
                   aria-hidden="true"
                 >
