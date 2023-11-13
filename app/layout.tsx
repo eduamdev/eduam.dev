@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 import '@/app/styles/globals.css';
-import { fontSans } from '@/lib/fonts';
+import { fontSans } from '@/app/lib/fonts';
 import { ThemeProvider } from '@/app/components/theme-provider';
 import { Analytics } from '@/app/components/analytics';
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
-import { siteConfig } from '@/config/site';
-import { absoluteUrl } from '@/lib/utils';
+import { siteConfig } from '@/app/config/site';
+import { absoluteUrl } from '@/app/lib/utils';
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),

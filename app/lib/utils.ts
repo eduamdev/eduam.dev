@@ -1,4 +1,4 @@
-import { siteConfig } from '@/config/site';
+import { siteConfig } from '@/app/config/site';
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -18,4 +18,15 @@ export function absoluteUrl(path: string) {
       // development
       return `http://localhost:${process.env.PORT ?? 3000}${path}`;
   }
+}
+
+export function getCssVariableValue(variableName: string) {
+  // Check if running on the client-side (browser environment)
+  if (typeof document === 'undefined') {
+    return null;
+  }
+
+  const root = document.documentElement;
+  const computedStyles = getComputedStyle(root);
+  return computedStyles.getPropertyValue(variableName).trim() || null;
 }

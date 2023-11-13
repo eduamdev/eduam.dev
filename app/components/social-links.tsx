@@ -1,6 +1,6 @@
 import { Icons } from '@/app/components/icons';
-import { siteConfig } from '@/config/site';
-import { Separator } from './ui/separator';
+import { siteConfig } from '@/app/config/site';
+import { Separator } from '@/app/components/ui/separator';
 
 export function SocialLinks() {
   const {
@@ -9,7 +9,7 @@ export function SocialLinks() {
 
   return (
     <div className="flex">
-      <ul className="m-0 inline-flex items-center p-0 pl-[5px]">
+      <ul className="m-0 inline-flex shrink-0 items-center p-0 pl-[5px]">
         <li className=" inline-flex leading-[0]">
           <a
             href={github.url}

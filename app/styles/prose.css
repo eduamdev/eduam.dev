@@ -26,18 +26,6 @@
   margin-top: 1.5rem;
 }
 
-.prose a {
-  color: #0072f5;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-property: color;
-  transition-timing-function: ease;
-}
-
-.prose a:hover {
-  color: #68b5fb;
-}
-
 .prose ol,
 .prose ul {
   margin-top: 1.25em;
