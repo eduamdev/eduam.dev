@@ -1,0 +1,53 @@
+.prose {
+  color: rgb(23, 23, 23);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose {
+    color: rgb(237, 237, 237);
+  }
+}
+
+.prose h3 {
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.prose p:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.prose ol,
+.prose ul {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+}
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose li {
+  padding-left: 0.375em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose ul > li::marker {
+  color: #666;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose ul > li::marker {
+    color: #a1a1a1;
+  }
+}
