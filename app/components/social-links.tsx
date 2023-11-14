@@ -1,5 +1,5 @@
 import { Icons } from '@/app/components/icons';
-import { siteConfig } from '@/app/config/site';
+import { siteConfig } from '@/config/site';
 import { Separator } from '@/app/components/ui/separator';
 
 export function SocialLinks() {

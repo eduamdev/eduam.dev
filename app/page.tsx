@@ -58,7 +58,7 @@ export default function HomePage() {
         </article>
         <Projects />
         <div className="pb-8 pt-12">
-          <div className="h-24 w-full min-w-[var(--content-min-width)] rounded-lg border border-black/[0.1] dark:border-[hsla(0,0%,18%,1)] sm:rounded-xl">
+          <div className="h-24 w-full min-w-[var(--content-min-width)] rounded-[5px] border border-black/[0.1] dark:border-[hsla(0,0%,18%,1)] ">
             <div className="flex h-full items-center justify-center gap-10 p-4">
               <h2 className="text-left text-xl font-semibold md:text-2xl">
                 Let&apos;s connect.
@@ -70,7 +70,8 @@ export default function HomePage() {
       </main>
       <footer className="mb-16">
         <p className="select-none text-sm text-[#666] dark:text-[#888]">
-          Copyright ©{new Date().getFullYear()} eduam.dev. All rights reserved.
+          Copyright <span aria-hidden="true">©</span>{' '}
+          {new Date().getFullYear()} eduam.dev. All rights reserved.
         </p>
       </footer>
     </div>

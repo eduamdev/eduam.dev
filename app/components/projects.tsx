@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import carhive from '../../public/projects/carhive.webp';
-import { siteConfig } from '@/app/config/site';
+import { siteConfig } from '@/config/site';
 import { Icons } from '@/app/components/icons';
 
 export function Projects() {
@@ -22,14 +22,14 @@ export function Projects() {
                 href="https://carhive.eduam.dev"
                 rel="noreferrer"
                 target="_blank"
-                className="absolute inset-0 z-10 h-full w-full rounded-[inherit] border border-black/10 focus-visible:border-2 focus-visible:border-[hsla(211,100%,42%,1)] dark:border-[hsla(0,0%,18%,1)] dark:focus-visible:border-[hsla(212,100%,48%,1)]"
+                className="absolute inset-0 z-10 h-full w-full select-none rounded-[inherit] border border-black/10 focus-visible:border-2 focus-visible:border-[hsla(211,100%,42%,1)] dark:border-[hsla(0,0%,18%,1)] dark:focus-visible:border-[hsla(212,100%,48%,1)]"
               >
                 <span className="sr-only">CarHive</span>
               </a>
               <div className="relative aspect-video max-w-full">
                 <Image
                   src={carhive}
-                  alt="CarHive"
+                  alt=""
                   priority
                   fill
                   className="object-contain transition-all group-hover:scale-105"

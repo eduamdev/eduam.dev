@@ -3,14 +3,16 @@
 import { useRef } from 'react';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 
-import { siteConfig } from '@/app/config/site';
+import { siteConfig } from '@/config/site';
 import { Icons } from '@/app/components/icons';
-import { getCssVariableValue } from '@/app/lib/utils';
+import { getCssVariableValue } from '@/lib/utils';
 import { Avatar } from '@/app/components/avatar';
 
 export function Navbar() {
   const {
     links: { xcom, github },
+    name,
+    username,
   } = siteConfig;
 
   const ref = useRef<HTMLDivElement>(null);
@@ -78,9 +80,9 @@ export function Navbar() {
       <div className="flex shrink-0 items-center gap-x-2.5 pl-1">
         <Avatar />
         <div className="flex flex-col items-stretch">
-          <span className="text-[15px] font-medium">eduamdev</span>
+          <span className="text-[15px] font-medium">{name}</span>
           <span className="text-[13px] text-neutral-600 dark:text-neutral-400">
-            Software Engineer
+            @{username}
           </span>
         </div>
       </div>

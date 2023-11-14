@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 import '@/app/styles/globals.css';
-import { fontSans } from '@/app/lib/fonts';
+import { fontSans } from '@/lib/fonts';
 import { ThemeProvider } from '@/app/components/theme-provider';
 import { Analytics } from '@/app/components/analytics';
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
-import { siteConfig } from '@/app/config/site';
-import { absoluteUrl } from '@/app/lib/utils';
+import { siteConfig } from '@/config/site';
+import { absoluteUrl } from '@/lib/utils';
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),
@@ -29,21 +29,12 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
-    creator: `@${siteConfig.name}`,
-    images: [siteConfig.ogImage],
+    creator: `@${siteConfig.username}`,
   },
   icons: {
     icon: [

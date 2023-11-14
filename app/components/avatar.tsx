@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import { siteConfig } from '@/app/config/site';
+import { siteConfig } from '@/config/site';
 
 export function Avatar() {
   return (
     <Image
-      src={`https://avatars.githubusercontent.com/${siteConfig.name}?size=120`}
-      alt={siteConfig.name}
+      src={`https://avatars.githubusercontent.com/${siteConfig.username}?size=120`}
+      alt=""
       width={32}
       height={32}
       priority
