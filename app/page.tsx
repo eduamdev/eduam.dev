@@ -57,10 +57,10 @@ export default function HomePage() {
           </div>
         </article>
         <Projects />
-        <div className="pb-8 pt-12">
-          <div className="h-24 w-full min-w-[var(--content-min-width)] rounded-[5px] border border-black/[0.1] dark:border-[hsla(0,0%,18%,1)] ">
+        <div className="pb-8 pt-14">
+          <div className="h-[104px] w-full min-w-[var(--content-min-width)] rounded-[5px] border border-black/[0.1] dark:border-[hsla(0,0%,18%,1)] ">
             <div className="flex h-full items-center justify-center gap-10 p-4">
-              <h2 className="text-left text-xl font-semibold md:text-2xl">
+              <h2 className="text-left text-[22px] font-semibold sm:text-[26px]">
                 Let&apos;s connect.
               </h2>
               <SocialLinks />

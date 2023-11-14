@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     apple: [{ url: '/apple-icon.png', type: 'image/png' }],
   },
   manifest: siteConfig.manifest,
+  verification: {
+    google: 'u-DKEQw5lL_POLqhzuyzDWL6WPABLrBoEf3Vyk1JTWA',
+  },
 };
 
 export const viewport: Viewport = {
