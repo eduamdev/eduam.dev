@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --content-min-width: 330px;
-    --content-width: 900px;
+    --content-width: 964px;
 
     --selection-bg-color: hsla(212, 100%, 41%, 1);
     --selection-text-color: theme('colors.white');
@@ -31,10 +31,30 @@
     --navbar-animation-end-y: 317;
 
     --header-height: calc(var(--navbar-height) + var(--navbar-offset));
+
+    --grid-border-color: hsl(0, 0%, 92%);
+    --cross-size: 11px;
+    --cross-half-size: calc((var(--cross-size) / 2) + 1px - 0.5px);
+    --cross-color: hsl(0, 0%, 66%);
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 960px) {
+    :root {
+      --cross-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 961px) {
+    :root {
+      --cross-size: 17px;
+    }
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
+      --grid-border-color: hsl(0, 0%, 12%);
+      --cross-color: hsl(0, 0%, 53%);
+
       --navbar-bg-initial: 0 0% 0%;
       --navbar-bg-max-rgb: 50;
       --navbar-bg-end: rgba(
@@ -72,7 +92,7 @@
     min-height: 100vh;
     max-width: 100vw;
     width: 100vw;
-    background-color: white;
+    background-color: theme('colors.neutral.50');
     overflow-x: hidden;
   }
 

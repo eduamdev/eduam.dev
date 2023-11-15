@@ -26,6 +26,10 @@
   margin-top: 1.5rem;
 }
 
+.prose p {
+  font-size: max(16px, min(2vw, 17px));
+}
+
 .prose ol,
 .prose ul {
   margin-top: 1.25em;
