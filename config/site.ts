@@ -8,7 +8,6 @@ export const siteConfig = {
     xcom: { name: 'x.com', url: 'https://x.com/eduamdev' },
   },
   ogImage: '/opengraph-image.png',
-  manifest: '/manifest.webmanifest',
 };
 
 export type SiteConfig = typeof siteConfig;

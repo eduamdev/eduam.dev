@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import carhive from '../../public/projects/carhive.webp';
+import carhiveImage from '../../public/images/projects/carhive.webp';
 import { siteConfig } from '@/config/site';
 import { Icons } from '@/app/components/icons';
 
@@ -7,6 +7,8 @@ export function Projects() {
   const {
     links: { github },
   } = siteConfig;
+
+  const carhiveUrl = 'https://carhive.eduam.dev';
 
   return (
     <section>
@@ -21,7 +23,7 @@ export function Projects() {
                 <Icons.arrowUpRight className="h-4 w-4" />
               </div>
               <a
-                href="https://carhive.eduam.dev"
+                href={carhiveUrl}
                 rel="noreferrer"
                 target="_blank"
                 className="absolute inset-0 z-10 h-full w-full select-none rounded-[inherit] border border-transparent border-t-neutral-200 focus-visible:border-2 focus-visible:border-[hsla(211,100%,42%,1)] dark:border-[hsla(0,0%,18%,1)] dark:focus-visible:border-[hsla(212,100%,48%,1)]"
@@ -30,7 +32,7 @@ export function Projects() {
               </a>
               <div className="relative aspect-video max-w-full">
                 <Image
-                  src={carhive}
+                  src={carhiveImage}
                   alt=""
                   priority
                   fill
@@ -40,7 +42,7 @@ export function Projects() {
                 />
               </div>
             </div>
-            <div className="flex items-center gap-x-4 border border-black/10 border-x-transparent border-t-transparent bg-white p-5 dark:border-[hsla(0,0%,18%,1)] dark:bg-black md:px-10 md:py-6">
+            <div className="grid grid-rows-2 items-center gap-x-4 gap-y-6 border border-black/10 border-x-transparent border-t-transparent bg-white p-5 dark:border-[hsla(0,0%,18%,1)] dark:bg-black md:flex md:px-10 md:py-6">
               <div className="inline-flex overflow-hidden">
                 <div className="flex max-w-full flex-col">
                   <span className="inline-block max-w-full truncate text-sm font-semibold leading-none">
@@ -51,18 +53,25 @@ export function Projects() {
                   </span>
                 </div>
               </div>
-              <div className="ml-auto shrink-0">
-                <a
-                  href={`${github.url}/carhive`}
-                  rel="noreferrer"
-                  target="_blank"
-                  className="group text-[15px] font-medium underline"
-                >
-                  GitHub
-                  <span className="inline-flex group-hover:translate-x-0.5 group-focus-visible:translate-x-0.5">
-                    <Icons.arrowUpRight className="h-[14px] w-[14px]" />
-                  </span>
-                </a>
+              <div className="ml-auto w-full shrink-0 md:w-auto">
+                <div className="grid grid-cols-2 items-center justify-center gap-x-4 md:flex">
+                  <a
+                    href={carhiveUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                    className="inline-flex h-10 min-w-[70px] items-center justify-center rounded-md border border-transparent bg-black px-3 text-sm font-medium text-neutral-50 transition-all hover:opacity-80 focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(211,100%,42%,1)] focus-visible:outline-none dark:bg-neutral-50 dark:text-[#171717] dark:focus-visible:shadow-[0_0_0_2px_#0a0a0a,_0_0_0_4px_hsla(212,100%,48%,1)]"
+                  >
+                    Visit
+                  </a>
+                  <a
+                    href={`${github.url}/carhive`}
+                    rel="noreferrer"
+                    target="_blank"
+                    className="inline-flex h-10 min-w-[128px] items-center justify-center rounded-md border border-black/[0.13] px-3 text-sm font-medium transition-colors hover:bg-neutral-50 focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(211,100%,42%,1)] focus-visible:outline-none dark:border-white/10 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:focus-visible:shadow-[0_0_0_2px_#0a0a0a,_0_0_0_4px_hsla(212,100%,48%,1)]"
+                  >
+                    Git Repository
+                  </a>
+                </div>
               </div>
             </div>
           </article>
