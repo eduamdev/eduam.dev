@@ -7,7 +7,6 @@ export const siteConfig = {
     github: { name: 'GitHub', url: 'https://github.com/eduamdev' },
     xcom: { name: 'x.com', url: 'https://x.com/eduamdev' },
   },
-  ogImage: '/opengraph-image.png',
 };
 
 export type SiteConfig = typeof siteConfig;

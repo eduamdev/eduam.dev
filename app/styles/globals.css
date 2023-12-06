@@ -15,9 +15,10 @@
       'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
 
-    --navbar-width: 480px;
-    --navbar-height: 60px;
-    --navbar-offset: 20px;
+    --navbar-width: 400px;
+    --navbar-height: 54px;
+    --navbar-offset: 16px;
+    --navbar-border-color: rgba(0, 0, 0, 0.05);
     --navbar-bg-initial: 0 0% 100%;
     --navbar-bg-max-rgb: 235;
     --navbar-bg-max-alpha: 0.8;
@@ -30,31 +31,16 @@
     --navbar-animation-start-y: 20;
     --navbar-animation-end-y: 317;
 
-    --header-height: calc(var(--navbar-height) + var(--navbar-offset));
+    --header-height: calc(var(--navbar-height) + var(--navbar-offset) * 2);
 
     --grid-border-color: hsl(0, 0%, 92%);
-    --cross-size: 11px;
-    --cross-half-size: calc((var(--cross-size) / 2) + 1px - 0.5px);
-    --cross-color: hsl(0, 0%, 66%);
-  }
-
-  @media screen and (min-width: 601px) and (max-width: 960px) {
-    :root {
-      --cross-size: 15px;
-    }
-  }
-
-  @media screen and (min-width: 961px) {
-    :root {
-      --cross-size: 17px;
-    }
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --grid-border-color: hsl(0, 0%, 12%);
-      --cross-color: hsl(0, 0%, 53%);
 
+      --navbar-border-color: rgba(255, 255, 255, 0.12);
       --navbar-bg-initial: 0 0% 0%;
       --navbar-bg-max-rgb: 50;
       --navbar-bg-end: rgba(

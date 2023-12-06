@@ -55,6 +55,7 @@ export function Navbar() {
 
     if (latest < minYValue) {
       ref.current.style.backgroundColor = 'var(--navbar-bg-initial)';
+      ref.current.style.borderColor = 'transparent';
       return;
     }
 
@@ -69,12 +70,13 @@ export function Navbar() {
       maxRgbValue,
       maxAlphaValue,
     );
+    ref.current.style.borderColor = 'var(--navbar-border-color)';
   });
 
   return (
     <div
       ref={ref}
-      className="fixed inset-x-4 bottom-auto top-0 z-30 mx-auto mt-[var(--navbar-offset)] flex h-[var(--navbar-height)] w-[90%] min-w-[var(--content-min-width)] flex-row items-center justify-between gap-x-4 rounded-xl border-[length:0.5px] border-black/[0.08] bg-white px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease] dark:border-[hsla(0,0%,18%,1)] dark:bg-black sm:w-[var(--navbar-width)]"
+      className="fixed inset-x-4 bottom-auto top-0 z-30 mx-auto mt-[var(--navbar-offset)] flex h-[var(--navbar-height)] w-[90%] min-w-[var(--content-min-width)] flex-row items-center justify-between gap-x-4 rounded-xl border border-transparent px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease] sm:w-[var(--navbar-width)]"
       style={{ willChange: 'background' }}
     >
       <div className="flex shrink-0 items-center gap-x-2.5 pl-1">
@@ -88,7 +90,7 @@ export function Navbar() {
       </div>
       {/* Allow horizontal scrolling to avoid overlapping items on very small devices (<360px) */}
       <nav className="overflow-hidden">
-        <ul className="flex items-center gap-x-2 overflow-x-hidden text-sm">
+        <ul className="flex items-center gap-x-2 overflow-x-hidden text-[15px]">
           <a
             href={github.url}
             target="_blank"
