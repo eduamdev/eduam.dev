@@ -14,11 +14,40 @@ export const Icons = {
       />
     </svg>
   ),
+  carhiveLogo: (props: IconProps) => (
+    <svg
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 26 26"
+      {...props}
+    >
+      <path
+        d="m22.718 6.718-8.938-4.89a1.613 1.613 0 0 0-1.56 0L3.282 6.72a1.625 1.625 0 0 0-.845 1.422v9.714a1.625 1.625 0 0 0 .846 1.422l8.937 4.892a1.612 1.612 0 0 0 1.56 0l8.938-4.892a1.625 1.625 0 0 0 .845-1.422V8.143a1.625 1.625 0 0 0-.845-1.425ZM13 17.063a4.063 4.063 0 1 1 0-8.126 4.063 4.063 0 0 1 0 8.126Z"
+        fill="currentColor"
+      />
+    </svg>
+  ),
   navbarExternalArrow: (props: IconProps) => (
     <svg viewBox="0 0 6 6" {...props}>
       <path
         d="M1.25215 5.54731L0.622742 4.9179L3.78169 1.75597H1.3834L1.38936 0.890915H5.27615V4.78069H4.40513L4.41109 2.38538L1.25215 5.54731Z"
         fill="currentColor"
+      ></path>
+    </svg>
+  ),
+  chevronRight: (props: IconProps) => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M9 6L15 12L9 18"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       ></path>
     </svg>
   ),
@@ -29,12 +58,28 @@ export const Icons = {
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth="2.5"
+      strokeWidth="2"
       viewBox="0 0 24 24"
       {...props}
     >
       <path d="M7 17L17 7"></path>
       <path d="M7 7h10v10"></path>
+    </svg>
+  ),
+  checkCircle: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      {...props}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
     </svg>
   ),
   xcom: (props: IconProps) => (

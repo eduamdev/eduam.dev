@@ -21,7 +21,7 @@ export function Navbar() {
   const minY = getCssVariableValue('--navbar-animation-start-y');
   const maxY = getCssVariableValue('--navbar-animation-end-y');
   let maxNavbarBgRGB = getCssVariableValue('--navbar-bg-max-rgb');
-  const maxNavbarBgAlpha = getCssVariableValue('--navbar-bg-max-alpha');
+  let maxNavbarBgAlpha = getCssVariableValue('--navbar-bg-max-alpha');
 
   function calculateNavbarBgColor(
     latest: number,
@@ -36,6 +36,7 @@ export function Navbar() {
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     maxNavbarBgRGB = getCssVariableValue('--navbar-bg-max-rgb');
+    maxNavbarBgAlpha = getCssVariableValue('--navbar-bg-max-alpha');
 
     if (
       !ref ||
@@ -76,21 +77,21 @@ export function Navbar() {
   return (
     <div
       ref={ref}
-      className="fixed inset-x-4 bottom-auto top-0 z-30 mx-auto mt-[var(--navbar-offset)] flex h-[var(--navbar-height)] w-[90%] min-w-[var(--content-min-width)] flex-row items-center justify-between gap-x-4 rounded-xl border border-transparent px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease] sm:w-[var(--navbar-width)]"
+      className="fixed inset-x-4 bottom-auto top-0 z-30 mx-auto mt-[var(--navbar-offset)] flex h-[var(--navbar-height)] w-[90%] min-w-[var(--content-min-width)] max-w-[var(--navbar-width)] flex-row items-center justify-between gap-x-4 rounded-xl border border-transparent px-2 py-1 backdrop-blur-[10px] transition-colors duration-200 [transition-timing-function:ease]"
       style={{ willChange: 'background' }}
     >
-      <div className="flex shrink-0 items-center gap-x-2.5 pl-1">
+      <div className="flex shrink-0 items-center gap-x-3 pl-1">
         <Avatar />
-        <div className="flex flex-col items-stretch">
-          <span className="text-[15px] font-medium">{name}</span>
-          <span className="text-[13px] text-neutral-600 dark:text-neutral-400">
+        <div className="flex flex-col items-stretch gap-y-2">
+          <span className="text-sm font-medium leading-none">{name}</span>
+          <span className="text-[13px] leading-none text-neutral-600 dark:text-[#bbb]">
             @{username}
           </span>
         </div>
       </div>
       {/* Allow horizontal scrolling to avoid overlapping items on very small devices (<360px) */}
       <nav className="overflow-hidden">
-        <ul className="flex items-center gap-x-2 overflow-x-hidden text-[15px]">
+        <ul className="flex items-center gap-x-2.5 overflow-x-hidden text-sm">
           <a
             href={github.url}
             target="_blank"

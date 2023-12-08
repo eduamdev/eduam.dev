@@ -10,10 +10,8 @@
   }
 }
 
-.prose h3 {
-  font-size: 1.25em;
-  margin-top: 1.6em;
-  margin-bottom: 0.6em;
+.prose h1 {
+  font-size: 19px;
   line-height: 1.6;
   font-weight: 600;
 }
