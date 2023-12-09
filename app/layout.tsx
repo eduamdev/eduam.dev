@@ -3,6 +3,7 @@ import '@/app/styles/globals.css';
 import { fontSans } from '@/lib/fonts';
 import { ThemeProvider } from '@/app/components/theme-provider';
 import { Analytics } from '@/app/components/analytics';
+import { SpeedInsights } from '@/app/components/speed-insights';
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
 import { siteConfig } from '@/config/site';
 import { absoluteUrl } from '@/lib/utils';
@@ -76,6 +77,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <WrapBalancerProvider>{children}</WrapBalancerProvider>
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
