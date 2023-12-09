@@ -10,10 +10,11 @@ export default function HomePage() {
   const { name, username } = siteConfig;
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col overflow-x-hidden">
       <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
-        <div className="border-b border-r border-[var(--grid-border-color)]"></div>
-        <section className="border-b border-[var(--grid-border-color)]">
+        <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
+        <section className="relative after:absolute after:inset-0 after:border-x after:border-b after:border-[var(--grid-border-color)] after:content-['']">
+          <div className="absolute inset-0 border-b border-[var(--grid-border-color)]"></div>
           <header className="h-[var(--header-height)]">
             <div className="flex h-full shrink-0 items-center gap-x-3 px-5 md:px-9">
               <Avatar />
@@ -26,11 +27,11 @@ export default function HomePage() {
             </div>
           </header>
         </section>
-        <div className="border-b border-l border-[var(--grid-border-color)]"></div>
+        <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
       </div>
       <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
-        <div className="border-b border-r border-[var(--grid-border-color)]"></div>
-        <section className="relative border-b border-[var(--grid-border-color)]">
+        <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
+        <section className="relative after:absolute after:inset-0 after:border-x after:border-b after:border-[var(--grid-border-color)] after:content-['']">
           <div className="pointer-events-none absolute left-[-5px] top-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
           <div className="pointer-events-none absolute right-[-5px] top-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
           <div className="px-5 py-7 md:p-9">
@@ -70,11 +71,11 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <div className="border-b border-l border-[var(--grid-border-color)]"></div>
+        <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
       </div>
       <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
-        <div className="border-b border-r border-[var(--grid-border-color)]"></div>
-        <section className="relative border-b border-[var(--grid-border-color)]">
+        <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
+        <section className="relative after:absolute after:inset-0 after:border-x after:border-b after:border-[var(--grid-border-color)] after:content-['']">
           <div className="pointer-events-none absolute left-[-5px] top-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
           <div className="pointer-events-none absolute right-[-5px] top-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
           <div className="pointer-events-none absolute bottom-[-5px] left-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
@@ -97,17 +98,17 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <div className="border-b border-l border-[var(--grid-border-color)]"></div>
+        <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
       </div>
       <Projects />
       <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
-        <div className="hidden md:block"></div>
-        <div className="h-14 border-x border-[var(--grid-border-color)] md:h-16"></div>
-        <div></div>
+        <div className="relative hidden after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-[''] md:block"></div>
+        <div className="relative h-14 after:absolute after:inset-0 after:border-x after:border-b after:border-[var(--grid-border-color)] after:content-[''] md:h-16"></div>
+        <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
       </div>
       <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
-        <div className="border-y border-r border-[var(--grid-border-color)]"></div>
-        <section className="relative border-y border-[var(--grid-border-color)] bg-neutral-50 dark:bg-black">
+        <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
+        <section className="relative after:absolute after:inset-0 after:border-x after:border-b after:border-[var(--grid-border-color)] after:content-['']">
           <div className="pointer-events-none absolute left-[-5px] top-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
           <div className="pointer-events-none absolute right-[-5px] top-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
           <div className="pointer-events-none absolute bottom-[-5px] left-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
@@ -121,11 +122,11 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-        <div className="border-y border-l border-[var(--grid-border-color)]"></div>
+        <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
       </div>
       <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
         <div></div>
-        <div className="border-x border-[var(--grid-border-color)]">
+        <div className="">
           <footer className="mx-auto pb-12 pt-6">
             <p className="select-none px-5 text-left text-sm text-[#666] dark:text-[#888] md:px-9">
               Copyright <span aria-hidden="true">©</span>{' '}

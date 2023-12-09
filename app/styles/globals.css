@@ -31,6 +31,10 @@
     color: var(--selection-text-color);
   }
 
+  *:after {
+    pointer-events: none;
+  }
+
   html,
   body {
     font-family: var(--font-sans), var(--font-sans-fallback);
@@ -42,6 +46,7 @@
     text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    user-select: text;
   }
 
   body {
