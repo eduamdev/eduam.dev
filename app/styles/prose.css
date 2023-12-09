@@ -1,17 +1,10 @@
 .prose {
-  color: rgb(23, 23, 23);
   font-size: 1rem;
   line-height: 1.75;
 }
 
-@media (prefers-color-scheme: dark) {
-  .prose {
-    color: rgb(237, 237, 237);
-  }
-}
-
 .prose h1 {
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.6;
   font-weight: 600;
 }

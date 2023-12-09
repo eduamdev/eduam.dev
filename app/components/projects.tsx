@@ -16,7 +16,7 @@ export function Projects() {
       <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
         <div></div>
         <div className="border-x border-[var(--grid-border-color)]">
-          <div className="px-5 py-7 md:p-[38px]">
+          <div className="px-5 py-7 md:p-9">
             <h2 className="text-left text-lg font-semibold md:text-xl">
               Projects
             </h2>
@@ -26,7 +26,7 @@ export function Projects() {
       </div>
       <div className="grid grid-cols-1 flex-row xl:grid-cols-[1fr_minmax(var(--content-min-width),calc(var(--content-width)_+_220px))_1fr]">
         <div className="hidden xl:block"></div>
-        <article className="grid grid-cols-1 overflow-hidden border border-[#d6e0ff] bg-gradient-to-b from-[#e5eeff] to-[#f9fbff] lg:grid-cols-[0.65fr_1fr] lg:rounded-[32px] xl:grid-cols-[110px_0.55fr_1fr]">
+        <article className="grid grid-cols-1 overflow-hidden border border-[#d6e0ff] bg-gradient-to-b from-[#e5eeff] to-[#f9fbff] lg:grid-cols-[0.65fr_1fr] lg:rounded-[32px] xl:grid-cols-[110px_0.6fr_1fr]">
           <div className="hidden border-r border-[#d6e0ff] xl:block">
             <div className="h-12 border-b border-[#d6e0ff]"></div>
             <div className="h-12 border-b border-[#d6e0ff]"></div>
@@ -34,22 +34,24 @@ export function Projects() {
           <div className="border-r border-[#d6e0ff]">
             <div className="hidden h-12 lg:block"></div>
             <div className="hidden h-12 border-y border-[#d6e0ff] lg:block"></div>
-            <div className="space-y-6 px-5 py-7 md:p-[38px] lg:space-y-8">
+            <div className="space-y-6 px-5 py-7 md:p-9 lg:space-y-8">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(55,93,251,0.1)_0px_0px_0px_1px,rgba(37,62,167,0.2)_0px_1px_3px_0px]">
                 <Icons.carhiveLogo className="h-6 w-6 shrink-0 text-black" />
               </div>
               <div className="space-y-2">
-                <span className="text-xs font-medium uppercase tracking-wider text-neutral-700">
+                <span className="text-xs font-medium uppercase tracking-wider text-neutral-600">
                   web application
                 </span>
-                <h3 className="text-base font-semibold text-black md:text-lg">
+                <h3 className="text-lg font-semibold text-black md:text-xl">
                   CarHive
                 </h3>
                 <p className="text-sm text-neutral-600 sm:text-base">
-                  <Balancer>Open-source car rental application</Balancer>
+                  <Balancer>
+                    Embark on a streamlined car rental experience with CarHive.
+                  </Balancer>
                 </p>
               </div>
-              <ul className="hidden flex-col gap-5 text-sm text-neutral-600 lg:flex">
+              <ul className="hidden flex-col gap-5 text-sm text-neutral-800 lg:flex">
                 <li className="flex  gap-2.5">
                   <Icons.checkCircle className="inline-flex h-5 w-5 shrink-0 text-[#375dfb]" />{' '}
                   Interactive Map
@@ -61,7 +63,7 @@ export function Projects() {
 
                 <li className="flex  gap-2.5">
                   <Icons.checkCircle className="inline-flex h-5 w-5 shrink-0 text-[#375dfb]" />{' '}
-                  Server Actions and Server Components
+                  Authentication
                 </li>
                 <li className="flex  gap-2.5">
                   <Icons.checkCircle className="inline-flex h-5 w-5 shrink-0 text-[#375dfb]" />{' '}
@@ -92,19 +94,19 @@ export function Projects() {
           </div>
           <div>
             <div className="hidden h-12 lg:block"></div>
-            <div className="relative flex h-auto flex-wrap items-center justify-start gap-2 border-y border-[#d6e0ff] px-5 py-4 md:px-[38px] lg:h-12 lg:px-6 lg:py-0">
+            <div className="relative flex h-auto flex-nowrap items-center justify-start gap-2 border-y border-[#d6e0ff] px-5 py-4 md:px-9 lg:h-12 lg:px-6 lg:py-0">
               <div className="pointer-events-none absolute left-[-5px] top-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[#d6e0ff] bg-white  "></div>
               <div className="pointer-events-none absolute bottom-[-5px] left-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[#d6e0ff] bg-white  "></div>
-              <div className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-neutral-50 px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]">
+              <div className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-white px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]">
                 Next.js
               </div>
-              <div className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-neutral-50 px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]">
+              <div className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-white px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]">
                 TypeScript
               </div>
-              <div className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-neutral-50 px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]">
+              <div className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-white px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]">
                 Tailwind CSS
               </div>
-              <div className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-neutral-50 px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]">
+              <div className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-white px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]">
                 Vercel Postgres
               </div>
               <span className="whitespace-nowrap text-sm text-[#253ea7] opacity-60">
@@ -118,7 +120,6 @@ export function Projects() {
               width={924}
               height={550}
               className="hidden h-[550px] w-[924px] object-cover object-left lg:block"
-              sizes="100vw"
             />
             <Image
               src={carhive}

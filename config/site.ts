@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Eduardo Ambriz',
   username: 'eduamdev',
   url: 'https://eduam.dev',
-  description: 'Software engineer, frontend developer.',
+  description: 'Software engineer, web developer.',
   links: {
     github: { name: 'GitHub', url: 'https://github.com/eduamdev' },
     xcom: { name: 'x.com', url: 'https://x.com/eduamdev' },

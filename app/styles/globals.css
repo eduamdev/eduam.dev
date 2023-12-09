@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --grid-border-color: hsl(0, 0%, 92%);
+    --header-height: 70px;
     --content-min-width: 330px;
     --content-width: 964px;
 
@@ -14,42 +16,11 @@
     --font-sans-fallback: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
-
-    --navbar-width: 420px;
-    --navbar-height: 56px;
-    --navbar-offset: 10px;
-    --navbar-border-color: rgba(0, 0, 0, 0.05);
-    --navbar-bg-initial: 0 0% 100%;
-    --navbar-bg-max-rgb: 235;
-    --navbar-bg-max-alpha: 0.4;
-    --navbar-bg-end: rgba(
-      var(--navbar-bg-max-rgb),
-      var(--navbar-bg-max-rgb),
-      var(--navbar-bg-max-rgb),
-      var(--navbar-bg-max-alpha)
-    );
-    --navbar-animation-start-y: 10;
-    --navbar-animation-end-y: 317;
-
-    --header-height: calc(var(--navbar-height) + var(--navbar-offset) * 2);
-
-    --grid-border-color: hsl(0, 0%, 92%);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --grid-border-color: hsl(0, 0%, 12%);
-
-      --navbar-border-color: rgba(255, 255, 255, 0.1);
-      --navbar-bg-initial: 0 0% 0%;
-      --navbar-bg-max-rgb: 50;
-      --navbar-bg-max-alpha: 0.8;
-      --navbar-bg-end: rgba(
-        var(--navbar-bg-max-rgb),
-        var(--navbar-bg-max-rgb),
-        var(--navbar-bg-max-rgb),
-        var(--navbar-bg-max-alpha)
-      );
     }
   }
 }
@@ -80,6 +51,7 @@
     max-width: 100vw;
     width: 100vw;
     background-color: theme('colors.neutral.50');
+    color: rgb(23, 23, 23);
     overflow-x: hidden;
   }
 
@@ -98,6 +70,7 @@
   @media (prefers-color-scheme: dark) {
     body {
       background-color: black;
+      color: rgb(237, 237, 237);
     }
   }
 
