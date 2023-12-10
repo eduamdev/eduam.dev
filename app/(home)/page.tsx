@@ -7,7 +7,7 @@ import { SocialIcons } from '@/app/components/social-icons';
 import { siteConfig } from '@/config/site';
 
 export default function HomePage() {
-  const { name, username } = siteConfig;
+  const { name, username, email } = siteConfig;
 
   return (
     <div className="flex flex-col overflow-x-hidden">
@@ -56,10 +56,9 @@ export default function HomePage() {
                 </p>
 
                 <a
-                  // href="mailto:hi@example.com?subject=Project inquiry"
-                  href="#"
+                  href={`mailto:${email}?subject=Project inquiry`}
                   rel="noopener"
-                  // target="_blank"
+                  target="_blank"
                   className="mt-7 inline-flex h-8 items-center justify-center gap-1 rounded-[50px] bg-neutral-950 py-1 pl-[14px] pr-[6px] text-sm font-medium text-white shadow-[rgba(0,0,0,0.14)_0_0.8px_0.8px_-0.6875px,rgb(0,0,0)_0_2.4px_2.4px_-1.375px,rgba(0,0,0,0.13)_0_6.38px_6.38px_-2.0625px,rgba(0,0,0,0.11)_0_20px_20px_-2.75px] transition-colors hover:bg-neutral-700 dark:bg-[#555] dark:text-[rgb(237,237,237)] dark:hover:bg-neutral-700"
                 >
                   Open for projects
@@ -102,7 +101,7 @@ export default function HomePage() {
       </div>
       <Projects />
       <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
-        <div className="relative hidden after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-[''] md:block"></div>
+        <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
         <div className="relative h-14 after:absolute after:inset-0 after:border-x after:border-b after:border-[var(--grid-border-color)] after:content-[''] md:h-16"></div>
         <div className="relative after:absolute after:inset-0 after:border-b after:border-[var(--grid-border-color)] after:content-['']"></div>
       </div>
@@ -126,14 +125,12 @@ export default function HomePage() {
       </div>
       <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
         <div></div>
-        <div className="">
-          <footer className="mx-auto pb-12 pt-6">
-            <p className="select-none px-5 text-left text-sm text-[#666] dark:text-[#888] md:px-9">
-              Copyright <span aria-hidden="true">©</span>{' '}
-              {new Date().getFullYear()} eduam.dev. All rights reserved.
-            </p>
-          </footer>
-        </div>
+        <footer className="mx-auto w-full pb-12 pt-6">
+          <p className="select-none px-5 text-left text-sm text-[#666] dark:text-[#888] md:px-9">
+            Copyright <span aria-hidden="true">©</span>{' '}
+            {new Date().getFullYear()} eduam.dev. All rights reserved.
+          </p>
+        </footer>
         <div></div>
       </div>
     </div>
