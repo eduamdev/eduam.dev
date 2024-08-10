@@ -1,4 +1,3 @@
-import '@/app/styles/prose.css';
 import Balancer from 'react-wrap-balancer';
 import { Avatar } from '@/app/components/avatar';
 import { Projects } from '@/app/components/projects';
@@ -35,14 +34,14 @@ export default function HomePage() {
           <div className="pointer-events-none absolute left-[-5px] top-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
           <div className="pointer-events-none absolute right-[-5px] top-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
           <div className="px-5 py-7 md:p-9">
-            <div className="flex flex-col items-center justify-center">
-              <div className="prose select-within w-full">
-                <h1>
-                  <Balancer>
-                    I&apos;m Eduardo, a software engineer and web developer
-                    based in Mexico.
-                  </Balancer>
-                </h1>
+            <div className="flex flex-col items-start justify-center">
+              <h1>
+                <Balancer>
+                  I&apos;m Eduardo, a software engineer and web developer based
+                  in Mexico.
+                </Balancer>
+              </h1>
+              <div className="pt-6">
                 <p>
                   <Balancer>
                     In my six-year journey in web development, I&apos;ve
@@ -54,12 +53,13 @@ export default function HomePage() {
                     users.
                   </Balancer>
                 </p>
-
+              </div>
+              <div className="pt-7">
                 <a
                   href={`mailto:${email}?subject=Project inquiry`}
                   rel="noopener"
                   target="_blank"
-                  className="mt-7 inline-flex h-8 items-center justify-center gap-1 rounded-[50px] bg-neutral-950 py-1 pl-[14px] pr-[6px] text-sm font-medium text-white shadow-[rgba(0,0,0,0.14)_0_0.8px_0.8px_-0.6875px,rgb(0,0,0)_0_2.4px_2.4px_-1.375px,rgba(0,0,0,0.13)_0_6.38px_6.38px_-2.0625px,rgba(0,0,0,0.11)_0_20px_20px_-2.75px] transition-colors hover:bg-neutral-700 dark:bg-[#555] dark:text-[rgb(237,237,237)] dark:hover:bg-neutral-700"
+                  className="inline-flex h-8 items-center justify-center gap-1 rounded-[50px] bg-neutral-950 py-1 pl-[14px] pr-[6px] text-sm font-medium text-white shadow-[rgba(0,0,0,0.14)_0_0.8px_0.8px_-0.6875px,rgb(0,0,0)_0_2.4px_2.4px_-1.375px,rgba(0,0,0,0.13)_0_6.38px_6.38px_-2.0625px,rgba(0,0,0,0.11)_0_20px_20px_-2.75px] transition-colors hover:bg-neutral-700 dark:bg-[#555] dark:text-[rgb(237,237,237)] dark:hover:bg-neutral-700"
                 >
                   Open for projects
                   <span className="flex h-6 w-6 items-center justify-center">
@@ -80,20 +80,22 @@ export default function HomePage() {
           <div className="pointer-events-none absolute bottom-[-5px] left-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
           <div className="pointer-events-none absolute bottom-[-5px] right-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
           <div className="px-5 py-7 md:p-9">
-            <div className="prose select-within w-full">
+            <div className="select-within w-full">
               <div className="flex items-center gap-1.5">
                 <p className="font-medium">Availability</p>
                 <span className="flex h-min shrink-0 items-center justify-center rounded-[7px] border border-black/5 bg-neutral-100/50  px-1.5 text-xs leading-[24px] tracking-wide text-neutral-500 dark:border-white/5 dark:bg-neutral-900 dark:text-neutral-400">
                   Remote
                 </span>
               </div>
-              <p>
-                <Balancer>
-                  I am particularly interested in collaborating with early-stage
-                  startups and founders, providing my expertise to help define
-                  their unique online presence.
-                </Balancer>
-              </p>
+              <div className="pt-6">
+                <p>
+                  <Balancer>
+                    I am particularly interested in collaborating with
+                    early-stage startups and founders, providing my expertise to
+                    help define their unique online presence.
+                  </Balancer>
+                </p>
+              </div>
             </div>
           </div>
         </section>

@@ -60,6 +60,15 @@
     overflow-x: hidden;
   }
 
+  h1 {
+    @apply text-lg font-semibold;
+  }
+
+  p {
+    font-size: max(16px, min(2vw, 17px));
+    line-height: 1.75;
+  }
+
   a {
     transition-delay: 0s;
     transition-duration: 0.2s;
