@@ -35,13 +35,13 @@ const renderImageSection = (
     <div className="relative flex h-auto flex-nowrap items-center justify-start gap-2 px-5 py-4 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] md:px-9 lg:h-12 lg:px-6 lg:py-0">
       <div
         className={cn(
-          'pointer-events-none absolute top-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[#d6e0ff] bg-white',
+          'pointer-events-none absolute top-[-5px] z-[2] flex size-2.5 items-center justify-center border border-[#d6e0ff] bg-white',
           imageAlignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
         )}
       ></div>
       <div
         className={cn(
-          'pointer-events-none absolute bottom-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[#d6e0ff] bg-white',
+          'pointer-events-none absolute bottom-[-5px] z-[2] flex size-2.5 items-center justify-center border border-[#d6e0ff] bg-white',
           imageAlignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
         )}
       ></div>
@@ -91,7 +91,7 @@ const renderContentSection = (
   <div className="relative after:absolute after:inset-0 after:border-x after:border-[#d6e0ff] after:content-['']">
     <div className="relative hidden h-12 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] lg:block"></div>
     <div className="relative hidden h-12 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] lg:block"></div>
-    <div className="flex flex-col justify-center px-5 py-7 md:p-9 lg:h-[550px]">
+    <div className="flex flex-col justify-evenly px-5 py-7 md:p-9 lg:h-[550px]">
       <div className="flex size-12 items-center justify-center rounded-xl bg-white shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(55,93,251,0.1)_0px_0px_0px_1px,rgba(37,62,167,0.2)_0px_1px_3px_0px]">
         {projectLogo}
       </div>
