@@ -45,8 +45,7 @@ export function Projects() {
   const projectData = [
     {
       title: 'Carhive',
-      description:
-        'Embark on a streamlined car rental experience with CarHive.',
+      description: 'Experience seamless car rentals',
       technologies: [
         'Next.js',
         'TypeScript',
@@ -70,7 +69,7 @@ export function Projects() {
     {
       title: 'Notespace',
       description:
-        'Embark on a streamlined car rental experience with CarHive.',
+        'Organize and manage your notes, featuring rich text editing, notebook structuring, and tag management',
       technologies: [
         'Vite',
         'React',
@@ -83,10 +82,10 @@ export function Projects() {
       imageSrc: carhive,
       logo: <Icons.carhiveLogo className="size-6 shrink-0 text-black" />,
       features: [
-        'Interactive Map',
-        'Multi-Filter Search',
-        'Authentication',
-        'Form Validation',
+        'Rich Text Editor',
+        'Note Management',
+        'Debounced Autosave',
+        'Tagging & Search',
       ],
       githubUrl: '#',
       liveUrl: '#',

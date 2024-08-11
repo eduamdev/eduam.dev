@@ -17,8 +17,8 @@ const GridSection: React.FC<{ children?: ReactNode }> = ({
 
 const GridCornerDecorators = () => (
   <>
-    <div className="pointer-events-none absolute bottom-[-5px] left-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
-    <div className="pointer-events-none absolute bottom-[-5px] right-[-5px] z-[2] flex h-2.5 w-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
+    <div className="pointer-events-none absolute bottom-[-5px] left-[-5px] z-[2] flex size-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
+    <div className="pointer-events-none absolute bottom-[-5px] right-[-5px] z-[2] flex size-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
   </>
 );
 
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
     <ContentWrapper>
       <GridSection>
         <div className="absolute inset-0 border-b border-[var(--grid-border-color)]"></div>
-        <header className="h-[var(--header-height)]">
+        <header className="relative z-10 h-[var(--header-height)]">
           <div className="flex h-full shrink-0 items-center gap-x-3 px-5 md:px-9">
             <Avatar />
             <div className="flex flex-col items-stretch gap-y-2">
@@ -69,21 +69,17 @@ const Summary: React.FC<{}> = () => {
       <GridSection>
         <div className="px-5 py-7 md:p-9">
           <div className="flex flex-col items-start justify-center">
-            <h1>
-              <Balancer>
-                I'm Eduardo, a software engineer and web developer based in
-                Mexico.
-              </Balancer>
+            <h1 className="text-lg font-semibold md:text-[19px]">
+              <Balancer>I&apos;m a Software Engineer based in Mexico.</Balancer>
             </h1>
             <div className="pt-6">
               <p>
                 <Balancer>
-                  In my six-year journey in web development, I've specialized in
-                  creating visually stunning websites and dynamic user
-                  interfaces. Fueled by an unwavering passion, I prioritize
-                  top-notch performance to ensure seamless and lightning-fast
-                  user experiences. My commitment extends to an inclusive design
-                  approach, emphasizing accessibility for all users.
+                  I&apos;ve focused on crafting visually engaging websites and
+                  intuitive user interfaces. Driven by a passion for excellence,
+                  I ensure high performance for smooth, fast experiences.
+                  I&apos;m also committed to inclusive design, making sure my
+                  work is accessible to everyone.
                 </Balancer>
               </p>
             </div>
@@ -111,22 +107,20 @@ const Availability = () => (
   <ContentWrapper>
     <GridSection>
       <div className="px-5 py-7 md:p-9">
-        <div className="select-within w-full">
-          <div className="flex items-center gap-1.5">
-            <p className="font-medium">Availability</p>
-            <span className="flex h-min shrink-0 items-center justify-center rounded-[7px] border border-black/5 bg-neutral-100/50 px-1.5 text-xs leading-[24px] tracking-wide text-neutral-500 dark:border-white/5 dark:bg-neutral-900 dark:text-neutral-400">
-              Remote
-            </span>
-          </div>
-          <div className="pt-6">
-            <p>
-              <Balancer>
-                I am particularly interested in collaborating with early-stage
-                startups and founders, providing my expertise to help define
-                their unique online presence.
-              </Balancer>
-            </p>
-          </div>
+        <div className="flex items-center gap-2.5">
+          <p className="font-semibold">Availability</p>
+          <span className="flex h-min shrink-0 items-center justify-center rounded-[7px] border border-black/10 bg-white px-2 text-xs leading-[24px] tracking-wider text-neutral-700 dark:border-white/[0.08] dark:bg-neutral-800 dark:text-neutral-200">
+            Remote
+          </span>
+        </div>
+        <div className="pt-6">
+          <p>
+            <Balancer>
+              I&apos;m especially interested in working with early-stage
+              startups and founders, using my expertise to help shape and define
+              their unique online presence.
+            </Balancer>
+          </p>
         </div>
       </div>
     </GridSection>

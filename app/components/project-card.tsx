@@ -91,8 +91,8 @@ const renderContentSection = (
   <div className="relative after:absolute after:inset-0 after:border-x after:border-[#d6e0ff] after:content-['']">
     <div className="relative hidden h-12 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] lg:block"></div>
     <div className="relative hidden h-12 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] lg:block"></div>
-    <div className="flex flex-col justify-evenly px-5 py-7 md:p-9 lg:h-[550px]">
-      <div className="flex size-12 items-center justify-center rounded-xl bg-white shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(55,93,251,0.1)_0px_0px_0px_1px,rgba(37,62,167,0.2)_0px_1px_3px_0px]">
+    <div className="flex flex-col justify-start px-5 py-8 md:p-9 lg:h-[550px]">
+      <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(55,93,251,0.1)_0px_0px_0px_1px,rgba(37,62,167,0.2)_0px_1px_3px_0px]">
         {projectLogo}
       </div>
       <div className="pt-8">
@@ -101,15 +101,17 @@ const renderContentSection = (
         </span>
       </div>
       <div className="pt-4">
-        <h3 className="font-semibold text-black md:text-lg">{projectTitle}</h3>
+        <h3 className="font-semibold text-black md:text-[17px]">
+          {projectTitle}
+        </h3>
       </div>
       <div className="pt-2">
-        <p className="text-sm text-neutral-600 sm:text-[15px]">
+        <p className="text-sm leading-6 text-neutral-700 sm:text-[15px]">
           <Balancer>{projectDescription}</Balancer>
         </p>
       </div>
       <div className="hidden pt-8 lg:block">
-        <ul className="flex flex-col gap-5 text-sm text-neutral-800">
+        <ul className="flex flex-col gap-5 text-[15px] text-neutral-800">
           {projectFeatures.map((feature, index) => (
             <li key={index} className="flex gap-2.5">
               <Icons.checkCircle className="inline-flex size-5 shrink-0 text-[#375dfb]" />
