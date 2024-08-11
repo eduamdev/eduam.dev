@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 import Balancer from 'react-wrap-balancer';
 import { Avatar } from '@/app/components/avatar';
 import { Projects } from '@/app/components/projects';
-import { Icons } from '@/app/components/icons';
+import { MailIcon } from '@/app/components/icons/mail';
+import { ChevronRightIcon } from '@/app/components/icons/chevron-right';
 import { SocialIcons } from '@/app/components/social-icons';
 import { siteConfig } from '@/config/site';
 
@@ -39,13 +40,13 @@ const ContentWrapper: React.FC<{ children: ReactNode }> = ({ children }) => (
 );
 
 const Header: React.FC = () => {
-  const { name, username } = siteConfig;
+  const { name, username, email } = siteConfig;
 
   return (
     <ContentWrapper>
       <GridSection>
         <div className="absolute inset-0 border-b border-[var(--grid-border-color)]"></div>
-        <header className="relative z-10 h-[var(--header-height)]">
+        <header className="relative z-10 flex h-[var(--header-height)] items-center justify-between">
           <div className="flex h-full shrink-0 items-center gap-x-3 px-5 md:px-9">
             <Avatar />
             <div className="flex flex-col items-stretch gap-y-2">
@@ -54,6 +55,10 @@ const Header: React.FC = () => {
                 @{username}
               </span>
             </div>
+          </div>
+          <div className="px-5 md:px-9">
+            <MailIcon className="mr-2 inline-block size-[18px] shrink-0 text-[#666] dark:text-[#aaa]" />
+            <span className="text-[15px]">{email}</span>
           </div>
         </header>
       </GridSection>
@@ -92,7 +97,7 @@ const Summary: React.FC<{}> = () => {
               >
                 Open for projects
                 <span className="flex size-6 items-center justify-center">
-                  <Icons.chevronRight className="size-4 shrink-0 text-neutral-400" />
+                  <ChevronRightIcon className="size-4 shrink-0 text-neutral-400" />
                 </span>
               </a>
             </div>

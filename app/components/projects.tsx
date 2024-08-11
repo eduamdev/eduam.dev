@@ -1,6 +1,7 @@
 import carhive from '../../public/images/projects/carhive.webp';
 import { siteConfig } from '@/config/site';
-import { Icons } from '@/app/components/icons';
+import { CarhiveIcon } from '@/app/components/icons/carhive';
+import { NotespaceIcon } from '@/app/components/icons/notespace';
 import { ProjectCard } from './project-card';
 import { cn } from '@/lib/utils';
 
@@ -56,7 +57,7 @@ export function Projects() {
       ],
       type: 'web application',
       imageSrc: carhive,
-      logo: <Icons.carhiveLogo className="size-6 shrink-0 text-black" />,
+      logo: <CarhiveIcon className="size-6 shrink-0 text-black" />,
       features: [
         'Interactive Map',
         'Multi-Filter Search',
@@ -80,7 +81,7 @@ export function Projects() {
       ],
       type: 'web application',
       imageSrc: carhive,
-      logo: <Icons.carhiveLogo className="size-6 shrink-0 text-black" />,
+      logo: <NotespaceIcon className="size-6 shrink-0 text-black" />,
       features: [
         'Rich Text Editor',
         'Note Management',
@@ -102,7 +103,7 @@ export function Projects() {
           {index < projectData.length - 1 && <ProjectCardSeparator />}
         </div>
       ))}
-      <ProjectCardSeparator className="h-16" />
+      <ProjectCardSeparator className="h-20" />
     </section>
   );
 }

@@ -1,6 +1,8 @@
 import Image, { StaticImageData } from 'next/image';
 import Balancer from 'react-wrap-balancer';
-import { Icons } from '@/app/components/icons';
+import { CheckCircleIcon } from '@/app/components/icons/check-circle';
+import { ArrowUpRightIcon } from '@/app/components/icons/arrow-up-right';
+import { GithubIcon } from '@/app/components/icons/github';
 import { cn } from '@/lib/utils';
 
 interface ProjectCardProps {
@@ -53,7 +55,7 @@ const renderImageSection = (
           {tech}
         </div>
       ))}
-      <span className="ml-2 whitespace-nowrap text-sm text-[#253ea7] opacity-60">
+      <span className="ml-2 whitespace-nowrap text-sm text-[#253ea7]">
         and more...
       </span>
     </div>
@@ -114,7 +116,7 @@ const renderContentSection = (
         <ul className="flex flex-col gap-5 text-[15px] text-neutral-800">
           {projectFeatures.map((feature, index) => (
             <li key={index} className="flex gap-2.5">
-              <Icons.checkCircle className="inline-flex size-5 shrink-0 text-[#375dfb]" />
+              <CheckCircleIcon className="inline-flex size-5 shrink-0 text-[#375dfb]" />
               {feature}
             </li>
           ))}
@@ -128,7 +130,7 @@ const renderContentSection = (
             target="_blank"
             className="flex size-auto flex-nowrap items-center justify-center gap-1 overflow-visible rounded-lg bg-white p-2 text-sm font-medium shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px] transition-shadow hover:shadow-[rgba(55,93,251,0.12)_0px_0px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px] dark:text-[#171717]"
           >
-            <Icons.github className="mx-1 size-4 shrink-0" />
+            <GithubIcon className="mx-1 size-4 shrink-0" />
             <span className="shrink-0 px-1">Repository</span>
           </a>
           <a
@@ -138,7 +140,7 @@ const renderContentSection = (
             className="flex size-auto flex-row flex-nowrap items-center justify-center gap-1 rounded-lg bg-[#383838] px-3 py-2 text-sm font-medium text-white shadow-[rgb(73,73,73)_0px_-2.4px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] transition-all hover:bg-[#5c5c5c] hover:shadow-[rgb(73,73,73)_0px_0px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(211,100%,42%,1)] focus-visible:outline-none dark:focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(212,100%,48%,1)]"
           >
             <span className="shrink-0 px-1">Visit</span>
-            <Icons.arrowUpRight className="inline-block size-3.5 shrink-0 text-neutral-300" />
+            <ArrowUpRightIcon className="inline-block size-3.5 shrink-0 text-neutral-300" />
           </a>
         </div>
       </div>
