@@ -1,8 +1,8 @@
-import carhive from '../../public/images/projects/carhive.webp';
+import carhiveImage from '../../../public/images/projects/carhive.webp';
 import { siteConfig } from '@/config/site';
 import { CarhiveIcon } from '@/app/components/icons/carhive';
 import { NotespaceIcon } from '@/app/components/icons/notespace';
-import { ProjectCard } from './project-card';
+import { ProjectCard } from '@/app/(home)/components/project-card';
 import { cn } from '@/lib/utils';
 
 const GridWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -11,39 +11,27 @@ const GridWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   </div>
 );
 
-const ProjectCardSeparator: React.FC<{ className?: string }> = ({
-  className,
-}) => (
-  <GridWrapper>
-    <div></div>
-    <div
-      className={cn(
-        `relative h-10 after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']`,
-        className,
-      )}
-    ></div>
-    <div></div>
-  </GridWrapper>
+const Separator: React.FC<{ className?: string }> = ({ className }) => (
+  <div
+    className={cn(
+      "relative h-10 after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']",
+      className,
+    )}
+  ></div>
 );
 
-const ProjectSectionHeader = () => (
-  <GridWrapper>
-    <div></div>
-    <div className="relative after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']">
-      <div className="px-5 py-7 md:p-9">
-        <h2 className="text-left text-lg font-semibold md:text-xl">Projects</h2>
-      </div>
+const SectionHeader: React.FC = () => (
+  <div className="relative after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']">
+    <div className="px-5 py-7 md:p-9">
+      <h2 className="text-left text-lg font-semibold md:text-xl">Projects</h2>
     </div>
-    <div></div>
-  </GridWrapper>
+  </div>
 );
 
 export function Projects() {
-  const {
-    links: { github },
-  } = siteConfig;
+  const { github } = siteConfig.links;
 
-  const projectData = [
+  const projects = [
     {
       title: 'Carhive',
       description: 'Experience seamless car rentals',
@@ -55,7 +43,7 @@ export function Projects() {
         'Clerk',
         'Leaflet',
       ],
-      imageSrc: carhive,
+      imageSrc: carhiveImage,
       logo: <CarhiveIcon className="size-6 shrink-0 text-black" />,
       features: [
         'Interactive Map',
@@ -78,12 +66,12 @@ export function Projects() {
         'Wouter',
         'Tiptap',
       ],
-      imageSrc: carhive,
+      imageSrc: carhiveImage,
       logo: <NotespaceIcon className="size-6 shrink-0 text-black" />,
       features: [
         'Rich Text Editor',
         'Note Management',
-        'Debounced Autosave',
+        'Autosave',
         'Tagging & Search',
       ],
       githubUrl: `${github.url}/notespace`,
@@ -94,14 +82,28 @@ export function Projects() {
 
   return (
     <section>
-      <ProjectSectionHeader />
-      {projectData.map((project, index) => (
+      <GridWrapper>
+        <div></div>
+        <SectionHeader />
+        <div></div>
+      </GridWrapper>
+      {projects.map((project, index) => (
         <div key={project.title}>
           <ProjectCard {...project} />
-          {index < projectData.length - 1 && <ProjectCardSeparator />}
+          {index < projects.length - 1 && (
+            <GridWrapper>
+              <div></div>
+              <Separator />
+              <div></div>
+            </GridWrapper>
+          )}
         </div>
       ))}
-      <ProjectCardSeparator className="h-20" />
+      <GridWrapper>
+        <div></div>
+        <Separator className="h-20" />
+        <div></div>
+      </GridWrapper>
     </section>
   );
 }
