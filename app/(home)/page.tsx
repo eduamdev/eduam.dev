@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 import Balancer from 'react-wrap-balancer';
 import { Avatar } from '@/app/components/avatar';
 import { Projects } from '@/app/components/projects';
-import { MailIcon } from '@/app/components/icons/mail';
 import { ChevronRightIcon } from '@/app/components/icons/chevron-right';
 import { SocialIcons } from '@/app/components/social-icons';
 import { siteConfig } from '@/config/site';
@@ -57,7 +56,6 @@ const Header: React.FC = () => {
             </div>
           </div>
           <div className="px-5 md:px-9">
-            <MailIcon className="mr-2 inline-block size-[18px] shrink-0 text-[#666] dark:text-[#aaa]" />
             <span className="text-[15px]">{email}</span>
           </div>
         </header>

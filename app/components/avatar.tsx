@@ -9,7 +9,7 @@ export function Avatar() {
       width={32}
       height={32}
       priority
-      className="aspect-square h-8 w-8 rounded-full"
+      className="aspect-square size-8 rounded-full"
     />
   );
 }

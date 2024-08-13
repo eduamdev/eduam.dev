@@ -55,7 +55,6 @@ export function Projects() {
         'Clerk',
         'Leaflet',
       ],
-      type: 'web application',
       imageSrc: carhive,
       logo: <CarhiveIcon className="size-6 shrink-0 text-black" />,
       features: [
@@ -79,7 +78,6 @@ export function Projects() {
         'Wouter',
         'Tiptap',
       ],
-      type: 'web application',
       imageSrc: carhive,
       logo: <NotespaceIcon className="size-6 shrink-0 text-black" />,
       features: [
@@ -88,8 +86,8 @@ export function Projects() {
         'Debounced Autosave',
         'Tagging & Search',
       ],
-      githubUrl: '#',
-      liveUrl: '#',
+      githubUrl: `${github.url}/notespace`,
+      liveUrl: 'https://notespace.eduam.dev',
       alignment: 'right',
     },
   ];
