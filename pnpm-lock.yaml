@@ -59,9 +59,6 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
-      react-wrap-balancer:
-        specifier: ^1.1.1
-        version: 1.1.1(react@18.2.0)
       tailwind-merge:
         specifier: ^2.4.0
         version: 2.4.0
@@ -1491,11 +1488,6 @@ packages:
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-
-  react-wrap-balancer@1.1.1:
-    resolution: {integrity: sha512-AB+l7FPRWl6uZ28VcJ8skkwLn2+UC62bjiw8tQUrZPlEWDVnR9MG0lghyn7EyxuJSsFEpht4G+yh2WikEqQ/5Q==}
-    peerDependencies:
-      react: '>=16.8.0 || ^17.0.0 || ^18'
 
   react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
@@ -3325,10 +3317,6 @@ snapshots:
       scheduler: 0.23.2
 
   react-is@16.13.1: {}
-
-  react-wrap-balancer@1.1.1(react@18.2.0):
-    dependencies:
-      react: 18.2.0
 
   react@18.2.0:
     dependencies:

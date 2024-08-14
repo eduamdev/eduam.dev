@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import Balancer from 'react-wrap-balancer';
 import { CheckCircleIcon } from '@/app/components/icons/check-circle';
 import { GithubIcon } from '@/app/components/icons/github';
 import { cn } from '@/lib/utils';
@@ -90,8 +89,8 @@ const ContentSection = ({
         <h3 className="font-semibold text-black md:text-[17px]">{title}</h3>
       </div>
       <div className="pt-2">
-        <p className="text-sm leading-6 text-neutral-700 sm:text-[15px]">
-          <Balancer>{description}</Balancer>
+        <p className="text-balance text-sm leading-6 text-neutral-700 sm:text-[15px]">
+          {description}
         </p>
       </div>
       <div className="hidden pt-8 lg:block">

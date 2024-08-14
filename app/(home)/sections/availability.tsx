@@ -1,4 +1,3 @@
-import Balancer from 'react-wrap-balancer';
 import { ContentWrapper } from '../components/content-wrapper';
 import { GridSection } from '../components/grid-section';
 import { Badge } from '@/app/components/ui/badge';
@@ -13,12 +12,10 @@ export function Availability() {
             <Badge label="Remote" />
           </div>
           <div className="pt-6">
-            <p>
-              <Balancer>
-                I&apos;m especially interested in working with early-stage
-                startups and founders, using my expertise to help shape and
-                define their unique online presence.
-              </Balancer>
+            <p className="text-balance">
+              I&apos;m especially interested in working with early-stage
+              startups and founders, using my expertise to help shape and define
+              their unique online presence.
             </p>
           </div>
         </div>

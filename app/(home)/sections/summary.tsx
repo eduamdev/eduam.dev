@@ -1,6 +1,5 @@
 import { siteConfig } from '@/config/site';
 import { ContentWrapper } from '../components/content-wrapper';
-import Balancer from 'react-wrap-balancer';
 import { GridSection } from '../components/grid-section';
 import { ChevronRightIcon } from '@/app/components/icons/chevron-right';
 
@@ -12,18 +11,16 @@ export function Summary() {
       <GridSection>
         <div className="px-5 py-7 md:p-9">
           <div className="flex flex-col items-start justify-center">
-            <h1 className="text-lg font-semibold md:text-[19px]">
-              <Balancer>I&apos;m a Software Engineer based in Mexico.</Balancer>
+            <h1 className="text-balance text-lg font-semibold md:text-[19px]">
+              I&apos;m a Software Engineer based in Mexico.
             </h1>
             <div className="pt-6">
-              <p>
-                <Balancer>
-                  I&apos;ve focused on crafting visually engaging websites and
-                  intuitive user interfaces. Driven by a passion for excellence,
-                  I ensure high performance for smooth, fast experiences.
-                  I&apos;m also committed to inclusive design, making sure my
-                  work is accessible to everyone.
-                </Balancer>
+              <p className="text-balance">
+                I&apos;ve focused on crafting visually engaging websites and
+                intuitive user interfaces. Driven by a passion for excellence, I
+                ensure high performance for smooth, fast experiences. I&apos;m
+                also committed to inclusive design, making sure my work is
+                accessible to everyone.
               </p>
             </div>
             <CallToAction email={email} />
