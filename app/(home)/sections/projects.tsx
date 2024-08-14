@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import carhiveImage from '../../../public/images/projects/carhive.webp';
 import { siteConfig } from '@/config/site';
-import { CarhiveIcon } from '@/app/components/icons/carhive';
-import { NotespaceIcon } from '@/app/components/icons/notespace';
+import { CarhiveLogo } from '@/app/components/icons/carhive';
+import { NotespaceLogo } from '@/app/components/icons/notespace';
 import { ProjectCard } from '@/app/(home)/components/project-card';
 import { cn } from '@/lib/utils';
 
@@ -63,7 +63,7 @@ export function Projects() {
           />
         </>
       ),
-      logo: <CarhiveIcon className="size-6 shrink-0 text-black" />,
+      logo: <CarhiveLogo className="size-5 shrink-0 text-black xl:size-6" />,
       features: [
         'Interactive Map',
         'Multi-Filter Search',
@@ -86,7 +86,7 @@ export function Projects() {
         'Tiptap',
       ],
       image: <></>,
-      logo: <NotespaceIcon className="size-6 shrink-0 text-black" />,
+      logo: <NotespaceLogo className="size-5 shrink-0 text-black xl:size-6" />,
       features: [
         'Rich Text Editor',
         'Note Management',

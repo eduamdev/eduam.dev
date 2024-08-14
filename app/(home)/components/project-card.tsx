@@ -83,10 +83,10 @@ const ContentSection = ({
     <div className="relative hidden h-12 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] lg:block"></div>
     <div className="relative hidden h-12 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] lg:block"></div>
     <div className="flex flex-col justify-start px-5 py-8 md:p-9 lg:h-[550px]">
-      <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(55,93,251,0.1)_0px_0px_0px_1px,rgba(37,62,167,0.2)_0px_1px_3px_0px]">
+      <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-white shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(55,93,251,0.1)_0px_0px_0px_1px,rgba(37,62,167,0.2)_0px_1px_3px_0px] xl:size-11">
         {logo}
       </div>
-      <div className="pt-9">
+      <div className="pt-7 xl:pt-9">
         <h3 className="font-semibold text-black md:text-[17px]">{title}</h3>
       </div>
       <div className="pt-2">
@@ -104,7 +104,7 @@ const ContentSection = ({
           ))}
         </ul>
       </div>
-      <div className="pt-6 lg:pt-8">
+      <div className="pt-6 lg:pt-9">
         <div className="grid grid-cols-2 items-center justify-start gap-x-4 lg:flex">
           <a
             href={githubUrl}
@@ -141,15 +141,15 @@ export function ProjectCard({
   alignment = 'left',
 }: ProjectCardProps) {
   return (
-    <div className="grid grid-cols-1 flex-row xl:grid-cols-[1fr_minmax(var(--content-min-width),calc(var(--content-width)_+_220px))_1fr]">
+    <div className="grid grid-cols-1 flex-row xl:grid-cols-[1fr_minmax(var(--content-min-width),calc(var(--content-width)_+_300px))_1fr]">
       <div className="hidden xl:block"></div>
       <article className="relative overflow-hidden after:absolute after:inset-0 after:border after:border-[#d6e0ff] after:content-[''] lg:rounded-[32px] after:lg:rounded-[32px]">
         <div
           className={cn(
             'grid bg-gradient-to-b from-[#e5eeff] to-[#f9fbff]',
             alignment === 'left'
-              ? "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[0.65fr_1fr] lg:[grid-template-areas:'content_image'] xl:grid-cols-[110px_0.55fr_1fr] xl:[grid-template-areas:'spacer_content_image']"
-              : "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[1fr_0.65fr] lg:[grid-template-areas:'image_content'] xl:grid-cols-[1fr_0.55fr_110px] xl:[grid-template-areas:'image_content_spacer']",
+              ? "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[0.65fr_1fr] lg:[grid-template-areas:'content_image'] xl:grid-cols-[150px_0.55fr_1fr] xl:[grid-template-areas:'spacer_content_image']"
+              : "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[1fr_0.65fr] lg:[grid-template-areas:'image_content'] xl:grid-cols-[1fr_0.55fr_150px] xl:[grid-template-areas:'image_content_spacer']",
           )}
         >
           <Spacer />

@@ -1,4 +1,4 @@
-export function CarhiveIcon(props: React.HTMLAttributes<SVGElement>) {
+export function CarhiveLogo(props: React.HTMLAttributes<SVGElement>) {
   return (
     <svg
       fill="none"
