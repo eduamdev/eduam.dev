@@ -6,7 +6,7 @@ import { GridSection } from '../components/grid-section';
 import { siteConfig } from '@/config/site';
 import { Separator } from '@radix-ui/react-separator';
 
-export function Socials() {
+export function Social() {
   const {
     links: { xcom, github },
   } = siteConfig;

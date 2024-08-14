@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import carhiveImage from '../../../public/images/projects/carhive.webp';
+import carhiveImage from '../../../public/images/projects/carhive.png';
+import notespaceImage from '../../../public/images/projects/notespace.png';
 import { siteConfig } from '@/config/site';
 import { CarhiveLogo } from '@/app/components/icons/carhive';
 import { NotespaceLogo } from '@/app/components/icons/notespace';
@@ -85,7 +86,18 @@ export function Projects() {
         'Wouter',
         'Tiptap',
       ],
-      image: <></>,
+      image: (
+        <>
+          <Image
+            src={notespaceImage}
+            alt=""
+            priority
+            width={924}
+            height={550}
+            className="hidden h-[550px] w-[924px] object-cover object-right lg:block"
+          />
+        </>
+      ),
       logo: <NotespaceLogo className="size-5 shrink-0 text-black xl:size-6" />,
       features: [
         'Rich Text Editor',

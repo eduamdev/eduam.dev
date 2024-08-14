@@ -141,15 +141,15 @@ export function ProjectCard({
   alignment = 'left',
 }: ProjectCardProps) {
   return (
-    <div className="grid grid-cols-1 flex-row xl:grid-cols-[1fr_minmax(var(--content-min-width),calc(var(--content-width)_+_300px))_1fr]">
+    <div className="grid grid-cols-1 flex-row xl:grid-cols-[1fr_minmax(var(--content-min-width),calc(var(--content-width)_+_250px))_1fr]">
       <div className="hidden xl:block"></div>
       <article className="relative overflow-hidden after:absolute after:inset-0 after:border after:border-[#d6e0ff] after:content-[''] lg:rounded-[32px] after:lg:rounded-[32px]">
         <div
           className={cn(
             'grid bg-gradient-to-b from-[#e5eeff] to-[#f9fbff]',
             alignment === 'left'
-              ? "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[0.65fr_1fr] lg:[grid-template-areas:'content_image'] xl:grid-cols-[150px_0.55fr_1fr] xl:[grid-template-areas:'spacer_content_image']"
-              : "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[1fr_0.65fr] lg:[grid-template-areas:'image_content'] xl:grid-cols-[1fr_0.55fr_150px] xl:[grid-template-areas:'image_content_spacer']",
+              ? "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[0.65fr_1fr] lg:[grid-template-areas:'content_image'] xl:grid-cols-[125px_0.5fr_1fr] xl:[grid-template-areas:'spacer_content_image']"
+              : "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[1fr_0.65fr] lg:[grid-template-areas:'image_content'] xl:grid-cols-[1fr_0.5fr_125px] xl:[grid-template-areas:'image_content_spacer']",
           )}
         >
           <Spacer />
