@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import carhiveImage from '../../../public/images/projects/carhive.webp';
 import { siteConfig } from '@/config/site';
 import { CarhiveIcon } from '@/app/components/icons/carhive';
@@ -5,22 +6,22 @@ import { NotespaceIcon } from '@/app/components/icons/notespace';
 import { ProjectCard } from '@/app/(home)/components/project-card';
 import { cn } from '@/lib/utils';
 
-const GridWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+const GridWrapper = ({ children }: { children: React.ReactNode }) => (
   <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
     {children}
   </div>
 );
 
-const Separator: React.FC<{ className?: string }> = ({ className }) => (
+const Separator = ({ className }: { className?: string }) => (
   <div
     className={cn(
-      "relative h-10 after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']",
+      "relative h-14 after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']",
       className,
     )}
   ></div>
 );
 
-const SectionHeader: React.FC = () => (
+const SectionHeader = () => (
   <div className="relative after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']">
     <div className="px-5 py-7 md:p-9">
       <h2 className="text-left text-lg font-semibold md:text-xl">Projects</h2>
@@ -43,7 +44,25 @@ export function Projects() {
         'Clerk',
         'Leaflet',
       ],
-      imageSrc: carhiveImage,
+      image: (
+        <>
+          <Image
+            src={carhiveImage}
+            alt=""
+            priority
+            width={924}
+            height={550}
+            className="hidden h-[550px] w-[924px] object-cover object-left lg:block"
+          />
+          <Image
+            src={carhiveImage}
+            alt=""
+            priority
+            className="ml-2 mt-2 object-cover object-left sm:m-0 lg:hidden"
+            sizes="100vw"
+          />
+        </>
+      ),
       logo: <CarhiveIcon className="size-6 shrink-0 text-black" />,
       features: [
         'Interactive Map',
@@ -66,7 +85,7 @@ export function Projects() {
         'Wouter',
         'Tiptap',
       ],
-      imageSrc: carhiveImage,
+      image: <></>,
       logo: <NotespaceIcon className="size-6 shrink-0 text-black" />,
       features: [
         'Rich Text Editor',
