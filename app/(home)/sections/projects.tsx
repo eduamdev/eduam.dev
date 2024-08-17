@@ -1,140 +1,200 @@
 import Image from 'next/image';
-import carhiveImage from '../../../public/images/projects/carhive.png';
-import notespaceImage from '../../../public/images/projects/notespace.png';
 import { siteConfig } from '@/config/site';
-import { CarhiveLogo } from '@/app/components/icons/carhive';
-import { NotespaceLogo } from '@/app/components/icons/notespace';
-import { ProjectCard } from '@/app/(home)/components/project-card';
-import { cn } from '@/lib/utils';
 
-const GridWrapper = ({ children }: { children: React.ReactNode }) => (
-  <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
-    {children}
-  </div>
-);
-
-const Separator = ({ className }: { className?: string }) => (
-  <div
-    className={cn(
-      "relative h-14 after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']",
-      className,
-    )}
-  ></div>
-);
-
-const SectionHeader = () => (
-  <div className="relative after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']">
-    <div className="px-5 py-7 md:p-9">
-      <h2 className="text-left text-lg font-semibold md:text-xl">Projects</h2>
-    </div>
-  </div>
-);
+import { CheckIcon } from '@/app/components/icons/check';
+import { Button } from '@/app/components/ui/button';
+import { GithubIcon } from '@/app/components/icons/github';
+import carhive from '../../../public/assets/projects/carhive.png';
+import notespace from '../../../public/assets/projects/notespace.png';
 
 export function Projects() {
   const { github } = siteConfig.links;
 
-  const projects = [
-    {
-      title: 'Carhive',
-      description: 'Experience seamless car rentals',
-      technologies: [
-        'Next.js',
-        'TypeScript',
-        'Tailwind CSS',
-        'Cloudinary',
-        'Clerk',
-        'Leaflet',
-      ],
-      image: (
-        <>
-          <Image
-            src={carhiveImage}
-            alt=""
-            priority
-            width={924}
-            height={550}
-            className="hidden h-[550px] w-[924px] object-cover object-left lg:block"
-          />
-          <Image
-            src={carhiveImage}
-            alt=""
-            priority
-            className="ml-2 mt-2 object-cover object-left sm:m-0 lg:hidden"
-            sizes="100vw"
-          />
-        </>
-      ),
-      logo: <CarhiveLogo className="size-5 shrink-0 text-black xl:size-6" />,
-      features: [
-        'Interactive Map',
-        'Multi-Filter Search',
-        'Authentication',
-        'Form Validation',
-      ],
-      githubUrl: `${github.url}/carhive`,
-      liveUrl: 'https://carhive.eduam.dev',
-    },
-    {
-      title: 'Notespace',
-      description:
-        'Organize and manage your notes, featuring rich text editing, notebook structuring, and tag management',
-      technologies: [
-        'Vite',
-        'React',
-        'TypeScript',
-        'TanStack Query',
-        'Wouter',
-        'Tiptap',
-      ],
-      image: (
-        <>
-          <Image
-            src={notespaceImage}
-            alt=""
-            priority
-            width={924}
-            height={550}
-            className="hidden h-[550px] w-[924px] object-cover object-right lg:block"
-          />
-        </>
-      ),
-      logo: <NotespaceLogo className="size-5 shrink-0 text-black xl:size-6" />,
-      features: [
-        'Rich Text Editor',
-        'Note Management',
-        'Autosave',
-        'Tagging & Search',
-      ],
-      githubUrl: `${github.url}/notespace`,
-      liveUrl: 'https://notespace.eduam.dev',
-      alignment: 'right',
-    },
-  ];
-
   return (
-    <section>
-      <GridWrapper>
-        <div></div>
-        <SectionHeader />
-        <div></div>
-      </GridWrapper>
-      {projects.map((project, index) => (
-        <div key={project.title}>
-          <ProjectCard {...project} />
-          {index < projects.length - 1 && (
-            <GridWrapper>
-              <div></div>
-              <Separator />
-              <div></div>
-            </GridWrapper>
-          )}
+    <section className="relative">
+      <div className="before:absolute before:inset-0 before:border-x before:border-t before:border-[var(--grid-border-color)] before:content-['']"></div>
+      <div className="grid grid-cols-3">
+        <div className="relative col-span-3">
+          <div className="before:absolute before:inset-0 before:w-1/3 before:border-r before:border-t before:border-[var(--grid-border-color)] before:opacity-70 before:content-[''] dark:before:opacity-90"></div>
+          <div className="before:absolute before:inset-0 before:w-2/3 before:border-r before:border-t before:border-[var(--grid-border-color)] before:opacity-70 before:content-[''] dark:before:opacity-90"></div>
+          <div className="p-6 sm:p-10 md:p-12">
+            <div className="pt-12">
+              <h2 className="text-balance text-center text-[28px] font-semibold">
+                Selected projects.
+              </h2>
+            </div>
+            <div className="pt-4">
+              <p className="text-balance text-center text-neutral-700 dark:text-neutral-400">
+                Here’s a glimpse at what I’ve been working on.
+              </p>
+            </div>
+          </div>
         </div>
-      ))}
-      <GridWrapper>
-        <div></div>
-        <Separator className="h-20" />
-        <div></div>
-      </GridWrapper>
+      </div>
+
+      <article className="relative grid grid-cols-3">
+        <div className="before:absolute before:inset-0 before:w-1/3 before:border-r before:border-[var(--grid-border-color)] before:opacity-70 before:content-[''] dark:before:opacity-90"></div>
+        <div className="before:absolute before:inset-0 before:w-2/3 before:border-r before:border-[var(--grid-border-color)] before:opacity-70 before:content-[''] dark:before:opacity-90"></div>
+        <div className="col-span-3 grid grid-cols-3">
+          <div className="col-span-3 md:col-span-1">
+            <div className="flex h-full flex-col ">
+              <div className="p-6 sm:p-10 md:p-12">
+                <div className="pt-6">
+                  <h3 className="flex items-center justify-start text-lg font-semibold">
+                    Carhive
+                  </h3>
+                </div>
+                <div className="pt-2.5">
+                  <p className="text-balance text-[16px] text-neutral-600 dark:text-neutral-400">
+                    Makes renting a car effortless, with a wide range of
+                    vehicles and easy booking.
+                  </p>
+                </div>
+                <div className="pt-8">
+                  <ul className="flex flex-col items-start justify-center gap-4 text-sm tracking-wide text-neutral-600 dark:text-neutral-400">
+                    <li>
+                      <CheckIcon className="mr-2.5 inline size-[14px] shrink-0" />
+                      Interactive Map
+                    </li>
+                    <li>
+                      <CheckIcon className="mr-2.5 inline size-[14px] shrink-0" />
+                      Multi-Filter Search
+                    </li>
+                    <li>
+                      <CheckIcon className="mr-2.5 inline size-[14px] shrink-0" />
+                      Authentication
+                    </li>
+                    <li>
+                      <CheckIcon className="mr-2.5 inline size-[14px] shrink-0" />
+                      Form Validation
+                    </li>
+                  </ul>
+                </div>
+                <div className="pt-12">
+                  <div className="flex items-center gap-4">
+                    <Button asChild>
+                      <a
+                        href="https://carhive.eduam.dev"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        Live Site
+                      </a>
+                    </Button>
+                    <Button variant={'outline'} asChild>
+                      <a
+                        href={`${github.url}/carhive`}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <GithubIcon className="mr-1.5 size-[18px] shrink-0" />
+                        Repository
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-3 md:col-span-2">
+            <div className="p-6 pr-0 sm:p-10 sm:pr-0 md:p-12 md:pr-0">
+              <div className="relative overflow-hidden rounded-tl-xl border border-b-0 dark:border-transparent">
+                <div className="after:absolute after:bottom-0 after:left-0 after:z-10 after:h-4 after:w-full after:bg-gradient-to-t after:from-neutral-50 after:content-[''] dark:after:bg-none"></div>
+                <Image
+                  src={carhive}
+                  alt="carhive"
+                  priority
+                  className=" object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div className="relative grid h-14 w-full grid-cols-3">
+        <div className="before:absolute before:inset-0 before:w-1/3 before:border-r before:border-[var(--grid-border-color)] before:opacity-70 before:content-[''] dark:before:opacity-90"></div>
+        <div className="before:absolute before:inset-0 before:w-2/3 before:border-r before:border-[var(--grid-border-color)] before:opacity-70 before:content-[''] dark:before:opacity-90"></div>
+      </div>
+
+      <article className="relative grid grid-cols-3">
+        <div className="before:absolute before:inset-0 before:w-1/3 before:border-r before:border-[var(--grid-border-color)] before:opacity-70 before:content-[''] dark:before:opacity-90"></div>
+        <div className="before:absolute before:inset-0 before:w-2/3 before:border-r before:border-[var(--grid-border-color)] before:opacity-70 before:content-[''] dark:before:opacity-90"></div>
+        <div className="col-span-3 grid grid-cols-3">
+          <div className="col-span-3 md:col-span-2">
+            <div className="p-6 sm:p-10 md:p-12 ">
+              <div className="relative overflow-hidden rounded-t-xl border border-b-0 after:absolute after:bottom-0 after:left-0 after:z-10 after:h-20 after:w-full after:bg-gradient-to-t after:from-neutral-50 after:content-[''] dark:border-transparent dark:after:bg-none">
+                <Image
+                  src={notespace}
+                  alt="Notespace"
+                  className=" object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="col-span-3 md:col-span-1">
+            <div className="flex h-full flex-col ">
+              <div className="p-6 sm:p-10 md:p-12">
+                <div className="pt-6">
+                  <h3 className="flex items-center justify-start text-lg font-semibold">
+                    Notespace
+                  </h3>
+                </div>
+                <div className="pt-2.5">
+                  <p className="text-balance text-[16px] text-neutral-600 dark:text-neutral-400">
+                    Organize and manage your notes, featuring rich text editing,
+                    notebook structuring, and tag management.
+                  </p>
+                </div>
+                <div className="pt-8">
+                  <ul className="flex flex-col items-start justify-center gap-4 text-sm tracking-wide text-neutral-600 dark:text-neutral-400">
+                    <li>
+                      <CheckIcon className="mr-2.5 inline size-[14px] shrink-0" />
+                      Rich Text Editor
+                    </li>
+                    <li>
+                      <CheckIcon className="mr-2.5 inline size-[14px] shrink-0" />
+                      Autosave
+                    </li>
+                    <li>
+                      <CheckIcon className="mr-2.5 inline size-[14px] shrink-0" />
+                      Search
+                    </li>
+                  </ul>
+                </div>
+                <div className="pt-12">
+                  <div className="flex items-center gap-4">
+                    <Button asChild>
+                      <a
+                        href="https://notespace.eduam.dev"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        Live Site
+                      </a>
+                    </Button>
+                    <Button variant={'outline'} asChild>
+                      <a
+                        href={`${github.url}/notespace`}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <GithubIcon className="mr-1.5 size-[18px] shrink-0" />
+                        Repository
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div className="relative grid h-16 w-full grid-cols-3">
+        <div className="before:absolute before:inset-0 before:w-1/3 before:border-r before:border-[var(--grid-border-color)] before:opacity-70 before:content-[''] dark:before:opacity-90"></div>
+        <div className="before:absolute before:inset-0 before:w-2/3 before:border-r before:border-[var(--grid-border-color)] before:opacity-70 before:content-[''] dark:before:opacity-90"></div>
+      </div>
     </section>
   );
 }

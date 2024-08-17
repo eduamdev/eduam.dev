@@ -7,7 +7,7 @@
     --grid-border-color: hsl(0, 0%, 92%);
     --header-height: 70px;
     --content-min-width: 330px;
-    --content-width: 964px;
+    --content-width: 1080px;
 
     --selection-bg-color: hsla(212, 100%, 41%, 1);
     --selection-text-color: #fff;
@@ -31,6 +31,7 @@
     color: var(--selection-text-color);
   }
 
+  *:before,
   *:after {
     pointer-events: none;
   }

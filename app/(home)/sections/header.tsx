@@ -1,39 +1,48 @@
-import { Avatar } from '@/app/components/ui/avatar';
-import { ContentWrapper } from '../components/content-wrapper';
-import { GridSection } from '../components/grid-section';
+import eduamdev from '../../../public/assets/avatars/eduamdev.png';
+
+import { Button } from '@/app/components/ui/button';
+import { AvatarImage } from '@/app/components/ui/avatar-image';
+import { XBrandIcon } from '@/app/components/icons/x-brand';
+import { GithubIcon } from '@/app/components/icons/github';
 import { siteConfig } from '@/config/site';
 
 export function Header() {
-  const { name, username, email } = siteConfig;
+  const { name, username } = siteConfig;
 
   return (
-    <ContentWrapper>
-      <GridSection>
-        <header className="relative z-10 flex h-[var(--header-height)] items-center justify-between">
-          <UserDetails name={name} username={username} />
-          <div className="px-5 md:px-9">
-            <span className="text-[15px]">{email}</span>
+    <section>
+      <div className="grid grid-cols-3">
+        <header className="col-span-3">
+          <div className="px-6 sm:px-10">
+            <div className="flex h-[var(--header-height)] items-center justify-between">
+              <div className="flex shrink-0 items-center justify-center gap-x-2.5">
+                <AvatarImage src={eduamdev} alt={username} priority />
+                <span className="font-medium">{name}</span>
+              </div>
+              <div className="inline-flex items-center gap-x-1">
+                <Button variant={'link'} size={'icon'} asChild>
+                  <a
+                    href={`https://x.com/eduamdev`}
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    <XBrandIcon className="size-[18px]" />
+                  </a>
+                </Button>
+                <Button variant={'link'} size={'icon'} asChild>
+                  <a
+                    href={`https://github.com/eduamdev`}
+                    rel="noopener"
+                    target="_blank"
+                  >
+                    <GithubIcon className="size-[18px]" />
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </header>
-      </GridSection>
-    </ContentWrapper>
+      </div>
+    </section>
   );
 }
-
-const UserDetails = ({
-  name,
-  username,
-}: {
-  name: string;
-  username: string;
-}) => (
-  <div className="flex h-full shrink-0 items-center gap-x-3 px-5 md:px-9">
-    <Avatar />
-    <div className="flex flex-col items-stretch gap-y-2">
-      <span className="text-sm font-medium leading-none">{name}</span>
-      <span className="text-sm leading-none text-neutral-600 dark:text-[#bbb]">
-        @{username}
-      </span>
-    </div>
-  </div>
-);

@@ -1,19 +1,21 @@
 import { Header } from './sections/header';
 import { Summary } from './sections/summary';
-import { Availability } from './sections/availability';
 import { Projects } from './sections/projects';
-import { Social } from './sections/social';
 import { Footer } from './sections/footer';
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col overflow-x-hidden">
-      <Header />
-      <Summary />
-      <Availability />
-      <Projects />
-      <Social />
-      <Footer />
+    <div className="flex h-dvh w-dvw flex-col overflow-x-hidden">
+      <div className="px-4 sm:px-8">
+        <div className="mx-auto w-full min-w-[var(--content-min-width)] max-w-[var(--content-width)]">
+          <Header />
+          <div className="pt-[10px] md:pt-4">
+            <Summary />
+          </div>
+          <Projects />
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }
