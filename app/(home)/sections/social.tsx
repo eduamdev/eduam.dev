@@ -4,7 +4,7 @@ import { TwitterIcon } from '@/app/components/icons/twitter';
 import { ContentWrapper } from '../components/content-wrapper';
 import { GridSection } from '../components/grid-section';
 import { siteConfig } from '@/config/site';
-import { Separator } from '@radix-ui/react-separator';
+import { Separator } from '@/app/components/ui/separator';
 
 export function Social() {
   const {
