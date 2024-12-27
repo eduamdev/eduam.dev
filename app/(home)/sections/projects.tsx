@@ -97,7 +97,7 @@ export function Projects() {
             </div>
           </div>
           <div className="col-span-3 md:col-span-2">
-            <div className="p-6 pr-0 sm:p-10 sm:pr-0 md:p-12 md:pr-0">
+            <div className="py-6 sm:py-10 md:py-12">
               <div className="relative overflow-hidden rounded-tl-xl border border-b-0 dark:border-transparent">
                 <div className="after:absolute after:bottom-0 after:left-0 after:z-10 after:h-4 after:w-full after:bg-gradient-to-t after:from-neutral-50 after:content-[''] dark:after:bg-none"></div>
                 <Image
