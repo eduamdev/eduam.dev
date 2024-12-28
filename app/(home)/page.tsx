@@ -1,7 +1,7 @@
-import { Header } from './sections/header';
-import { Summary } from './sections/summary';
-import { Projects } from './sections/projects';
-import { Footer } from './sections/footer';
+import { Header } from './header';
+import { Summary } from './summary';
+import { Projects } from './projects';
+import { Footer } from './footer';
 
 export default function HomePage() {
   return (
