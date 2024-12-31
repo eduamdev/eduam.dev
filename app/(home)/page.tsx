@@ -5,16 +5,22 @@ import { Footer } from './footer';
 
 export default function HomePage() {
   return (
-    <div className="flex h-dvh w-dvw flex-col overflow-x-hidden">
+    <div
+      className="flex h-dvh w-dvw flex-col overflow-x-hidden"
+      style={
+        {
+          '--content-min-width': '330px',
+          '--content-max-width': '1020px',
+        } as React.CSSProperties
+      }
+    >
       <div className="px-4 sm:px-8">
-        <div className="mx-auto w-full min-w-[var(--content-min-width)] max-w-[var(--content-width)]">
+        <main className="mx-auto w-full min-w-[var(--content-min-width)] max-w-[var(--content-max-width)]">
           <Header />
-          <div className="pt-[10px] md:pt-4">
-            <Summary />
-          </div>
+          <Summary />
           <Projects />
           <Footer />
-        </div>
+        </main>
       </div>
     </div>
   );

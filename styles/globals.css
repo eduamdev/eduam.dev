@@ -5,9 +5,6 @@
 @layer base {
   :root {
     --grid-border-color: hsl(0, 0%, 92%);
-    --header-height: 70px;
-    --content-min-width: 330px;
-    --content-width: 1020px;
 
     --selection-bg-color: hsla(212, 100%, 41%, 1);
     --selection-text-color: #fff;
