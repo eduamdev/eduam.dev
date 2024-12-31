@@ -1,6 +1,6 @@
-import { Avatar } from '@/app/components/ui/avatar';
-import { ContentWrapper } from '../components/content-wrapper';
-import { GridSection } from '../components/grid-section';
+import { Avatar } from '@/components/ui/avatar';
+import { ContentWrapper } from '@/components/content-wrapper';
+import { GridSection } from '@/components/grid-section';
 import { siteConfig } from '@/config/site';
 
 export function Header() {

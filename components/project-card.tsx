@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { CheckCircleIcon } from '@/app/components/icons/check-circle';
-import { GithubIcon } from '@/app/components/icons/github';
+import { CheckCircleIcon } from '@/components/icons/check-circle';
+import { GithubIcon } from '@/components/icons/github';
 import { cn } from '@/lib/utils';
 
 interface ProjectCardProps {

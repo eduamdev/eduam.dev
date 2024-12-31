@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import carhiveImage from '../../../public/images/projects/carhive.png';
-import notespaceImage from '../../../public/images/projects/notespace.png';
+import carhiveImage from '@/assets/images/carhive.png';
+import notespaceImage from '@/assets/images/notespace.png';
 import { siteConfig } from '@/config/site';
-import { CarhiveLogo } from '@/app/components/icons/carhive';
-import { NotespaceLogo } from '@/app/components/icons/notespace';
-import { ProjectCard } from '@/app/(home)/components/project-card';
+import { CarhiveLogo } from '@/components/icons/carhive';
+import { NotespaceLogo } from '@/components/icons/notespace';
+import { ProjectCard } from '@/components/project-card';
 import { cn } from '@/lib/utils';
 
 const GridWrapper = ({ children }: { children: React.ReactNode }) => (

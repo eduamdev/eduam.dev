@@ -1,6 +1,6 @@
-import { ContentWrapper } from '../components/content-wrapper';
-import { GridSection } from '../components/grid-section';
-import { Badge } from '@/app/components/ui/badge';
+import { ContentWrapper } from '../../components/content-wrapper';
+import { GridSection } from '../../components/grid-section';
+import { Badge } from '@/components/ui/badge';
 
 export function Availability() {
   return (

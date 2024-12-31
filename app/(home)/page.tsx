@@ -1,9 +1,9 @@
-import { Header } from './sections/header';
-import { Summary } from './sections/summary';
-import { Availability } from './sections/availability';
-import { Projects } from './sections/projects';
-import { Social } from './sections/social';
-import { Footer } from './sections/footer';
+import { Header } from './header';
+import { Summary } from './summary';
+import { Availability } from './availability';
+import { Projects } from './projects';
+import { Social } from './social';
+import { Footer } from './footer';
 
 export default function HomePage() {
   return (

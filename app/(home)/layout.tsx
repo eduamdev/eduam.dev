@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from 'next';
-import '@/app/styles/globals.css';
+import '@/styles/globals.css';
 import { fontSans } from '@/lib/fonts';
-import { ThemeProvider } from '@/app/components/theme-provider';
-import { Analytics } from '@/app/components/analytics';
-import { SpeedInsights } from '@/app/components/speed-insights';
+import { ThemeProvider } from '@/components/theme-provider';
+import { Analytics } from '@/components/analytics';
+import { SpeedInsights } from '@/components/speed-insights';
 import { siteConfig } from '@/config/site';
 import { absoluteUrl } from '@/lib/utils';
 

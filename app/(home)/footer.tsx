@@ -1,4 +1,4 @@
-import { ContentWrapper } from '../components/content-wrapper';
+import { ContentWrapper } from '@/components/content-wrapper';
 
 export function Footer() {
   return (

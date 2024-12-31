@@ -1,7 +1,7 @@
 import { siteConfig } from '@/config/site';
-import { ContentWrapper } from '../components/content-wrapper';
-import { GridSection } from '../components/grid-section';
-import { ChevronRightIcon } from '@/app/components/icons/chevron-right';
+import { ContentWrapper } from '@/components/content-wrapper';
+import { GridSection } from '@/components/grid-section';
+import { ChevronRightIcon } from '@/components/icons/chevron-right';
 
 export function Summary() {
   const { email } = siteConfig;

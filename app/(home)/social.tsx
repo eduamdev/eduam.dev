@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
-import { GithubIcon } from '@/app/components/icons/github';
-import { TwitterIcon } from '@/app/components/icons/twitter';
-import { ContentWrapper } from '../components/content-wrapper';
-import { GridSection } from '../components/grid-section';
+import { GithubIcon } from '@/components/icons/github';
+import { TwitterIcon } from '@/components/icons/twitter';
+import { ContentWrapper } from '@/components/content-wrapper';
+import { GridSection } from '@/components/grid-section';
 import { siteConfig } from '@/config/site';
-import { Separator } from '@/app/components/ui/separator';
+import { Separator } from '@/components/ui/separator';
 
 export function Social() {
   const {
