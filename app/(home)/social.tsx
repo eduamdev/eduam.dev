@@ -1,10 +1,9 @@
 import { ReactNode } from 'react';
 import { GithubIcon } from '@/components/icons/github';
 import { TwitterIcon } from '@/components/icons/twitter';
-import { ContentWrapper } from '@/components/content-wrapper';
-import { GridSection } from '@/components/grid-section';
 import { siteConfig } from '@/config/site';
 import { Separator } from '@/components/ui/separator';
+import { GridWrapper } from '@/components/grid-wrapper';
 
 export function Social() {
   const {
@@ -12,40 +11,29 @@ export function Social() {
   } = siteConfig;
 
   return (
-    <>
-      <ContentWrapper>
-        <GridSection />
-      </ContentWrapper>
+    <GridWrapper>
+      <div className="px-5 py-7 md:p-9">
+        <div className="flex h-full items-center justify-between gap-10 sm:justify-start">
+          <h2 className="text-left text-[22px] font-semibold md:text-2xl">
+            Let&apos;s connect
+          </h2>
 
-      <ContentWrapper>
-        <GridSection>
-          <div className="px-5 py-7 md:p-9">
-            <div className="flex h-full items-center justify-between gap-10 sm:justify-start">
-              <h2 className="text-left text-[22px] font-semibold md:text-2xl">
-                Let&apos;s connect
-              </h2>
-
-              <ul className="m-0 inline-flex shrink-0 items-center p-0 pl-[5px]">
-                <SocialLink href={github.url} ariaLabel="GitHub">
-                  <GithubIcon className="size-4 shrink-0" />
-                </SocialLink>
-                <Separator
-                  orientation="vertical"
-                  className="mx-3.5 h-[19px] w-px bg-[hsla(0,0%,92%,1)] dark:bg-[hsla(0,0%,12%,1)]"
-                  decorative
-                />
-                <SocialLink
-                  href={xcom.url}
-                  ariaLabel="X formerly known as Twitter"
-                >
-                  <TwitterIcon className="size-4 shrink-0" />
-                </SocialLink>
-              </ul>
-            </div>
-          </div>
-        </GridSection>
-      </ContentWrapper>
-    </>
+          <ul className="m-0 inline-flex shrink-0 items-center p-0 pl-[5px]">
+            <SocialLink href={github.url} ariaLabel="GitHub">
+              <GithubIcon className="size-4 shrink-0" />
+            </SocialLink>
+            <Separator
+              orientation="vertical"
+              className="mx-3.5 h-[19px] w-px bg-[hsla(0,0%,92%,1)] dark:bg-[hsla(0,0%,12%,1)]"
+              decorative
+            />
+            <SocialLink href={xcom.url} ariaLabel="X formerly known as Twitter">
+              <TwitterIcon className="size-4 shrink-0" />
+            </SocialLink>
+          </ul>
+        </div>
+      </div>
+    </GridWrapper>
   );
 }
 

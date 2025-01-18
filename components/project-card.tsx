@@ -15,11 +15,30 @@ interface ProjectCardProps {
   alignment?: 'left' | 'right';
 }
 
-const Spacer = () => (
-  <div className="hidden [grid-area:spacer] xl:block">
-    <div className="relative h-12 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-['']"></div>
-    <div className="relative h-12 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-['']"></div>
+const SectionSpacer = ({ alignment }: { alignment: 'left' | 'right' }) => (
+  <div
+    className={cn(
+      'hidden border-[#d6e0ff] [grid-area:spacer] xl:block',
+      alignment === 'left' ? 'border-r' : 'border-l',
+    )}
+  >
+    <div className="h-12 border-b border-[#d6e0ff]"></div>
+    <div className="h-12 border-b border-[#d6e0ff]"></div>
     <div></div>
+  </div>
+);
+
+const TechnologyTags = ({ technologies }: { technologies: string[] }) => (
+  <div className="flex flex-nowrap items-center justify-start gap-2 px-5 py-4 md:px-9 lg:h-12 lg:px-6 lg:py-0">
+    {technologies.map((tech, index) => (
+      <div
+        key={index}
+        className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-white px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]"
+      >
+        {tech}
+      </div>
+    ))}
+    <span className="ml-2 text-sm text-[#253ea7]">and more...</span>
   </div>
 );
 
@@ -33,31 +52,26 @@ const ImageSection = ({
   technologies: string[];
 }) => (
   <div className="[grid-area:image]">
-    <div className="relative h-0 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] lg:h-12"></div>
-    <div className="relative flex h-auto flex-nowrap items-center justify-start gap-2 px-5 py-4 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] md:px-9 lg:h-12 lg:px-6 lg:py-0">
+    <div
+      aria-hidden="true"
+      className="h-0 border-b border-[#d6e0ff] lg:h-12"
+    ></div>
+    <div className="relative flex border-b border-[#d6e0ff]">
       <div
+        aria-hidden="true"
         className={cn(
           'pointer-events-none absolute top-[-5px] z-[2] flex size-2.5 items-center justify-center border border-[#d6e0ff] bg-white',
           alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
         )}
       ></div>
       <div
+        aria-hidden="true"
         className={cn(
           'pointer-events-none absolute bottom-[-5px] z-[2] flex size-2.5 items-center justify-center border border-[#d6e0ff] bg-white',
           alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
         )}
       ></div>
-      {technologies.map((tech, index) => (
-        <div
-          key={index}
-          className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-white px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]"
-        >
-          {tech}
-        </div>
-      ))}
-      <span className="ml-2 whitespace-nowrap text-sm text-[#253ea7]">
-        and more...
-      </span>
+      <TechnologyTags technologies={technologies} />
     </div>
     {image}
   </div>
@@ -70,6 +84,7 @@ const ContentSection = ({
   features,
   githubUrl,
   liveUrl,
+  alignment,
 }: {
   logo: ReactNode;
   title: string;
@@ -77,10 +92,22 @@ const ContentSection = ({
   features: string[];
   githubUrl: string;
   liveUrl: string;
+  alignment: 'left' | 'right';
 }) => (
-  <div className="relative [grid-area:content] after:absolute after:inset-0 after:border-x after:border-[#d6e0ff] after:content-['']">
-    <div className="relative hidden h-12 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] lg:block"></div>
-    <div className="relative hidden h-12 after:absolute after:inset-0 after:border-b after:border-[#d6e0ff] after:content-[''] lg:block"></div>
+  <div
+    className={cn(
+      'border-[#d6e0ff] [grid-area:content]',
+      alignment === 'left' ? 'border-r' : 'border-l',
+    )}
+  >
+    <div
+      aria-hidden="true"
+      className="hidden h-12 border-b border-[#d6e0ff] lg:block"
+    ></div>
+    <div
+      aria-hidden="true"
+      className="hidden h-12 border-b border-[#d6e0ff] lg:block"
+    ></div>
     <div className="flex flex-col justify-start px-5 py-8 md:p-9 lg:h-[550px]">
       <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-white shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(55,93,251,0.1)_0px_0px_0px_1px,rgba(37,62,167,0.2)_0px_1px_3px_0px] xl:size-11">
         {logo}
@@ -140,8 +167,7 @@ export function ProjectCard({
   alignment = 'left',
 }: ProjectCardProps) {
   return (
-    <div className="grid grid-cols-1 flex-row xl:grid-cols-[1fr_minmax(var(--content-min-width),calc(var(--content-width)_+_250px))_1fr]">
-      <div className="hidden xl:block"></div>
+    <div className="grid grid-cols-1 items-center justify-center xl:grid-cols-[minmax(var(--content-min-width),calc(var(--content-width)_+_250px))]">
       <article className="relative overflow-hidden after:absolute after:inset-0 after:border after:border-[#d6e0ff] after:content-[''] lg:rounded-[32px] after:lg:rounded-[32px]">
         <div
           className={cn(
@@ -151,7 +177,7 @@ export function ProjectCard({
               : "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[1fr_0.65fr] lg:[grid-template-areas:'image_content'] xl:grid-cols-[1fr_0.5fr_125px] xl:[grid-template-areas:'image_content_spacer']",
           )}
         >
-          <Spacer />
+          <SectionSpacer alignment={alignment} />
           <ContentSection
             logo={logo}
             title={title}
@@ -159,6 +185,7 @@ export function ProjectCard({
             features={features}
             githubUrl={githubUrl}
             liveUrl={liveUrl}
+            alignment={alignment}
           />
           <ImageSection
             image={image}
@@ -167,7 +194,6 @@ export function ProjectCard({
           />
         </div>
       </article>
-      <div></div>
     </div>
   );
 }

@@ -5,30 +5,6 @@ import { siteConfig } from '@/config/site';
 import { CarhiveLogo } from '@/components/icons/carhive';
 import { NotespaceLogo } from '@/components/icons/notespace';
 import { ProjectCard } from '@/components/project-card';
-import { cn } from '@/lib/utils';
-
-const GridWrapper = ({ children }: { children: React.ReactNode }) => (
-  <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] flex-row">
-    {children}
-  </div>
-);
-
-const Separator = ({ className }: { className?: string }) => (
-  <div
-    className={cn(
-      "relative h-14 after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']",
-      className,
-    )}
-  ></div>
-);
-
-const SectionHeader = () => (
-  <div className="relative after:absolute after:inset-0 after:border-x after:border-[var(--grid-border-color)] after:content-['']">
-    <div className="px-5 py-7 md:p-9">
-      <h2 className="text-left text-lg font-semibold md:text-xl">Projects</h2>
-    </div>
-  </div>
-);
 
 export function Projects() {
   const { github } = siteConfig.links;
@@ -113,28 +89,54 @@ export function Projects() {
 
   return (
     <section>
-      <GridWrapper>
-        <div></div>
-        <SectionHeader />
-        <div></div>
-      </GridWrapper>
+      <div className="grid grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr]">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none  border-r border-[var(--grid-border-color)]"
+        ></div>
+        <div className="px-5 py-7 md:p-9">
+          <h2 className="text-left text-lg font-semibold md:text-xl">
+            Projects
+          </h2>
+        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none  border-l border-[var(--grid-border-color)]"
+        ></div>
+      </div>
       {projects.map((project, index) => (
         <div key={project.title}>
           <ProjectCard {...project} />
           {index < projects.length - 1 && (
-            <GridWrapper>
-              <div></div>
-              <Separator />
-              <div></div>
-            </GridWrapper>
+            <div className="grid h-20 grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr]">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none border-r border-[var(--grid-border-color)]"
+              ></div>
+              <div aria-hidden="true"></div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none border-l border-[var(--grid-border-color)]"
+              ></div>
+            </div>
           )}
         </div>
       ))}
-      <GridWrapper>
-        <div></div>
-        <Separator className="h-20" />
-        <div></div>
-      </GridWrapper>
+      <div className="grid h-20 grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] border-b border-[var(--grid-border-color)]">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none relative border-r border-[var(--grid-border-color)]"
+        >
+          <div className="pointer-events-none absolute bottom-[-5px] right-[-5px] z-[2] flex size-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
+        </div>
+        <div aria-hidden="true"></div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none relative border-l border-[var(--grid-border-color)]"
+        >
+          <div className="pointer-events-none absolute bottom-[-5px] left-[-5px] z-[2] flex size-2.5 items-center justify-center border border-[var(--grid-border-color)] bg-white shadow-sm dark:hidden"></div>
+        </div>
+      </div>
     </section>
   );
 }

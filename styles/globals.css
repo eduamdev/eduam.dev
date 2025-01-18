@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --grid-border-color: hsl(0, 0%, 92%);
-    --header-height: 70px;
+
     --content-min-width: 330px;
     --content-width: 964px;
 
@@ -13,9 +13,9 @@
     --selection-text-color: #fff;
 
     --font-sans: var(--font-geist-sans);
-    --font-sans-fallback: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
+    --font-sans-fallback: 'Inter', -apple-system, BlinkMacSystemFont,
+      'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+      'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 
   @media (prefers-color-scheme: dark) {
