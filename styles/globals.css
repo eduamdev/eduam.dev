@@ -17,12 +17,6 @@
       'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
       'Droid Sans', 'Helvetica Neue', sans-serif;
   }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --grid-border-color: hsl(0, 0%, 12%);
-    }
-  }
 }
 
 @layer base {
@@ -75,13 +69,6 @@
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: black;
-      color: rgb(237, 237, 237);
-    }
   }
 
   /* https://bugs.webkit.org/show_bug.cgi?id=243601

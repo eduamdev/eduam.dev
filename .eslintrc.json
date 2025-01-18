@@ -6,14 +6,18 @@
     "prettier",
     "plugin:tailwindcss/recommended"
   ],
-  "plugins": ["tailwindcss", "markdown"],
+  "plugins": [
+    "tailwindcss"
+  ],
   "rules": {
     "tailwindcss/no-custom-classname": "off",
     "tailwindcss/classnames-order": "error"
   },
   "settings": {
     "tailwindcss": {
-      "callees": ["cn"],
+      "callees": [
+        "cn"
+      ],
       "config": "tailwind.config.js"
     },
     "next": {
@@ -22,12 +26,12 @@
   },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js"],
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js"
+      ],
       "parser": "@typescript-eslint/parser"
-    },
-    {
-      "files": ["**/*.md"],
-      "processor": "markdown/markdown"
     }
   ]
 }

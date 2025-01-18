@@ -136,7 +136,7 @@ const ContentSection = ({
             href={githubUrl}
             rel="noreferrer"
             target="_blank"
-            className="flex h-9 items-center justify-center rounded-lg bg-white px-[10px] text-sm font-medium shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px] transition-shadow hover:shadow-[rgba(55,93,251,0.12)_0px_0px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px] dark:text-[#171717] lg:min-w-[126px] lg:max-w-[126px]"
+            className="flex h-9 items-center justify-center rounded-lg bg-white px-[10px] text-sm font-medium shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px] transition-shadow hover:shadow-[rgba(55,93,251,0.12)_0px_0px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px]  lg:min-w-[126px] lg:max-w-[126px]"
           >
             <GithubIcon className="mr-[2px] flex size-[14px] min-w-5 shrink-0 items-center justify-center" />
             <span className="inline-block truncate px-[6px]">Repository</span>
@@ -145,7 +145,7 @@ const ContentSection = ({
             href={liveUrl}
             rel="noreferrer"
             target="_blank"
-            className="flex h-9 items-center justify-center rounded-lg bg-[#383838] px-[10px] text-sm font-medium text-white shadow-[rgb(73,73,73)_0px_-2.4px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] transition-all hover:bg-[#5c5c5c] hover:shadow-[rgb(73,73,73)_0px_0px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(211,100%,42%,1)] focus-visible:outline-none dark:focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(212,100%,48%,1)] lg:min-w-[70px] lg:max-w-[70px]"
+            className="flex h-9 items-center justify-center rounded-lg bg-[#383838] px-[10px] text-sm font-medium text-white shadow-[rgb(73,73,73)_0px_-2.4px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] transition-all hover:bg-[#5c5c5c] hover:shadow-[rgb(73,73,73)_0px_0px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(211,100%,42%,1)] focus-visible:outline-none lg:min-w-[70px] lg:max-w-[70px]"
           >
             <span className="inline-block truncate px-[6x]">Visit</span>
           </a>

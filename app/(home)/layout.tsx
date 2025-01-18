@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import '@/styles/globals.css';
 import { fontSans } from '@/lib/fonts';
-import { ThemeProvider } from '@/components/theme-provider';
 import { Analytics } from '@/components/analytics';
 import { SpeedInsights } from '@/components/speed-insights';
 import { siteConfig } from '@/config/site';
@@ -69,12 +68,10 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={fontSans.variable} suppressHydrationWarning>
+    <html lang="en" className={fontSans.variable}>
       <head />
       <body>
-        <ThemeProvider attribute="class" disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+        {children}
         <Analytics />
         <SpeedInsights />
       </body>

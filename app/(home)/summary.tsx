@@ -34,7 +34,7 @@ const CallToAction = ({ email }: { email: string }) => (
       href={`mailto:${email}?subject=Project inquiry`}
       rel="noopener"
       target="_blank"
-      className="inline-flex h-8 items-center justify-center gap-1 rounded-[50px] bg-neutral-950 py-1 pl-[14px] pr-[6px] text-sm font-medium text-white shadow-[rgba(0,0,0,0.14)_0_0.8px_0.8px_-0.6875px,rgb(0,0,0)_0_2.4px_2.4px_-1.375px,rgba(0,0,0,0.13)_0_6.38px_6.38px_-2.0625px,rgba(0,0,0,0.11)_0_20px_20px_-2.75px] transition-colors hover:bg-neutral-700 dark:bg-[#555] dark:text-[rgb(237,237,237)] dark:hover:bg-neutral-700"
+      className="inline-flex h-8 items-center justify-center gap-1 rounded-[50px] bg-neutral-950 py-1 pl-[14px] pr-[6px] text-sm font-medium text-white shadow-[rgba(0,0,0,0.14)_0_0.8px_0.8px_-0.6875px,rgb(0,0,0)_0_2.4px_2.4px_-1.375px,rgba(0,0,0,0.13)_0_6.38px_6.38px_-2.0625px,rgba(0,0,0,0.11)_0_20px_20px_-2.75px] transition-colors hover:bg-neutral-700"
     >
       Open for projects
       <span className="flex size-6 items-center justify-center">

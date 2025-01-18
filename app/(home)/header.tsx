@@ -80,9 +80,7 @@ const UserDetails = ({
     <Avatar />
     <div className="flex flex-col items-stretch gap-y-2">
       <span className="text-sm font-medium leading-none">{name}</span>
-      <span className="text-sm leading-none text-neutral-600 dark:text-[#bbb]">
-        @{username}
-      </span>
+      <span className="text-sm leading-none text-neutral-600">@{username}</span>
     </div>
   </div>
 );
