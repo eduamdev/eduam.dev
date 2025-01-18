@@ -2,18 +2,20 @@ import Image from 'next/image';
 import carhiveImage from '@/assets/images/carhive.png';
 import notespaceImage from '@/assets/images/notespace.png';
 import { siteConfig } from '@/config/site';
-import { CarhiveLogo } from '@/components/icons/carhive';
-import { NotespaceLogo } from '@/components/icons/notespace';
+import { CarhiveLogo } from '@/components/carhive-logo';
+import { NotespaceLogo } from '@/components/notespace-logo';
 import { ProjectCard } from '@/components/project-card';
+import { Fragment } from 'react';
 
-export function Projects() {
+export function Work() {
   const { github } = siteConfig.links;
 
   const projects = [
     {
+      _id: 'p01',
       title: 'Carhive',
       description: 'Experience seamless car rentals',
-      technologies: [
+      techStack: [
         'Next.js',
         'TypeScript',
         'Tailwind CSS',
@@ -47,14 +49,16 @@ export function Projects() {
         'Authentication',
         'Form Validation',
       ],
-      githubUrl: `${github.url}/carhive`,
-      liveUrl: 'https://carhive.eduam.dev',
+      repoUrl: `${github.url}/carhive`,
+      siteUrl: 'https://carhive.eduam.dev',
+      alignment: 'left',
     },
     {
+      _id: 'p02',
       title: 'Notespace',
       description:
         'Organize and manage your notes, featuring rich text editing, notebook structuring, and tag management',
-      technologies: [
+      techStack: [
         'Vite',
         'React',
         'TypeScript',
@@ -81,8 +85,8 @@ export function Projects() {
         'Autosave',
         'Tagging & Search',
       ],
-      githubUrl: `${github.url}/notespace`,
-      liveUrl: 'https://notespace.eduam.dev',
+      repoUrl: `${github.url}/notespace`,
+      siteUrl: 'https://notespace.eduam.dev',
       alignment: 'right',
     },
   ];
@@ -95,9 +99,7 @@ export function Projects() {
           className="pointer-events-none  border-r border-[var(--grid-border-color)]"
         ></div>
         <div className="px-5 py-7 md:p-9">
-          <h2 className="text-left text-lg font-semibold md:text-xl">
-            Projects
-          </h2>
+          <h2 className="text-left text-lg font-semibold md:text-xl">Work</h2>
         </div>
         <div
           aria-hidden="true"
@@ -105,7 +107,7 @@ export function Projects() {
         ></div>
       </div>
       {projects.map((project, index) => (
-        <div key={project.title}>
+        <Fragment key={project._id}>
           <ProjectCard {...project} />
           {index < projects.length - 1 && (
             <div className="grid h-20 grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr]">
@@ -120,7 +122,7 @@ export function Projects() {
               ></div>
             </div>
           )}
-        </div>
+        </Fragment>
       ))}
       <div className="grid h-20 grid-cols-[1fr_minmax(var(--content-min-width),var(--content-width))_1fr] border-b border-[var(--grid-border-color)]">
         <div

@@ -70,7 +70,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={fontSans.variable}>
       <head />
-      <body>
+      <body className="text-pretty">
         {children}
         <Analytics />
         <SpeedInsights />

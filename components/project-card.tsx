@@ -1,19 +1,6 @@
 import { ReactNode } from 'react';
-import { CheckCircleIcon } from '@/components/icons/check-circle';
-import { GithubIcon } from '@/components/icons/github';
 import { cn } from '@/lib/utils';
-
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  technologies: string[];
-  image: ReactNode;
-  logo: ReactNode;
-  features: string[];
-  githubUrl: string;
-  liveUrl: string;
-  alignment?: 'left' | 'right';
-}
+import { IconCircleCheck } from '@tabler/icons-react';
 
 const SectionSpacer = ({ alignment }: { alignment: 'left' | 'right' }) => (
   <div
@@ -28,9 +15,9 @@ const SectionSpacer = ({ alignment }: { alignment: 'left' | 'right' }) => (
   </div>
 );
 
-const TechnologyTags = ({ technologies }: { technologies: string[] }) => (
+const TechnologyTags = ({ techStack }: { techStack: string[] }) => (
   <div className="flex flex-nowrap items-center justify-start gap-2 px-5 py-4 md:px-9 lg:h-12 lg:px-6 lg:py-0">
-    {technologies.map((tech, index) => (
+    {techStack.map((tech, index) => (
       <div
         key={index}
         className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-white px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]"
@@ -38,18 +25,17 @@ const TechnologyTags = ({ technologies }: { technologies: string[] }) => (
         {tech}
       </div>
     ))}
-    <span className="ml-2 text-sm text-[#253ea7]">and more...</span>
   </div>
 );
 
 const ImageSection = ({
   image,
   alignment,
-  technologies,
+  techStack,
 }: {
   image: ReactNode;
   alignment: 'left' | 'right';
-  technologies: string[];
+  techStack: string[];
 }) => (
   <div className="[grid-area:image]">
     <div
@@ -71,7 +57,7 @@ const ImageSection = ({
           alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
         )}
       ></div>
-      <TechnologyTags technologies={technologies} />
+      <TechnologyTags techStack={techStack} />
     </div>
     {image}
   </div>
@@ -82,16 +68,16 @@ const ContentSection = ({
   title,
   description,
   features,
-  githubUrl,
-  liveUrl,
+  repoUrl,
+  siteUrl,
   alignment,
 }: {
   logo: ReactNode;
   title: string;
   description: string;
   features: string[];
-  githubUrl: string;
-  liveUrl: string;
+  repoUrl: string;
+  siteUrl: string;
   alignment: 'left' | 'right';
 }) => (
   <div
@@ -116,15 +102,15 @@ const ContentSection = ({
         <h3 className="font-semibold text-black md:text-[17px]">{title}</h3>
       </div>
       <div className="pt-2">
-        <p className="text-balance text-sm leading-6 text-neutral-700 sm:text-[15px]">
+        <p className="text-sm leading-6 text-neutral-700 sm:text-[15px]">
           {description}
         </p>
       </div>
       <div className="hidden pt-8 lg:block">
-        <ul className="flex flex-col gap-5 text-[15px] text-neutral-800">
+        <ul className="flex flex-col gap-3 text-[15px] text-neutral-800">
           {features.map((feature, index) => (
-            <li key={index} className="flex gap-2.5">
-              <CheckCircleIcon className="inline-flex size-5 shrink-0 text-[#375dfb]" />
+            <li key={index} className="flex items-center gap-2.5">
+              <IconCircleCheck className="inline-flex size-[18px] shrink-0 text-[#375dfb]" />
               {feature}
             </li>
           ))}
@@ -133,21 +119,22 @@ const ContentSection = ({
       <div className="pt-6 lg:pt-9">
         <div className="grid grid-cols-2 items-center justify-start gap-x-4 lg:flex">
           <a
-            href={githubUrl}
-            rel="noreferrer"
+            href={repoUrl}
+            rel="noopener noreferrer"
             target="_blank"
-            className="flex h-9 items-center justify-center rounded-lg bg-white px-[10px] text-sm font-medium shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px] transition-shadow hover:shadow-[rgba(55,93,251,0.12)_0px_0px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px]  lg:min-w-[126px] lg:max-w-[126px]"
+            className="flex h-9 items-center justify-center rounded-lg bg-white px-[10px] text-sm font-medium shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px] transition-shadow hover:shadow-[rgba(55,93,251,0.12)_0px_0px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px]"
           >
-            <GithubIcon className="mr-[2px] flex size-[14px] min-w-5 shrink-0 items-center justify-center" />
-            <span className="inline-block truncate px-[6px]">Repository</span>
+            <span className="inline-block truncate px-[6px]">
+              View code repository
+            </span>
           </a>
           <a
-            href={liveUrl}
-            rel="noreferrer"
+            href={siteUrl}
+            rel="noopener noreferrer"
             target="_blank"
-            className="flex h-9 items-center justify-center rounded-lg bg-[#383838] px-[10px] text-sm font-medium text-white shadow-[rgb(73,73,73)_0px_-2.4px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] transition-all hover:bg-[#5c5c5c] hover:shadow-[rgb(73,73,73)_0px_0px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(211,100%,42%,1)] focus-visible:outline-none lg:min-w-[70px] lg:max-w-[70px]"
+            className="flex h-9 items-center justify-center rounded-lg bg-[#383838] px-[10px] text-sm font-medium text-white shadow-[rgb(73,73,73)_0px_-2.4px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] transition-all hover:bg-[#5c5c5c] hover:shadow-[rgb(73,73,73)_0px_0px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(211,100%,42%,1)] focus-visible:outline-none"
           >
-            <span className="inline-block truncate px-[6x]">Visit</span>
+            <span className="inline-block truncate px-[6x]">Visit website</span>
           </a>
         </div>
       </div>
@@ -155,15 +142,27 @@ const ContentSection = ({
   </div>
 );
 
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  techStack: string[];
+  image: ReactNode;
+  logo: ReactNode;
+  features: string[];
+  repoUrl: string;
+  siteUrl: string;
+  alignment?: 'left' | 'right';
+}
+
 export function ProjectCard({
   title,
   description,
-  technologies,
+  techStack,
   image,
   logo,
   features,
-  githubUrl,
-  liveUrl,
+  repoUrl,
+  siteUrl,
   alignment = 'left',
 }: ProjectCardProps) {
   return (
@@ -183,14 +182,14 @@ export function ProjectCard({
             title={title}
             description={description}
             features={features}
-            githubUrl={githubUrl}
-            liveUrl={liveUrl}
+            repoUrl={repoUrl}
+            siteUrl={siteUrl}
             alignment={alignment}
           />
           <ImageSection
             image={image}
             alignment={alignment}
-            technologies={technologies}
+            techStack={techStack}
           />
         </div>
       </article>

@@ -1,9 +1,8 @@
-import { ReactNode } from 'react';
-import { GithubIcon } from '@/components/icons/github';
-import { TwitterIcon } from '@/components/icons/twitter';
 import { siteConfig } from '@/config/site';
 import { Separator } from '@/components/ui/separator';
 import { GridWrapper } from '@/components/grid-wrapper';
+import { IconBrandGithub, IconBrandX } from '@tabler/icons-react';
+import { SocialLink } from '@/components/social-link';
 
 export function Social() {
   const {
@@ -14,47 +13,29 @@ export function Social() {
     <GridWrapper>
       <div className="px-5 py-7 md:p-9">
         <div className="flex h-full items-center justify-between gap-10 sm:justify-start">
-          <h2 className="text-left text-[22px] font-semibold md:text-2xl">
+          <h2 className="text-left text-[22px] font-semibold">
             Let&apos;s connect
           </h2>
 
-          <ul className="m-0 inline-flex shrink-0 items-center p-0 pl-[5px]">
-            <SocialLink href={github.url} ariaLabel="GitHub">
-              <GithubIcon className="size-4 shrink-0" />
-            </SocialLink>
+          <ul className="m-0 inline-flex shrink-0 items-center">
+            <li>
+              <SocialLink href={github.url} ariaLabel="Visit GitHub profile">
+                <IconBrandGithub />
+              </SocialLink>
+            </li>
             <Separator
               orientation="vertical"
-              className="mx-3.5 h-[19px] w-px bg-[hsla(0,0%,92%,1)] "
+              className="mx-1.5 h-[19px]"
               decorative
             />
-            <SocialLink href={xcom.url} ariaLabel="X formerly known as Twitter">
-              <TwitterIcon className="size-4 shrink-0" />
-            </SocialLink>
+            <li>
+              <SocialLink href={xcom.url} ariaLabel="Visit Twitter profile">
+                <IconBrandX />
+              </SocialLink>
+            </li>
           </ul>
         </div>
       </div>
     </GridWrapper>
   );
 }
-
-const SocialLink = ({
-  href,
-  ariaLabel,
-  children,
-}: {
-  href: string;
-  ariaLabel: string;
-  children: ReactNode;
-}) => (
-  <li className="inline-flex leading-[0]">
-    <a
-      href={href}
-      rel="noopener"
-      target="_blank"
-      className="m-[-3px] rounded-full p-[3px] text-[#666] transition-all duration-200 hover:text-black focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(211,100%,42%,1)] focus-visible:outline-none"
-      aria-label={ariaLabel}
-    >
-      {children}
-    </a>
-  </li>
-);
