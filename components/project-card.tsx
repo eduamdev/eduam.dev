@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
-import { IconCircleCheck } from '@tabler/icons-react';
+import { IconArrowUpRight } from '@tabler/icons-react';
 
 const SectionSpacer = ({ alignment }: { alignment: 'left' | 'right' }) => (
   <div
@@ -107,10 +107,12 @@ const ContentSection = ({
         </p>
       </div>
       <div className="hidden pt-8 lg:block">
-        <ul className="flex flex-col gap-3 text-[15px] text-neutral-800">
+        <ul className="flex flex-col gap-3 pl-3 text-[14px] text-neutral-800">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-center gap-2.5">
-              <IconCircleCheck className="inline-flex size-[18px] shrink-0 text-[#375dfb]" />
+            <li
+              key={index}
+              className="flex items-center gap-2.5 pl-3 before:absolute before:-mt-px before:ml-[-22px] before:text-[#375dfb] before:content-['-']"
+            >
               {feature}
             </li>
           ))}
@@ -126,6 +128,7 @@ const ContentSection = ({
           >
             <span className="inline-block truncate px-[6px]">
               View code repository
+              <IconArrowUpRight className="ml-1 inline size-2.5 shrink-0 align-top" />
             </span>
           </a>
           <a
@@ -134,7 +137,10 @@ const ContentSection = ({
             target="_blank"
             className="flex h-9 items-center justify-center rounded-lg bg-[#383838] px-[10px] text-sm font-medium text-white shadow-[rgb(73,73,73)_0px_-2.4px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] transition-all hover:bg-[#5c5c5c] hover:shadow-[rgb(73,73,73)_0px_0px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(211,100%,42%,1)] focus-visible:outline-none"
           >
-            <span className="inline-block truncate px-[6x]">Visit website</span>
+            <span className="inline-block truncate px-[6x]">
+              Visit website
+              <IconArrowUpRight className="ml-1 inline size-2.5 shrink-0 align-top" />
+            </span>
           </a>
         </div>
       </div>
