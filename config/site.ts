@@ -7,7 +7,7 @@ export const siteConfig = {
     github: { name: 'GitHub', url: 'https://github.com/eduamdev' },
     xcom: { name: 'x.com', url: 'https://x.com/eduamdev' },
   },
-  email: 'hi@eduam.dev',
+  email: 'eduamdev@gmail.com',
 };
 
 export type SiteConfig = typeof siteConfig;
