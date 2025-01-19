@@ -1,8 +1,9 @@
 /** @type {import('prettier').Config} */
 module.exports = {
-  endOfLine: "lf",
-  arrowParens: "always",
+  endOfLine: 'lf',
+  arrowParens: 'always',
   singleQuote: true,
   tabWidth: 2,
-  plugins: ["prettier-plugin-tailwindcss"],
+  tailwindFunctions: ['classnames', 'clsx', 'cn', 'cva'],
+  plugins: ['prettier-plugin-tailwindcss'],
 };
