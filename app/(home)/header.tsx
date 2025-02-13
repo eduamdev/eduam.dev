@@ -47,10 +47,10 @@ const Avatar = () => {
       <Image
         src={eduamdev}
         alt={`${name} Avatar`}
-        width={32}
-        height={32}
+        width={36}
+        height={36}
         priority
-        className="aspect-square size-8 rounded-full"
+        className="aspect-square size-9 rounded-full"
       />
       <div className="flex flex-col items-stretch gap-y-1.5">
         <span className="text-sm font-medium leading-none text-black">

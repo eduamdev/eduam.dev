@@ -1,152 +1,7 @@
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 import { IconArrowUpRight } from '@tabler/icons-react';
-
-const SectionSpacer = ({ alignment }: { alignment: 'left' | 'right' }) => (
-  <div
-    className={cn(
-      'hidden border-[#d6e0ff] [grid-area:spacer] xl:block',
-      alignment === 'left' ? 'border-r' : 'border-l',
-    )}
-  >
-    <div className="h-12 border-b border-[#d6e0ff]"></div>
-    <div className="h-12 border-b border-[#d6e0ff]"></div>
-    <div></div>
-  </div>
-);
-
-const TechnologyTags = ({ techStack }: { techStack: string[] }) => (
-  <div className="flex flex-nowrap items-center justify-start gap-2 px-5 py-4 md:px-9 lg:h-12 lg:px-6 lg:py-0">
-    {techStack.map((tech, index) => (
-      <div
-        key={index}
-        className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[rgba(37,62,167,0.2)] bg-white px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]"
-      >
-        {tech}
-      </div>
-    ))}
-  </div>
-);
-
-const ImageSection = ({
-  image,
-  alignment,
-  techStack,
-}: {
-  image: ReactNode;
-  alignment: 'left' | 'right';
-  techStack: string[];
-}) => (
-  <div className="[grid-area:image]">
-    <div
-      aria-hidden="true"
-      className="h-0 border-b border-[#d6e0ff] lg:h-12"
-    ></div>
-    <div className="relative flex border-b border-[#d6e0ff]">
-      <div
-        aria-hidden="true"
-        className={cn(
-          'pointer-events-none absolute top-[-5px] z-[2] flex size-2.5 items-center justify-center border border-[#d6e0ff] bg-white',
-          alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
-        )}
-      ></div>
-      <div
-        aria-hidden="true"
-        className={cn(
-          'pointer-events-none absolute bottom-[-5px] z-[2] flex size-2.5 items-center justify-center border border-[#d6e0ff] bg-white',
-          alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
-        )}
-      ></div>
-      <TechnologyTags techStack={techStack} />
-    </div>
-    {image}
-  </div>
-);
-
-const ContentSection = ({
-  logo,
-  title,
-  description,
-  features,
-  repoUrl,
-  siteUrl,
-  alignment,
-}: {
-  logo: ReactNode;
-  title: string;
-  description: string;
-  features: string[];
-  repoUrl: string;
-  siteUrl: string;
-  alignment: 'left' | 'right';
-}) => (
-  <div
-    className={cn(
-      'border-[#d6e0ff] [grid-area:content]',
-      alignment === 'left' ? 'border-r' : 'border-l',
-    )}
-  >
-    <div
-      aria-hidden="true"
-      className="hidden h-12 border-b border-[#d6e0ff] lg:block"
-    ></div>
-    <div
-      aria-hidden="true"
-      className="hidden h-12 border-b border-[#d6e0ff] lg:block"
-    ></div>
-    <div className="flex flex-col justify-start px-5 py-8 md:p-9 lg:h-[550px]">
-      <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-white shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(55,93,251,0.1)_0px_0px_0px_1px,rgba(37,62,167,0.2)_0px_1px_3px_0px] xl:size-11">
-        {logo}
-      </div>
-      <div className="pt-7 xl:pt-9">
-        <h3 className="font-semibold text-black md:text-[17px]">{title}</h3>
-      </div>
-      <div className="pt-2">
-        <p className="text-sm leading-6 text-neutral-700 sm:text-[15px]">
-          {description}
-        </p>
-      </div>
-      <div className="hidden pt-8 lg:block">
-        <ul className="flex flex-col gap-3 pl-3 text-[14px] text-neutral-800">
-          {features.map((feature, index) => (
-            <li
-              key={index}
-              className="flex items-center gap-2.5 pl-3 before:absolute before:-mt-px before:ml-[-22px] before:text-[#375dfb] before:content-['-']"
-            >
-              {feature}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="pt-6 lg:pt-9">
-        <div className="grid grid-cols-2 items-center justify-start gap-x-4 lg:flex">
-          <a
-            href={repoUrl}
-            rel="noopener noreferrer"
-            target="_blank"
-            className="flex h-9 items-center justify-center rounded-lg bg-white px-[10px] text-sm font-medium shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px] transition-shadow hover:shadow-[rgba(55,93,251,0.12)_0px_0px_0px_0px_inset,rgba(37,62,167,0.2)_0px_1px_3px_0px,rgba(55,93,251,0.1)_0px_0px_0px_1px]"
-          >
-            <span className="inline-block truncate px-[6px]">
-              View code repository
-              <IconArrowUpRight className="ml-1 inline size-2.5 shrink-0 align-top" />
-            </span>
-          </a>
-          <a
-            href={siteUrl}
-            rel="noopener noreferrer"
-            target="_blank"
-            className="flex h-9 items-center justify-center rounded-lg bg-[#383838] px-[10px] text-sm font-medium text-white shadow-[rgb(73,73,73)_0px_-2.4px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] transition-all hover:bg-[#5c5c5c] hover:shadow-[rgb(73,73,73)_0px_0px_0px_0px_inset,rgba(40,40,40,0.2)_0px_1px_3px_0px,rgb(45,45,45)_0px_0px_0px_1px] focus-visible:shadow-[0_0_0_2px_#fff,_0_0_0_4px_hsla(211,100%,42%,1)] focus-visible:outline-none"
-          >
-            <span className="inline-block truncate px-[6x]">
-              Visit website
-              <IconArrowUpRight className="ml-1 inline size-2.5 shrink-0 align-top" />
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-);
+import { Button } from './ui/button';
 
 interface ProjectCardProps {
   title: string;
@@ -155,10 +10,127 @@ interface ProjectCardProps {
   image: ReactNode;
   logo: ReactNode;
   features: string[];
-  repoUrl: string;
+  repoUrl?: string;
   siteUrl: string;
-  alignment?: 'left' | 'right';
+  alignment: 'left' | 'right';
 }
+
+const TechTagList = ({ techStack }: Pick<ProjectCardProps, 'techStack'>) => (
+  <div className="flex flex-nowrap items-center justify-start gap-2 px-5 py-4 md:px-9 lg:h-12 lg:px-6 lg:py-0">
+    {techStack.map((tech, index) => (
+      <div
+        key={index}
+        className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[var(--grid-border-color)] bg-neutral-50 px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]"
+      >
+        {tech}
+      </div>
+    ))}
+  </div>
+);
+
+const ProjectImageSection = ({
+  image,
+  alignment,
+  techStack,
+}: Pick<ProjectCardProps, 'image' | 'techStack' | 'alignment'>) => (
+  <div className="border-b border-[var(--grid-border-color)] [grid-area:image] lg:border-none">
+    <div
+      aria-hidden="true"
+      className="hidden h-0 border-b border-[var(--grid-border-color)] lg:block lg:h-12"
+    ></div>
+    <div className="relative flex border-b border-[var(--grid-border-color)]">
+      <div
+        aria-hidden="true"
+        className={cn(
+          'pointer-events-none absolute top-[-5px] z-[2] flex size-2.5 items-center justify-center border border-neutral-300 bg-white',
+          alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
+        )}
+      ></div>
+      <div
+        aria-hidden="true"
+        className={cn(
+          'pointer-events-none absolute bottom-[-5px] z-[2] flex size-2.5 items-center justify-center border border-neutral-300 bg-white',
+          alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
+        )}
+      ></div>
+      <TechTagList techStack={techStack} />
+    </div>
+    {image}
+  </div>
+);
+
+const ProjectContentSection = ({
+  logo,
+  title,
+  description,
+  features,
+  repoUrl,
+  siteUrl,
+  alignment,
+}: Omit<ProjectCardProps, 'techStack' | 'image'>) => (
+  <div
+    className={cn(
+      'border-[var(--grid-border-color)] [grid-area:content]',
+      alignment === 'left' ? 'border-r' : 'border-l',
+    )}
+  >
+    <div aria-hidden="true" className="hidden h-12 lg:block"></div>
+    <div aria-hidden="true" className="hidden h-12 lg:block"></div>
+    <div className="flex flex-col justify-start px-5 py-8 md:p-9 lg:h-[550px]">
+      <div className="hidden size-8 shrink-0 items-center justify-center rounded-xl bg-white shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(55,93,251,0.1)_0px_0px_0px_1px,rgba(37,62,167,0.2)_0px_1px_3px_0px] lg:flex xl:size-9">
+        {logo}
+      </div>
+      <h3 className="text-[15px] font-semibold text-black lg:pt-7 xl:pt-8">
+        {title}
+      </h3>
+      <p className="pt-2 text-sm leading-6 text-neutral-600 sm:text-[15px]">
+        {description}
+      </p>
+
+      <div className="hidden pt-6 lg:block">
+        <ul className="flex flex-col gap-3.5 pl-3 text-neutral-600">
+          {features.map((feature, index) => (
+            <li
+              key={index}
+              className="pl-3 text-sm before:absolute before:-mt-px before:ml-[-22px] before:text-[#888] before:content-['-'] sm:text-[15px]"
+            >
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="pt-6 lg:pt-10">
+        <div className="grid grid-cols-2 items-center justify-start gap-x-4 lg:flex">
+          <Button className="[&_svg]:size-4" asChild>
+            <a
+              href={siteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit ${title} website`}
+            >
+              Visit website
+              <IconArrowUpRight aria-hidden="true" />
+            </a>
+          </Button>
+          {repoUrl && (
+            <Button variant={'outline'} className="[&_svg]:size-4" asChild>
+              <a
+                href={repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${title} code`}
+              >
+                View code
+                <IconArrowUpRight aria-hidden="true" />
+              </a>
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 export function ProjectCard({
   title,
@@ -173,17 +145,26 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div className="grid grid-cols-1 items-center justify-center xl:grid-cols-[minmax(var(--content-min-width),calc(var(--content-width)_+_250px))]">
-      <article className="relative overflow-hidden after:absolute after:inset-0 after:border after:border-[#d6e0ff] after:content-[''] lg:rounded-[32px] after:lg:rounded-[32px]">
+      <article className="relative overflow-hidden after:absolute after:inset-0 after:border after:border-[var(--grid-border-color)] after:content-[''] lg:rounded-[32px] after:lg:rounded-[32px]">
         <div
           className={cn(
-            'grid bg-gradient-to-b from-[#e5eeff] to-[#f9fbff]',
+            'grid bg-white',
             alignment === 'left'
-              ? "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[0.65fr_1fr] lg:[grid-template-areas:'content_image'] xl:grid-cols-[125px_0.5fr_1fr] xl:[grid-template-areas:'spacer_content_image']"
-              : "grid-cols-1 [grid-template-areas:'content''image'] lg:grid-cols-[1fr_0.65fr] lg:[grid-template-areas:'image_content'] xl:grid-cols-[1fr_0.5fr_125px] xl:[grid-template-areas:'image_content_spacer']",
+              ? "grid-cols-1 [grid-template-areas:'image''content'] lg:grid-cols-[0.65fr_1fr] lg:[grid-template-areas:'content_image'] xl:grid-cols-[125px_0.5fr_1fr] xl:[grid-template-areas:'spacer_content_image']"
+              : "grid-cols-1 [grid-template-areas:'image''content'] lg:grid-cols-[1fr_0.65fr] lg:[grid-template-areas:'image_content'] xl:grid-cols-[1fr_0.5fr_125px] xl:[grid-template-areas:'image_content_spacer']",
           )}
         >
-          <SectionSpacer alignment={alignment} />
-          <ContentSection
+          <div
+            className={cn(
+              'hidden border-[var(--grid-border-color)] [grid-area:spacer] xl:block',
+              alignment === 'left' ? 'border-r' : 'border-l',
+            )}
+          >
+            <div className="h-12"></div>
+            <div className="h-12"></div>
+            <div></div>
+          </div>
+          <ProjectContentSection
             logo={logo}
             title={title}
             description={description}
@@ -192,7 +173,7 @@ export function ProjectCard({
             siteUrl={siteUrl}
             alignment={alignment}
           />
-          <ImageSection
+          <ProjectImageSection
             image={image}
             alignment={alignment}
             techStack={techStack}

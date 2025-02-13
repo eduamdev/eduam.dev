@@ -13,19 +13,23 @@ export function Intro() {
           <h1 className="text-lg font-semibold text-black">
             I&apos;m Eduardo, a frontend developer based in Mexico.
           </h1>
-          <div className="space-y-5 pt-6">
+          <div className="space-y-5 pt-5 md:text-[17px]">
             <p>
-              I&apos;ve focused on crafting visually engaging websites and
-              intuitive user interfaces. Driven by a passion for excellence, I
-              ensure high performance for smooth, fast experiences. I&apos;m
-              also committed to inclusive design, making sure my work is
-              accessible to everyone.
+              I specialize in building visually engaging websites and intuitive
+              user interfaces. With a strong focus on performance, I strive to
+              deliver fast, seamless experiences.
+            </p>
+            <p>
+              I&apos;m always excited to collaborate with others and bring
+              unique projects to life. Whether you&apos;re looking to enhance
+              your website or create something entirely new, I&apos;d love to
+              work together to turn your vision into reality.
             </p>
           </div>
           <div className="pt-7">
             <Button
               size={'sm'}
-              className="rounded-[50px] pl-[14px] shadow-[rgba(0,0,0,0.14)_0_0.8px_0.8px_-0.6875px,rgb(0,0,0)_0_2.4px_2.4px_-1.375px,rgba(0,0,0,0.13)_0_6.38px_6.38px_-2.0625px,rgba(0,0,0,0.11)_0_20px_20px_-2.75px]"
+              className="rounded-[50px] pl-[14px] hover:-translate-y-px"
               asChild
             >
               <a

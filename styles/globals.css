@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --grid-border-color: hsl(0, 0%, 92%);
+    --grid-border-color: hsl(0, 0%, 91%);
 
     --content-min-width: 330px;
     --content-width: 964px;
