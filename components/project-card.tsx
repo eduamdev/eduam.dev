@@ -20,7 +20,7 @@ const TechTagList = ({ techStack }: Pick<ProjectCardProps, 'techStack'>) => (
     {techStack.map((tech, index) => (
       <div
         key={index}
-        className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[var(--grid-border-color)] bg-neutral-50 px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]"
+        className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[var(--grid-border-color)] bg-gradient-to-t from-sky-100 px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]"
       >
         {tech}
       </div>
