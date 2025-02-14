@@ -103,14 +103,14 @@ export function Work() {
           aria-hidden="true"
           className="pointer-events-none relative border-r border-[var(--grid-border-color)]"
         >
-          <div className="pointer-events-none absolute bottom-[-5px] right-[-5px] z-[2] flex size-2.5 items-center justify-center border border-neutral-300 bg-white shadow-sm"></div>
+          <div className="pointer-events-none absolute right-[-5px] bottom-[-5px] z-2 flex size-2.5 items-center justify-center border border-neutral-300 bg-white shadow-xs"></div>
         </div>
         <div aria-hidden="true"></div>
         <div
           aria-hidden="true"
           className="pointer-events-none relative border-l border-[var(--grid-border-color)]"
         >
-          <div className="pointer-events-none absolute bottom-[-5px] left-[-5px] z-[2] flex size-2.5 items-center justify-center border border-neutral-300 bg-white shadow-sm"></div>
+          <div className="pointer-events-none absolute bottom-[-5px] left-[-5px] z-2 flex size-2.5 items-center justify-center border border-neutral-300 bg-white shadow-xs"></div>
         </div>
       </div>
     </section>

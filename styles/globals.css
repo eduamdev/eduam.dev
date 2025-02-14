@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+}
 
 @layer base {
   :root {
@@ -11,11 +13,6 @@
 
     --selection-bg-color: hsla(212, 100%, 41%, 1);
     --selection-text-color: #fff;
-
-    --font-sans: var(--font-geist-sans);
-    --font-sans-fallback: 'Inter', -apple-system, BlinkMacSystemFont,
-      'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-      'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 }
 
@@ -31,7 +28,6 @@
 
   html,
   body {
-    font-family: var(--font-sans), var(--font-sans-fallback);
     font-feature-settings:
       'calt' 0,
       'rlig';
@@ -49,7 +45,7 @@
     min-height: 100vh;
     max-width: 100vw;
     width: 100vw;
-    background-color: theme('colors.neutral.50');
+    background-color: var(--color-neutral-50);
     color: rgb(27, 28, 29);
     overflow-x: hidden;
   }

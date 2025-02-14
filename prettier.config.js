@@ -5,5 +5,6 @@ module.exports = {
   singleQuote: true,
   tabWidth: 2,
   tailwindFunctions: ['classnames', 'clsx', 'cn', 'cva'],
+  tailwindStylesheet: '/styles/globals.css',
   plugins: ['prettier-plugin-tailwindcss'],
 };

@@ -18,7 +18,6 @@ const eslintConfig = [
     settings: {
       tailwindcss: {
         callees: ['classnames', 'clsx', 'cn', 'cva'],
-        config: 'tailwind.config.js',
       },
 
       next: {

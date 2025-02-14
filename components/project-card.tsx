@@ -20,7 +20,7 @@ const TechTagList = ({ techStack }: Pick<ProjectCardProps, 'techStack'>) => (
     {techStack.map((tech, index) => (
       <div
         key={index}
-        className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[var(--grid-border-color)] bg-gradient-to-t from-sky-100 px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]"
+        className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[var(--grid-border-color)] bg-linear-to-t from-sky-100 px-2 py-1 text-xs leading-none font-medium text-neutral-600 md:text-[13px]"
       >
         {tech}
       </div>
@@ -42,14 +42,14 @@ const ProjectImageSection = ({
       <div
         aria-hidden="true"
         className={cn(
-          'pointer-events-none absolute top-[-5px] z-[2] flex size-2.5 items-center justify-center border border-neutral-300 bg-white',
+          'pointer-events-none absolute top-[-5px] z-2 flex size-2.5 items-center justify-center border border-neutral-300 bg-white',
           alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
         )}
       ></div>
       <div
         aria-hidden="true"
         className={cn(
-          'pointer-events-none absolute bottom-[-5px] z-[2] flex size-2.5 items-center justify-center border border-neutral-300 bg-white',
+          'pointer-events-none absolute bottom-[-5px] z-2 flex size-2.5 items-center justify-center border border-neutral-300 bg-white',
           alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
         )}
       ></div>
@@ -77,7 +77,7 @@ const ProjectContentSection = ({
     <div aria-hidden="true" className="hidden h-12 lg:block"></div>
     <div aria-hidden="true" className="hidden h-12 lg:block"></div>
     <div className="flex flex-col justify-start px-5 py-8 md:p-9 lg:h-[550px]">
-      <div className="hidden size-8 shrink-0 items-center justify-center rounded-xl bg-white shadow-[rgba(55,93,251,0.12)_0px_-2.4px_0px_0px_inset,rgba(55,93,251,0.1)_0px_0px_0px_1px,rgba(37,62,167,0.2)_0px_1px_3px_0px] lg:flex xl:size-9">
+      <div className="hidden size-8 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm shadow-blue-400/50 lg:flex xl:size-9">
         {logo}
       </div>
       <h3 className="text-[15px] font-semibold text-black lg:pt-7 xl:pt-8">
@@ -92,7 +92,7 @@ const ProjectContentSection = ({
           {features.map((feature, index) => (
             <li
               key={index}
-              className="pl-3 text-sm before:absolute before:-mt-px before:ml-[-22px] before:text-[#888] before:content-['-'] sm:text-[15px]"
+              className="pl-3 text-sm before:absolute before:-mt-px before:ml-[-22px] before:text-neutral-500 before:content-['-'] sm:text-[15px]"
             >
               {feature}
             </li>
@@ -144,8 +144,8 @@ export function ProjectCard({
   alignment = 'left',
 }: ProjectCardProps) {
   return (
-    <div className="grid grid-cols-1 items-center justify-center xl:grid-cols-[minmax(var(--content-min-width),calc(var(--content-width)_+_250px))]">
-      <article className="relative overflow-hidden after:absolute after:inset-0 after:border after:border-[var(--grid-border-color)] after:content-[''] lg:rounded-[32px] after:lg:rounded-[32px]">
+    <div className="grid grid-cols-1 items-center justify-center xl:grid-cols-[minmax(var(--content-min-width),calc(var(--content-width)+250px))]">
+      <article className="relative overflow-hidden after:absolute after:inset-0 after:border after:border-[var(--grid-border-color)] after:content-[''] lg:rounded-[32px] lg:after:rounded-[32px]">
         <div
           className={cn(
             'grid bg-white',
