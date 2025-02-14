@@ -26,7 +26,7 @@ function Intro() {
 
   return (
     <GridWrapper>
-      <div className="px-5 py-7 md:p-9">
+      <div className="px-5 py-9 md:p-9">
         <div className="flex flex-col items-start justify-center">
           <h1 className="text-lg font-semibold text-black">
             I&apos;m Eduardo, a frontend developer based in Mexico.
@@ -83,17 +83,13 @@ function Social() {
             Let&apos;s connect
           </h2>
 
-          <ul className="m-0 inline-flex shrink-0 items-center">
+          <ul className="m-0 flex h-[19px] shrink-0 items-center gap-1.5">
             <li>
               <SocialLink href={github.url} ariaLabel="Visit GitHub profile">
                 <IconBrandGithub />
               </SocialLink>
             </li>
-            <Separator
-              orientation="vertical"
-              className="mx-1.5 h-[19px]"
-              decorative
-            />
+            <Separator orientation="vertical" decorative />
             <li>
               <SocialLink href={xcom.url} ariaLabel="Visit Twitter profile">
                 <IconBrandX />
