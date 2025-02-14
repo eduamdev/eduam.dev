@@ -11,7 +11,7 @@ interface ProjectCardProps {
   logo: ReactNode;
   features: string[];
   repoUrl?: string;
-  siteUrl: string;
+  siteUrl?: string;
   alignment: 'left' | 'right';
 }
 
@@ -20,7 +20,7 @@ const TechTagList = ({ techStack }: Pick<ProjectCardProps, 'techStack'>) => (
     {techStack.map((tech, index) => (
       <div
         key={index}
-        className="inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[var(--grid-border-color)] bg-linear-to-t from-sky-100 px-2 py-1 text-xs leading-none font-medium text-neutral-600 md:text-[13px]"
+        className="bg-linear-to-t inline-flex h-[26px] shrink-0 grow-0 items-center justify-center rounded-[96px] border border-[var(--grid-border-color)] from-sky-100 px-2 py-1 text-xs font-medium leading-none text-neutral-600 md:text-[13px]"
       >
         {tech}
       </div>
@@ -42,14 +42,14 @@ const ProjectImageSection = ({
       <div
         aria-hidden="true"
         className={cn(
-          'pointer-events-none absolute top-[-5px] z-2 flex size-2.5 items-center justify-center border border-neutral-300 bg-white',
+          'z-2 pointer-events-none absolute top-[-5px] flex size-2.5 items-center justify-center border border-neutral-300 bg-white',
           alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
         )}
       ></div>
       <div
         aria-hidden="true"
         className={cn(
-          'pointer-events-none absolute bottom-[-5px] z-2 flex size-2.5 items-center justify-center border border-neutral-300 bg-white',
+          'z-2 pointer-events-none absolute bottom-[-5px] flex size-2.5 items-center justify-center border border-neutral-300 bg-white',
           alignment === 'left' ? 'left-[-5px]' : 'right-[-5px]',
         )}
       ></div>
@@ -102,17 +102,19 @@ const ProjectContentSection = ({
 
       <div className="pt-6 lg:pt-10">
         <div className="grid grid-cols-2 items-center justify-start gap-x-4 lg:flex">
-          <Button className="[&_svg]:size-4" asChild>
-            <a
-              href={siteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Visit ${title} website`}
-            >
-              Visit website
-              <IconArrowUpRight aria-hidden="true" />
-            </a>
-          </Button>
+          {siteUrl && (
+            <Button className="[&_svg]:size-4" asChild>
+              <a
+                href={siteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${title} website`}
+              >
+                Visit website
+                <IconArrowUpRight aria-hidden="true" />
+              </a>
+            </Button>
+          )}
           {repoUrl && (
             <Button variant={'outline'} className="[&_svg]:size-4" asChild>
               <a
