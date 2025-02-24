@@ -69,7 +69,7 @@ export function Work() {
           className="pointer-events-none border-r border-[var(--grid-border-color)]"
         ></div>
         <div className="flex items-center justify-center px-5 py-9 md:p-9">
-          <h2 className="text-xl font-semibold">Work</h2>
+          <h2 className="text-lg font-semibold">Recent Work</h2>
         </div>
         <div
           aria-hidden="true"
