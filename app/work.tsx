@@ -13,7 +13,7 @@ export function Work() {
       _id: 'p01',
       title: 'Carhive',
       description:
-        'A car rental website that lets users reserve vehicles, filter searches, and explore detailed information and ratings',
+        'A modern car rental platform featuring real-time availability, comprehensive vehicle details, and a seamless booking experience.',
       techStack: [
         'Next.js',
         'TypeScript',
@@ -33,9 +33,9 @@ export function Work() {
       ),
       logo: <CarhiveLogo />,
       features: [
-        'Interactive map view',
-        'Multi-filter search',
-        'Authentication and user management',
+        'Interactive map-based vehicle discovery',
+        'Advanced search with multiple filters',
+        'Secure user authentication and profile management',
       ],
       repoUrl: `${github.url}/carhive`,
       siteUrl: 'https://carhive.eduam.dev',
@@ -45,7 +45,7 @@ export function Work() {
       _id: 'p02',
       title: 'Libro Sugerido',
       description:
-        'A website that offers book reviews, recommendations, a blog, and trivia—all centered around books for Spanish-speaking readers',
+        'A comprehensive literary platform for Spanish-speaking readers, offering curated book recommendations, in-depth reviews, and engaging content. Built with a focus on user experience and content discoverability.',
       techStack: ['Next.js', 'TypeScript', 'Sanity', 'Tailwind CSS'],
       image: (
         <Image
@@ -56,7 +56,11 @@ export function Work() {
         />
       ),
       logo: <LibroSugeridoLogo />,
-      features: ['Content management system integration', 'SEO optimization'],
+      features: [
+        'Dynamic content management system',
+        'Optimized for search engines',
+        'Responsive design for all devices'
+      ],
       alignment: 'right',
     },
   ];

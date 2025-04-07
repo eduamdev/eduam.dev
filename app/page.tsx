@@ -29,19 +29,14 @@ function Intro() {
       <div className="px-5 py-9 md:p-9">
         <div className="flex flex-col items-start justify-center">
           <h1 className="text-lg font-semibold text-black">
-            I&apos;m Eduardo, a frontend developer based in Mexico.
+            I&apos;m Eduardo, a frontend developer crafting digital experiences in Mexico.
           </h1>
           <div className="space-y-5 pt-5 md:text-[17px]">
             <p>
-              I specialize in building visually engaging websites and intuitive
-              user interfaces. With a strong focus on performance, I strive to
-              deliver fast, seamless experiences.
+              I create beautiful, performant web experiences that users love. My focus on clean code and modern best practices ensures your project not only looks great but runs smoothly across all devices.
             </p>
             <p>
-              I&apos;m always excited to collaborate with others and bring
-              unique projects to life. Whether you&apos;re looking to enhance
-              your website or create something entirely new, I&apos;d love to
-              work together to turn your vision into reality.
+              Whether you need a complete website overhaul, a new web application, or just want to enhance your existing digital presence, I&apos;m here to help. Let&apos;s collaborate to bring your ideas to life with cutting-edge technology and thoughtful design.
             </p>
           </div>
           <div className="pt-7">
