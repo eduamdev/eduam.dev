@@ -6,6 +6,7 @@ export const siteConfig = {
   links: {
     github: { name: 'GitHub', url: 'https://github.com/eduamdev' },
     xcom: { name: 'x.com', url: 'https://x.com/eduamdev' },
+    bluesky: { name: 'Bluesky', url: 'https://bsky.app/profile/eduam.dev' },
   },
   email: 'eduamdev@gmail.com',
 };

@@ -4,6 +4,7 @@ import { GridWrapper } from '@/components/grid-wrapper';
 import { siteConfig } from '@/config/site';
 import { Button } from '@/components/ui/button';
 import {
+  IconBrandBluesky,
   IconBrandGithub,
   IconBrandX,
   IconChevronRight,
@@ -67,7 +68,7 @@ function Intro() {
 
 function Social() {
   const {
-    links: { xcom, github },
+    links: { xcom, github, bluesky },
   } = siteConfig;
 
   return (
@@ -88,6 +89,12 @@ function Social() {
             <li>
               <SocialLink href={xcom.url} ariaLabel="Visit Twitter profile">
                 <IconBrandX />
+              </SocialLink>
+            </li>
+            <Separator orientation="vertical" decorative />
+            <li>
+              <SocialLink href={bluesky.url} ariaLabel="Visit Bluesky profile">
+                <IconBrandBluesky />
               </SocialLink>
             </li>
           </ul>

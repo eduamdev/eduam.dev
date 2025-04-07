@@ -9,7 +9,7 @@ import { siteConfig } from '@/config/site';
 import { absoluteUrl } from '@/lib/utils';
 import { GridWrapper } from '@/components/grid-wrapper';
 import { SocialLink } from '@/components/social-link';
-import { IconBrandGithub, IconBrandX } from '@tabler/icons-react';
+import { IconBrandBluesky, IconBrandGithub, IconBrandX } from '@tabler/icons-react';
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),
@@ -87,6 +87,8 @@ export default function RootLayout({
 }
 
 function Header() {
+  const { links: { xcom, github, bluesky } } = siteConfig;
+
   return (
     <GridWrapper className="sticky top-0 z-20 bg-neutral-50">
       <header
@@ -98,16 +100,22 @@ function Header() {
           className="flex items-center justify-center gap-x-2"
         >
           <SocialLink
-            href={`https://github.com/eduamdev`}
+            href={github.url}
             ariaLabel="Visit GitHub profile"
           >
             <IconBrandGithub />
           </SocialLink>
           <SocialLink
-            href={`https://x.com/eduamdev`}
+            href={xcom.url}
             ariaLabel="Visit Twitter profile"
           >
             <IconBrandX />
+          </SocialLink>
+          <SocialLink
+            href={bluesky.url}
+            ariaLabel="Visit Bluesky profile"
+          >
+            <IconBrandBluesky />
           </SocialLink>
         </nav>
       </header>
