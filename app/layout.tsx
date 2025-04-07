@@ -90,12 +90,7 @@ function Header() {
   return (
     <GridWrapper className="sticky top-0 z-20 bg-neutral-50">
       <header
-        className="relative flex h-[var(--header-height)] items-center justify-between px-5 md:px-9"
-        style={
-          {
-            '--header-height': '70px',
-          } as React.CSSProperties
-        }
+        className="relative flex h-[70px] items-center justify-between px-5 md:px-9"
       >
         <Avatar />
         <nav
