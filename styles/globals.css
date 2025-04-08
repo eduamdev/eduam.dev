@@ -6,9 +6,8 @@
 
 @layer base {
   :root {
-    --grid-border-color: hsl(0, 0%, 91%);
-
-    --content-min-width: 330px;
+    --header-height: 64px;
+    --content-min-width: 250px;
     --content-width: 964px;
 
     --selection-bg-color: hsla(212, 100%, 41%, 1);
@@ -26,6 +25,32 @@
     pointer-events: none;
   }
 
+  *,
+  :after,
+  :before {
+    box-sizing: border-box;
+  }
+
+  :where(html, body) {
+    min-height: 100%;
+  }
+
+  @supports (font-synthesis-weight: none) {
+    html {
+      font-synthesis: initial;
+      font-synthesis-weight: none;
+    }
+  }
+
+  html {
+    touch-action: manipulation;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 0;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
+
   html,
   body {
     font-feature-settings:
@@ -41,18 +66,12 @@
 
   body {
     overscroll-behavior-y: contain;
-    font-size: 100%;
-    min-height: 100vh;
-    max-width: 100vw;
-    width: 100vw;
     background-color: var(--color-neutral-50);
-    color: rgb(27, 28, 29);
-    overflow-x: hidden;
-  }
-
-  p {
-    line-height: 1.75;
-    max-width: 65ch;
+    position: relative;
+    font-size: 100%;
+    min-height: 100%;
+    max-width: 100vw;
+    margin: 0;
   }
 
   a {

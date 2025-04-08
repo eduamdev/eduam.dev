@@ -7,9 +7,12 @@ import { Analytics } from '@/components/analytics';
 import { SpeedInsights } from '@/components/speed-insights';
 import { siteConfig } from '@/config/site';
 import { absoluteUrl } from '@/lib/utils';
-import { GridWrapper } from '@/components/grid-wrapper';
 import { SocialLink } from '@/components/social-link';
-import { IconBrandBluesky, IconBrandGithub, IconBrandX } from '@tabler/icons-react';
+import {
+  IconBrandBluesky,
+  IconBrandGithub,
+  IconBrandX,
+} from '@tabler/icons-react';
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),
@@ -75,10 +78,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={fontSans.variable}>
       <head />
-      <body className="flex flex-col text-pretty">
+      <body>
         <Header />
-        <main>{children}</main>
-        <Footer />
+        <div className="flex flex-col items-center justify-center">
+          {children}
+        </div>
+        <div className="flex items-center justify-center pb-12 pt-6">
+          <footer>
+            <p className="max-w-[var(--content-width)] px-5 text-center text-[13px] text-neutral-500 md:px-9">
+              Copyright <span aria-hidden="true">©</span>{' '}
+              {new Date().getFullYear()} eduam.dev. All rights reserved.
+            </p>
+          </footer>
+        </div>
         <Analytics />
         <SpeedInsights />
       </body>
@@ -87,76 +99,48 @@ export default function RootLayout({
 }
 
 function Header() {
-  const { links: { xcom, github, bluesky } } = siteConfig;
+  const {
+    name,
+    username,
+    links: { xcom, github, bluesky },
+  } = siteConfig;
 
   return (
-    <GridWrapper className="sticky top-0 z-20 bg-neutral-50">
-      <header
-        className="relative flex h-[70px] items-center justify-between px-5 md:px-9"
-      >
-        <Avatar />
+    <div className="z-60 after:shadow-2xs sticky top-0 flex min-h-[var(--header-height)] w-full max-w-full justify-center bg-neutral-50 after:absolute after:inset-0 after:top-0 after:-z-10 after:h-[var(--header-height)] after:shadow-neutral-900/10 after:content-['']">
+      <header className="flex w-[var(--content-width)] items-center justify-between gap-6 px-5 md:px-9">
+        <div className="flex items-center gap-x-3">
+          <Image
+            src={eduamdev}
+            alt={`${name} Avatar`}
+            width={36}
+            height={36}
+            priority
+            className="aspect-square size-9 rounded-full"
+          />
+          <div className="flex flex-col items-stretch gap-y-2">
+            <span className="text-sm font-medium leading-none text-black">
+              {name}
+            </span>
+            <span className="text-xs leading-none tracking-wide text-neutral-600">
+              @{username}
+            </span>
+          </div>
+        </div>
         <nav
           aria-label="Social Links"
-          className="flex items-center justify-center gap-x-2"
+          className="hidden items-center justify-center gap-x-2 sm:flex"
         >
-          <SocialLink
-            href={github.url}
-            ariaLabel="Visit GitHub profile"
-          >
+          <SocialLink href={github.url} ariaLabel="Visit GitHub profile">
             <IconBrandGithub />
           </SocialLink>
-          <SocialLink
-            href={xcom.url}
-            ariaLabel="Visit Twitter profile"
-          >
+          <SocialLink href={xcom.url} ariaLabel="Visit Twitter profile">
             <IconBrandX />
           </SocialLink>
-          <SocialLink
-            href={bluesky.url}
-            ariaLabel="Visit Bluesky profile"
-          >
+          <SocialLink href={bluesky.url} ariaLabel="Visit Bluesky profile">
             <IconBrandBluesky />
           </SocialLink>
         </nav>
       </header>
-    </GridWrapper>
-  );
-}
-
-const Avatar = () => {
-  const { name } = siteConfig;
-
-  return (
-    <div className="flex h-full shrink-0 items-center gap-x-3">
-      <Image
-        src={eduamdev}
-        alt={`${name} Avatar`}
-        width={36}
-        height={36}
-        priority
-        className="aspect-square size-9 rounded-full"
-      />
-      <div className="flex flex-col items-stretch gap-y-1.5">
-        <span className="text-sm leading-none font-medium text-black">
-          {name}
-        </span>
-        <span className="text-[13px] leading-none tracking-wide text-neutral-600">
-          Web Developer
-        </span>
-      </div>
-    </div>
-  );
-};
-
-function Footer() {
-  return (
-    <div className="grid grid-cols-[minmax(var(--content-min-width),var(--content-width))] items-center justify-center">
-      <footer className="mx-auto w-full pt-6 pb-12">
-        <p className="px-5 text-left text-sm text-neutral-500 md:px-9">
-          Copyright <span aria-hidden="true">©</span>{' '}
-          {new Date().getFullYear()} eduam.dev. All rights reserved.
-        </p>
-      </footer>
     </div>
   );
 }
