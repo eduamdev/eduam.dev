@@ -5,9 +5,8 @@ export function middleware(request: NextRequest) {
     const cspHeader = `
     default-src 'self';
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: http: ${process.env.NODE_ENV === "production" ? "" : `'unsafe-eval'`
-        } cdn.vercel-insights.com vercel.live va.vercel-scripts.com;
-    style-src 'self' ${process.env.NODE_ENV === "production" ? `'nonce-${nonce}'` : `'unsafe-inline'`
         };
+    style-src 'self' ${process.env.NODE_ENV === "production" ? `'nonce-${nonce}'` : `'unsafe-inline'`};
     img-src 'self' blob: data:;
     font-src 'self';
     object-src 'none';
@@ -15,7 +14,7 @@ export function middleware(request: NextRequest) {
     form-action 'self';
     frame-ancestors 'none';
     upgrade-insecure-requests;
-`
+`;
     // Replace newline characters and spaces
     const contentSecurityPolicyHeaderValue = cspHeader
         .replace(/\s{2,}/g, ' ')
@@ -27,6 +26,10 @@ export function middleware(request: NextRequest) {
         'Content-Security-Policy',
         contentSecurityPolicyHeaderValue
     )
+    requestHeaders.set('x-content-type-options', 'nosniff')
+    requestHeaders.set('x-frame-options', 'DENY')
+    requestHeaders.set('referrer-policy', 'strict-origin-when-cross-origin')
+    requestHeaders.set('permissions-policy', 'microphone=(), geolocation=()')
 
     const response = NextResponse.next({
         request: {
