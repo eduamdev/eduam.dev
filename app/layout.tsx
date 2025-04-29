@@ -13,6 +13,7 @@ import {
   IconBrandGithub,
   IconBrandX,
 } from '@tabler/icons-react';
+import TextFade from '@/components/text-fade';
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),
@@ -118,9 +119,10 @@ function Header() {
             className="aspect-square size-9 rounded-full"
           />
           <div className="flex flex-col items-stretch gap-y-1.5">
-            <span className="text-sm font-medium leading-none text-black">
-              {name}
-            </span>
+            <TextFade
+              text={name}
+              className="text-sm font-medium leading-none text-black"
+            />
             <span className="text-xs leading-none tracking-wide text-neutral-600">
               @{username}
             </span>
