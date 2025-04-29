@@ -35,7 +35,7 @@ export default function TextFade({
       animate={isInView ? 'show' : 'hidden'}
       variants={variants}
       viewport={{ once: true }}
-      className={` ${className}`}
+      className={className}
     >
       {letters.map((word, i) => (
         <motion.span key={`${word}-${i}`} variants={variants} custom={i}>

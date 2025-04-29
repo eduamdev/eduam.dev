@@ -14,7 +14,7 @@ import { projects } from './projects';
 
 export default function HomePage() {
   return (
-    <div className="relative ml-px mt-px flex min-w-[var(--content-min-width)] max-w-[var(--content-width)] flex-col before:pointer-events-none before:absolute before:inset-0 before:left-[calc(-1_*_1px)] before:top-[calc(-1_*_1px)] before:border before:border-t-0 before:border-neutral-200 before:content-['']">
+    <>
       <main>
         <div className="p-5 py-12 md:p-9 md:py-16">
           <h1 className="pt-2 font-semibold text-black md:text-lg">
@@ -59,8 +59,8 @@ export default function HomePage() {
       </main>
       {/* Work */}
       <section>
-        <div className="px-5 py-7 md:px-9">
-          <h2 className="pt-2 text-[15px] font-semibold text-black md:text-base">
+        <div className="px-5 py-6 md:px-9">
+          <h2 className="pt-4 text-[15px] font-semibold text-black md:text-base">
             Recent Work
           </h2>
         </div>
@@ -77,7 +77,7 @@ export default function HomePage() {
       </section>
       {/* Social */}
       <section>
-        <div className="flex flex-wrap items-center justify-center gap-7 border-t border-neutral-200 p-7 sm:p-9 md:gap-9">
+        <div className="flex flex-wrap items-center justify-center gap-7 p-7 sm:p-9 md:gap-9">
           <h2 className="text-left text-[17px] font-semibold md:text-lg">
             Contact
           </h2>
@@ -111,6 +111,6 @@ export default function HomePage() {
           </ul>
         </div>
       </section>
-    </div>
+    </>
   );
 }

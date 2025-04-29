@@ -1,19 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import Image from 'next/image';
-import eduamdev from '@/assets/images/eduamdev.png';
 import '@/styles/globals.css';
 import { fontSans } from '@/lib/fonts';
 import { Analytics } from '@/components/analytics';
 import { SpeedInsights } from '@/components/speed-insights';
 import { siteConfig } from '@/config/site';
 import { absoluteUrl } from '@/lib/utils';
-import { SocialLink } from '@/components/social-link';
-import {
-  IconBrandBluesky,
-  IconBrandGithub,
-  IconBrandX,
-} from '@tabler/icons-react';
-import TextFade from '@/components/text-fade';
+import { Header } from './header';
 
 export const metadata: Metadata = {
   metadataBase: new URL(absoluteUrl('/')),
@@ -80,9 +72,11 @@ export default function RootLayout({
     <html lang="en" className={fontSans.variable}>
       <head />
       <body>
-        <Header />
         <div className="flex flex-col items-center justify-center">
-          {children}
+          <div className="before:z-70 relative ml-px mt-px flex min-w-[var(--content-min-width)] max-w-[var(--content-width)] flex-col before:pointer-events-none before:absolute before:inset-0 before:left-[calc(-1_*_1px)] before:top-[calc(-1_*_1px)] before:border-neutral-200 before:content-[''] before:min-[960px]:border before:min-[980px]:border-t-0">
+            <Header />
+            {children}
+          </div>
         </div>
         <div className="flex items-center justify-center pb-14 pt-6">
           <footer>
@@ -96,53 +90,5 @@ export default function RootLayout({
         <SpeedInsights />
       </body>
     </html>
-  );
-}
-
-function Header() {
-  const {
-    name,
-    username,
-    links: { xcom, github, bluesky },
-  } = siteConfig;
-
-  return (
-    <div className="z-60 after:shadow-2xs sticky top-0 flex min-h-[var(--header-height)] w-full max-w-full justify-center bg-neutral-50 after:absolute after:inset-0 after:top-0 after:-z-10 after:h-[var(--header-height)] after:shadow-neutral-900/10 after:content-['']">
-      <header className="flex w-[var(--content-width)] items-center justify-between gap-6 px-5 md:px-9">
-        <div className="flex items-center gap-x-3">
-          <Image
-            src={eduamdev}
-            alt={`${name} Avatar`}
-            width={36}
-            height={36}
-            priority
-            className="aspect-square size-9 rounded-full"
-          />
-          <div className="flex flex-col items-stretch gap-y-1.5">
-            <TextFade
-              text={name}
-              className="text-sm font-medium leading-none text-black"
-            />
-            <span className="text-xs leading-none tracking-wide text-neutral-600">
-              @{username}
-            </span>
-          </div>
-        </div>
-        <nav
-          aria-label="Social Links"
-          className="hidden items-center justify-center gap-x-2 sm:flex"
-        >
-          <SocialLink href={github.url} ariaLabel="Visit GitHub profile">
-            <IconBrandGithub />
-          </SocialLink>
-          <SocialLink href={xcom.url} ariaLabel="Visit Twitter profile">
-            <IconBrandX />
-          </SocialLink>
-          <SocialLink href={bluesky.url} ariaLabel="Visit Bluesky profile">
-            <IconBrandBluesky />
-          </SocialLink>
-        </nav>
-      </header>
-    </div>
   );
 }

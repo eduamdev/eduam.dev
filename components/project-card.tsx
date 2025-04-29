@@ -55,7 +55,7 @@ const ProjectContentSection = ({
   <div
     className={cn(
       'border-neutral-200/60 [grid-area:content]',
-      alignment === 'left' ? 'border-r' : 'border-l',
+      alignment === 'left' ? 'lg:border-r' : 'lg:border-l',
     )}
   >
     <div aria-hidden="true" className="hidden h-12 lg:block"></div>
@@ -129,7 +129,7 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div className="grid grid-cols-1 items-center justify-center xl:grid-cols-[minmax(var(--content-min-width),calc(var(--content-width)+250px))]">
-      <article className="relative overflow-hidden after:absolute after:inset-0 after:border after:border-neutral-200 after:content-[''] lg:rounded-xl lg:after:rounded-xl">
+      <article className="relative overflow-hidden after:absolute after:inset-0 after:border-y after:border-neutral-200 after:content-[''] lg:rounded-xl lg:after:rounded-xl">
         <div
           className={cn(
             'grid bg-white',
