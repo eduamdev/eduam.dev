@@ -85,7 +85,7 @@ export default function RootLayout({
         </div>
         <div className="flex items-center justify-center pb-14 pt-6">
           <footer>
-            <p className="max-w-[var(--content-width)] px-5 text-center text-sm text-neutral-500 md:px-9">
+            <p className="max-w-[var(--content-width)] px-5 text-center text-[13px] text-neutral-500 md:px-9 lg:text-sm">
               Copyright <span aria-hidden="true">©</span>{' '}
               {new Date().getFullYear()} eduam.dev. All rights reserved.
             </p>

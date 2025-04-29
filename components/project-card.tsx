@@ -62,7 +62,7 @@ const ProjectContentSection = ({
     <div aria-hidden="true" className="hidden h-12 lg:block"></div>
     <div className="flex flex-col justify-start px-5 py-8 text-[13px] leading-[20px] md:p-9 lg:h-[550px]">
       {logo}
-      <h3 className="pt-3 text-[15px] font-semibold leading-[22px] text-black lg:pt-5">
+      <h3 className="pt-3 text-[15px] font-semibold leading-[22px] text-black lg:pt-4">
         {title}
       </h3>
       <p className="pt-1.5 text-neutral-600">{description}</p>
