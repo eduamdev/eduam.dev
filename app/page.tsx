@@ -16,12 +16,12 @@ export default function HomePage() {
   return (
     <div className="relative ml-px mt-px flex min-w-[var(--content-min-width)] max-w-[var(--content-width)] flex-col before:pointer-events-none before:absolute before:inset-0 before:left-[calc(-1_*_1px)] before:top-[calc(-1_*_1px)] before:border before:border-t-0 before:border-neutral-200 before:content-['']">
       <main>
-        <div className="p-5 py-10 md:p-9 md:py-16">
-          <h1 className="text-[17px] font-semibold text-black md:text-lg">
+        <div className="p-5 py-12 md:p-9 md:py-16">
+          <h1 className="pt-3 text-[17px] font-semibold text-black md:text-lg">
             I&apos;m Eduardo, a frontend developer crafting digital experiences
             in Mexico.
           </h1>
-          <div className="space-y-4 pt-4 leading-[1.6rem]">
+          <div className="space-y-5 pt-5 text-[15px] leading-[22px] lg:text-base lg:leading-[1.6rem]">
             <p>
               I create beautiful, performant web experiences that users love. My
               focus on clean code and modern best practices ensures your project
@@ -60,9 +60,7 @@ export default function HomePage() {
       {/* Work */}
       <section>
         <div className="px-5 py-7 md:px-9">
-          <h2 className="font-semibold text-black md:text-[17px]">
-            Recent Work
-          </h2>
+          <h2 className="font-semibold text-black">Recent Work</h2>
         </div>
         {projects.map((project, index) => (
           <Fragment key={project._id}>
@@ -77,10 +75,8 @@ export default function HomePage() {
       </section>
       {/* Social */}
       <section>
-        <div className="flex flex-wrap items-center justify-center gap-6 border-t border-neutral-200 p-7 sm:p-9 md:gap-9">
-          <h2 className="text-left text-lg font-semibold md:text-[19px]">
-            Contact
-          </h2>
+        <div className="flex flex-wrap items-center justify-center gap-7 border-t border-neutral-200 p-7 sm:p-9 md:gap-9">
+          <h2 className="text-left text-lg font-semibold">Contact</h2>
           <ul className="m-0 flex h-[19px] shrink-0 items-center gap-1.5">
             <li>
               <SocialLink

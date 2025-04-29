@@ -83,9 +83,9 @@ export default function RootLayout({
         <div className="flex flex-col items-center justify-center">
           {children}
         </div>
-        <div className="flex items-center justify-center pb-12 pt-6">
+        <div className="flex items-center justify-center pb-14 pt-6">
           <footer>
-            <p className="max-w-[var(--content-width)] px-5 text-center text-[13px] text-neutral-500 md:px-9">
+            <p className="max-w-[var(--content-width)] px-5 text-center text-sm text-neutral-500 md:px-9">
               Copyright <span aria-hidden="true">©</span>{' '}
               {new Date().getFullYear()} eduam.dev. All rights reserved.
             </p>
@@ -117,7 +117,7 @@ function Header() {
             priority
             className="aspect-square size-9 rounded-full"
           />
-          <div className="flex flex-col items-stretch gap-y-2">
+          <div className="flex flex-col items-stretch gap-y-1.5">
             <span className="text-sm font-medium leading-none text-black">
               {name}
             </span>

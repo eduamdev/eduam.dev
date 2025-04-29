@@ -60,10 +60,12 @@ const ProjectContentSection = ({
   >
     <div aria-hidden="true" className="hidden h-12 lg:block"></div>
     <div aria-hidden="true" className="hidden h-12 lg:block"></div>
-    <div className="flex flex-col justify-start px-5 py-8 text-sm leading-[22px] md:p-9 lg:h-[550px]">
+    <div className="flex flex-col justify-start px-5 py-8 text-[13px] leading-[20px] md:p-9 lg:h-[550px]">
       {logo}
-      <h3 className="pt-5 font-semibold text-black">{title}</h3>
-      <p className="pt-2 text-neutral-600">{description}</p>
+      <h3 className="pt-3 text-[15px] font-semibold leading-[22px] text-black lg:pt-5">
+        {title}
+      </h3>
+      <p className="pt-1.5 text-neutral-600">{description}</p>
       <div className="hidden pt-6 lg:block">
         <ul className="flex flex-col gap-3.5 pl-3 text-neutral-600">
           {features.map((feature, index) => (
