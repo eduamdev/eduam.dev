@@ -1,12 +1,13 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server';
 
 export function middleware(request: NextRequest) {
-    const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
-    const cspHeader = `
+  const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
+  const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: http: ${process.env.NODE_ENV === "production" ? "" : `'unsafe-eval'`
-        };
-    style-src 'self' ${process.env.NODE_ENV === "production" ? `'nonce-${nonce}'` : `'unsafe-inline'`};
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https: http: ${
+      process.env.NODE_ENV === 'production' ? '' : `'unsafe-eval'`
+    };
+    style-src 'self' ${process.env.NODE_ENV === 'production' ? `'nonce-${nonce}'` : `'unsafe-inline'`};
     img-src 'self' blob: data:;
     font-src 'self';
     object-src 'none';
@@ -15,50 +16,45 @@ export function middleware(request: NextRequest) {
     frame-ancestors 'none';
     upgrade-insecure-requests;
 `;
-    // Replace newline characters and spaces
-    const contentSecurityPolicyHeaderValue = cspHeader
-        .replace(/\s{2,}/g, ' ')
-        .trim()
+  // Replace newline characters and spaces
+  const contentSecurityPolicyHeaderValue = cspHeader
+    .replace(/\s{2,}/g, ' ')
+    .trim();
 
-    const requestHeaders = new Headers(request.headers)
-    requestHeaders.set('x-nonce', nonce)
-    requestHeaders.set(
-        'Content-Security-Policy',
-        contentSecurityPolicyHeaderValue
-    )
-    requestHeaders.set('x-content-type-options', 'nosniff')
-    requestHeaders.set('x-frame-options', 'DENY')
-    requestHeaders.set('referrer-policy', 'strict-origin-when-cross-origin')
-    requestHeaders.set('permissions-policy', 'microphone=(), geolocation=()')
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-nonce', nonce);
+  requestHeaders.set(
+    'Content-Security-Policy',
+    contentSecurityPolicyHeaderValue,
+  );
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+  response.headers.set(
+    'Content-Security-Policy',
+    contentSecurityPolicyHeaderValue,
+  );
 
-    const response = NextResponse.next({
-        request: {
-            headers: requestHeaders,
-        },
-    })
-    response.headers.set(
-        'Content-Security-Policy',
-        contentSecurityPolicyHeaderValue
-    )
-
-    return response
+  return response;
 }
 
 export const config = {
-    matcher: [
-        /*
-         * Match all request paths except for the ones starting with:
-         * - api (API routes)
-         * - _next/static (static files)
-         * - _next/image (image optimization files)
-         * - favicon.ico (favicon file)
-         */
-        {
-            source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
-            missing: [
-                { type: 'header', key: 'next-router-prefetch' },
-                { type: 'header', key: 'purpose', value: 'prefetch' },
-            ],
-        },
-    ],
-}
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    {
+      source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
+      missing: [
+        { type: 'header', key: 'next-router-prefetch' },
+        { type: 'header', key: 'purpose', value: 'prefetch' },
+      ],
+    },
+  ],
+};

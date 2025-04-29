@@ -21,7 +21,7 @@ export default function HomePage() {
             I&apos;m Eduardo, a frontend developer crafting digital experiences
             in Mexico.
           </h1>
-          <div className="space-y-4 pt-4 leading-[1.7rem]">
+          <div className="space-y-4 pt-4 leading-[1.6rem]">
             <p>
               I create beautiful, performant web experiences that users love. My
               focus on clean code and modern best practices ensures your project
@@ -59,7 +59,7 @@ export default function HomePage() {
       </main>
       {/* Work */}
       <section>
-        <div className="flex items-center justify-center px-5 py-7 md:px-9">
+        <div className="px-5 py-7 md:px-9">
           <h2 className="font-semibold text-black md:text-[17px]">
             Recent Work
           </h2>
@@ -79,7 +79,7 @@ export default function HomePage() {
       <section>
         <div className="flex flex-wrap items-center justify-center gap-6 border-t border-neutral-200 p-7 sm:p-9 md:gap-9">
           <h2 className="text-left text-lg font-semibold md:text-[19px]">
-            Let&apos;s connect
+            Contact
           </h2>
           <ul className="m-0 flex h-[19px] shrink-0 items-center gap-1.5">
             <li>

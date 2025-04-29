@@ -117,7 +117,7 @@ export const projects = [
     _id: 'p02',
     title: 'Libro Sugerido',
     description:
-      'A comprehensive literary platform for Spanish-speaking readers, offering curated book recommendations, in-depth reviews, and engaging content. Built with a focus on user experience and content discoverability.',
+      'A literary platform for Spanish-speaking readers, offering curated book recommendations, in-depth reviews, and engaging content. Built with a focus on user experience and content discoverability.',
     techStack: ['Next.js', 'TypeScript', 'Sanity', 'Tailwind CSS'],
     image: (
       <Image
