@@ -10,7 +10,7 @@ import { SocialLink } from '@/components/social-link';
 import { Separator } from '@/components/ui/separator';
 import { Fragment } from 'react';
 import { ProjectCard } from '@/components/project-card';
-import { projects } from './projects';
+import { projects } from '../projects';
 
 export default function HomePage() {
   return (
