@@ -8,9 +8,9 @@ export default function NotFound() {
         <pre>
           {/* prettier-ignore */}
           <code className="whitespace-pre font-mono">{
-`░░█▀█░░█▀▀█░░█▀█░
-░█▄▄█▄░█▄▀█░█▄▄█▄
-░░░░█░░█▄▄█░░░░█░`}</code>
+` █▄ █▀█ █▄
+  █ █▄█  █
+`}</code>
         </pre>
         <h2 className="pt-5 font-semibold text-black md:text-lg">
           Page Not Found
