@@ -71,7 +71,9 @@ export default function RootLayout({
     <html lang="en" className={fontSans.variable}>
       <head />
       <body>
-        {children}
+        <div className="flex h-dvh w-screen flex-col overflow-x-hidden">
+          {children}
+        </div>
         <Analytics />
         <SpeedInsights />
       </body>

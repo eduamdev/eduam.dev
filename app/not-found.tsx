@@ -1,9 +1,14 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Metadata } from 'next/types';
 
-export default function NotFound() {
+export const metadata: Metadata = {
+  title: 'Page Not Found',
+};
+
+export default function NotFoundPage() {
   return (
-    <div className="flex h-dvh w-screen items-center justify-center">
+    <div className="flex h-full flex-col items-center justify-center">
       <div className="flex max-w-[var(--content-width)] flex-col items-center justify-center gap-2 p-5 md:px-9">
         <pre>
           {/* prettier-ignore */}
