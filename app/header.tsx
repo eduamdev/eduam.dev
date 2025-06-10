@@ -29,7 +29,15 @@ export async function Header() {
           width={36}
           height={36}
           priority
-          className="aspect-square size-9 rounded-full"
+          className="hidden aspect-square size-9 rounded-full md:block"
+        />
+        <Image
+          src={eduamdev}
+          alt={`${name} Avatar`}
+          width={28}
+          height={28}
+          priority
+          className="aspect-square size-7 rounded-full md:hidden"
         />
         <div className="flex flex-col items-stretch gap-y-1.5">
           {nonce ? (
@@ -44,7 +52,7 @@ export async function Header() {
               {name}
             </span>
           )}
-          <span className="text-xs leading-none tracking-wide text-neutral-600">
+          <span className="hidden text-xs leading-none tracking-wide text-neutral-600 md:block">
             @{username}
           </span>
         </div>

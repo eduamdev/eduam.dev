@@ -5,6 +5,7 @@ import {
   IconBrandGithub,
   IconBrandX,
   IconChevronRight,
+  IconMail,
 } from '@tabler/icons-react';
 import { SocialLink } from '@/components/social-link';
 import { Separator } from '@/components/ui/separator';
@@ -21,8 +22,8 @@ export default function HomePage() {
           <Header />
           <>
             <main>
-              <div className="p-5 py-12 md:p-9 md:py-16">
-                <h1 className="pt-2 font-semibold text-black md:text-lg">
+              <div className="p-5 py-16 md:px-9">
+                <h1 className="pt-2 font-semibold tracking-tight text-black md:text-lg">
                   I&apos;m Eduardo, a frontend developer crafting digital
                   experiences in Mexico.
                 </h1>
@@ -90,13 +91,21 @@ export default function HomePage() {
                 <ul className="m-0 flex h-[19px] shrink-0 items-center gap-1.5">
                   <li>
                     <SocialLink
+                      href={`mailto:${siteConfig.email}`}
+                      ariaLabel="Visit GitHub profile"
+                    >
+                      <IconMail />
+                    </SocialLink>
+                  </li>
+                  <Separator orientation="vertical" decorative />
+                  <li>
+                    <SocialLink
                       href={siteConfig.links.github.url}
                       ariaLabel="Visit GitHub profile"
                     >
                       <IconBrandGithub />
                     </SocialLink>
                   </li>
-                  <Separator orientation="vertical" decorative />
                   <li>
                     <SocialLink
                       href={siteConfig.links.xcom.url}
@@ -105,7 +114,6 @@ export default function HomePage() {
                       <IconBrandX />
                     </SocialLink>
                   </li>
-                  <Separator orientation="vertical" decorative />
                   <li>
                     <SocialLink
                       href={siteConfig.links.bluesky.url}

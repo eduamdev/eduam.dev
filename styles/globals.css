@@ -6,12 +6,16 @@
 
 @layer base {
   :root {
-    --header-height: 60px;
+    --header-height: 52px;
     --content-min-width: 250px;
     --content-width: 964px;
 
     --selection-bg-color: hsla(212, 100%, 41%, 1);
     --selection-text-color: #fff;
+
+    @media (min-width: 768px) {
+      --header-height: 60px;
+    }
   }
 }
 
